@@ -162,6 +162,8 @@
     docker-compose
     rbenv
     eza
+    lazydocker
+    lazygit
   ];
 
   fonts.packages = with pkgs; [
