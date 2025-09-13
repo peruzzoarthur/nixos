@@ -168,6 +168,7 @@
     lazydocker
     lazygit
     openrgb
+    hyprpolkitagent
 
     # Language servers
     nodePackages.vscode-langservers-extracted  # provides vscode-*-language-server
