@@ -164,6 +164,23 @@
     eza
     lazydocker
     lazygit
+    openrgb
+
+    # Language servers
+    nodePackages.vscode-langservers-extracted  # provides vscode-*-language-server
+    vtsls
+    nodePackages.typescript-language-server    # alternative to vtsls
+    nodePackages."@tailwindcss/language-server" # tailwindcss-language-server
+    bash-language-server
+    yaml-language-server
+    lua-language-server
+    nil                                        # Nix LSP
+    gopls                                      # Go LSP
+
+    # Formatters
+    nodePackages.prettier
+    alejandra                                  # Nix formatter
+    stylua                                     # Lua formatter
   ];
 
   fonts.packages = with pkgs; [
