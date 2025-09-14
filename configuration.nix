@@ -59,7 +59,7 @@
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
-  
+
   # Enable PolicyKit for authentication
   security.polkit.enable = true;
 
@@ -107,7 +107,17 @@
   };
 
   # Install firefox.
-  programs.firefox.enable = true;
+  programs.firefox = {
+    enable = true;
+    preferences = {
+      "ui.systemUsesDarkTheme" = 1;
+      "browser.theme.content-theme" = 0; # 0 = auto (dark), 1 = light, 2 = dark
+      "browser.theme.toolbar-theme" = 0; # 0 = auto (dark), 1 = light, 2 = dark
+      "font.name.monospace.x-western" = "JetBrains Mono";
+      "font.name.sans-serif.x-western" = "JetBrains Mono";
+      "font.name.serif.x-western" = "JetBrains Mono";
+    };
+  };
 
   # Install hyprland
   programs.hyprland.enable = true;
@@ -129,6 +139,18 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    # Custom Go module: cold-note CLI tool
+    (buildGoModule {
+      pname = "cold-note";
+      version = "0.1.0";
+      src = fetchFromGitHub {
+        owner = "peruzzoarthur";
+        repo = "cold-note";
+        rev = "HEAD";
+        sha256 = "sha256-yx3Yk/PbqkxcokCqpxG3HVKTeR4JzBjs/c7insL5lmQ=";
+      };
+      vendorHash = "sha256-BONP0CHXZkfhYj8zuyB460nvxIo5OXr9TzsI6yTBhFM="; # Will be replaced with correct hash
+    })
     vim
     wget
     neovim
@@ -161,7 +183,6 @@
     fzf
     atuin
     unzip
-    # docker
     docker-compose
     rbenv
     eza
@@ -169,22 +190,25 @@
     lazygit
     openrgb
     hyprpolkitagent
+    obs-studio
+    libreoffice
+    vlc
 
     # Language servers
-    nodePackages.vscode-langservers-extracted  # provides vscode-*-language-server
+    nodePackages.vscode-langservers-extracted # provides vscode-*-language-server
     vtsls
-    nodePackages.typescript-language-server    # alternative to vtsls
+    nodePackages.typescript-language-server # alternative to vtsls
     nodePackages."@tailwindcss/language-server" # tailwindcss-language-server
     bash-language-server
     yaml-language-server
     lua-language-server
-    nil                                        # Nix LSP
-    gopls                                      # Go LSP
+    nil # Nix LSP
+    gopls # Go LSP
 
     # Formatters
     nodePackages.prettier
-    alejandra                                  # Nix formatter
-    stylua                                     # Lua formatter
+    alejandra # Nix formatter
+    stylua # Lua formatter
   ];
 
   fonts.packages = with pkgs; [
@@ -196,6 +220,8 @@
 
   environment.variables = {
     TERMINAL = "kitty";
+    # Force dark theme system-wide
+    GTK_THEME = "Adwaita:dark";
   };
 
   # Nvidia
@@ -246,6 +272,9 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+
+  services.hardware.openrgb.enable = true;
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
@@ -253,8 +282,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
-
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-
-  services.hardware.openrgb.enable = true;
 }

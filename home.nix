@@ -33,11 +33,11 @@
     userName = "Arthur Sperotto Peruzzo";
   };
 
-  home.packages = with pkgs; [
-    bat
-  ];
-
   programs.gpg = {
     enable = true;
   };
+
+  home.packages = with pkgs; [
+    bat
+  ];
 }
