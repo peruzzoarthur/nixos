@@ -198,6 +198,8 @@
     ripgrep
     hyprshot
     spotify
+    bun
+    yarn
 
     # Language servers
     nodePackages.vscode-langservers-extracted # provides vscode-*-language-server
