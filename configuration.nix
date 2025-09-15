@@ -149,7 +149,7 @@
         rev = "HEAD";
         sha256 = "sha256-yx3Yk/PbqkxcokCqpxG3HVKTeR4JzBjs/c7insL5lmQ=";
       };
-      vendorHash = "sha256-BONP0CHXZkfhYj8zuyB460nvxIo5OXr9TzsI6yTBhFM="; # Will be replaced with correct hash
+      vendorHash = "sha256-BONP0CHXZkfhYj8zuyB460nvxIo5OXr9TzsI6yTBhFM=";
     })
     vim
     wget
@@ -193,6 +193,9 @@
     obs-studio
     libreoffice
     vlc
+    steam
+    wlrctl
+    ripgrep
 
     # Language servers
     nodePackages.vscode-langservers-extracted # provides vscode-*-language-server
@@ -273,6 +276,8 @@
   # networking.firewall.enable = false;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
+
+  programs.nix-ld.enable = true;
 
   services.hardware.openrgb.enable = true;
   # This value determines the NixOS release from which the default
