@@ -200,22 +200,24 @@
     spotify
     bun
     yarn
+    spotify-player
+    google-chrome
 
     # Language servers
-    nodePackages.vscode-langservers-extracted # provides vscode-*-language-server
+    nodePackages.vscode-langservers-extracted 
     vtsls
-    nodePackages.typescript-language-server # alternative to vtsls
-    nodePackages."@tailwindcss/language-server" # tailwindcss-language-server
+    nodePackages.typescript-language-server 
+    nodePackages."@tailwindcss/language-server" 
     bash-language-server
     yaml-language-server
     lua-language-server
-    nil # Nix LSP
-    gopls # Go LSP
+    nil 
+    gopls 
 
     # Formatters
     nodePackages.prettier
-    alejandra # Nix formatter
-    stylua # Lua formatter
+    alejandra 
+    stylua 
   ];
 
   fonts.packages = with pkgs; [
@@ -233,7 +235,6 @@
 
   # Nvidia
   # Enable OpenGL
-  # Modern OpenGL configuration (replaces hardware.opengl)
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
@@ -243,7 +244,6 @@
   services.xserver.videoDrivers = ["nvidia"];
 
   hardware.nvidia = {
-    # Modesetting is required
     modesetting.enable = true;
 
     # Nvidia power management (optional)
