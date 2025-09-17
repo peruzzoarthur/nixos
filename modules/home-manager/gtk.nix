@@ -16,6 +16,13 @@
     size = 24;
   };
 
+  home.sessionVariables = {
+    XCURSOR_THEME = "Bibata-Modern-Ice";
+    XCURSOR_SIZE = "24";
+    HYPRCURSOR_THEME = "Bibata-Modern-Ice";
+    HYPRCURSOR_SIZE = "24";
+  };
+
   # set dpi for 4k monitor
   xresources.properties = {
     # dpi for Xorg's font

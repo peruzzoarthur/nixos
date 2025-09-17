@@ -57,7 +57,19 @@
   services.xserver.enable = false;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
+      xdg-desktop-portal-gtk
+    ];
+  };
+
   services.desktopManager.plasma6.enable = true;
 
   # Enable PolicyKit for authentication
@@ -205,22 +217,23 @@
     google-chrome
     wl-clipboard
     xclip
+    nwg-look
 
     # Language servers
-    nodePackages.vscode-langservers-extracted 
+    nodePackages.vscode-langservers-extracted
     vtsls
-    nodePackages.typescript-language-server 
-    nodePackages."@tailwindcss/language-server" 
+    nodePackages.typescript-language-server
+    nodePackages."@tailwindcss/language-server"
     bash-language-server
     yaml-language-server
     lua-language-server
-    nil 
-    gopls 
+    nil
+    gopls
 
     # Formatters
     nodePackages.prettier
-    alejandra 
-    stylua 
+    alejandra
+    stylua
   ];
 
   fonts.packages = with pkgs; [
@@ -233,7 +246,7 @@
   environment.variables = {
     TERMINAL = "kitty";
     # Force dark theme system-wide
-    GTK_THEME = "Adwaita:dark";
+    # GTK_THEME = "Adwaita:dark";
   };
 
   # Nvidia
@@ -288,6 +301,27 @@
   programs.nix-ld.enable = true;
 
   services.hardware.openrgb.enable = true;
+
+  systemd.services.hyprland-suspend = {
+    description = "Suspend hyprland";
+    before = ["systemd-suspend.service" "systemd-hibernate.service"];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "/root/bin/suspend-hyprland.sh suspend";
+    };
+    wantedBy = ["systemd-suspend.service" "systemd-hibernate.service"];
+  };
+
+  systemd.services.hyprland-resume = {
+    description = "Resume hyprland";
+    after = ["systemd-suspend.service" "systemd-hibernate.service"];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "/root/bin/suspend-hyprland.sh resume";
+    };
+    wantedBy = ["systemd-suspend.service" "systemd-hibernate.service"];
+  };
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
