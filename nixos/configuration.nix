@@ -57,32 +57,6 @@
   # You can disable this if you're only using the Wayland session.
   # services.xserver.enable = false;
 
-  # Enable the KDE Plasma Desktop Environment.
-  # services.displayManager.sddm = let
-  #   sddm-theme = inputs.silentSDDM.packages.${pkgs.system}.default.override {
-  #     theme = "rei";
-  #   };
-  # in {
-  #   package = lib.mkForce pkgs.kdePackages.sddm;
-  #   enable = true;
-  #   theme = sddm-theme.pname;
-  #   wayland.enable = true;
-  #   extraPackages = sddm-theme.propagatedBuildInputs;
-  #   settings = {
-  #     General = {
-  #       GreeterEnvironment = "QML2_IMPORT_PATH=${sddm-theme}/share/sddm/themes/${sddm-theme.pname}/components/,QT_IM_MODULE=qtvirtualkeyboard";
-  #       InputMethod = "qtvirtualkeyboard";
-  #     };
-  #   };
-  # };
-
-  # Add sddm theme to system packages
-  # environment.systemPackages = with pkgs; [
-  #   (inputs.silentSDDM.packages.${pkgs.system}.default.override {
-  #     theme = "catppuccin-mocha";
-  #   })
-  # ];
-
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
@@ -114,7 +88,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
+    jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
@@ -201,6 +175,8 @@
     zsh
     postman
     prisma
+    vulkan-tools
+    mesa
     claude-code
     waybar
     zig
@@ -242,6 +218,7 @@
     wl-clipboard
     xclip
     nwg-look
+    python3Packages.gpustat
 
     # Language servers
     nodePackages.vscode-langservers-extracted
@@ -279,28 +256,6 @@
     enable = true;
     enable32Bit = true;
   };
-
-  # # Load nvidia driver for Xorg and Wayland
-  # services.xserver.videoDrivers = ["nvidia"];
-  #
-  # hardware.nvidia = {
-  #   modesetting.enable = true;
-  #
-  #   # Nvidia power management (optional)
-  #   powerManagement.enable = false;
-  #   powerManagement.finegrained = false;
-  #
-  #   # Use the NVidia open source kernel module
-  #   # Support is limited to the RTX 20 series and newer
-  #   # Currently alpha-quality/buggy, so false is recommended
-  #   open = false;
-  #
-  #   # Enable the Nvidia settings menu
-  #   nvidiaSettings = true;
-  #
-  #   # Select appropriate driver version
-  #   package = config.boot.kernelPackages.nvidiaPackages.stable;
-  # };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
