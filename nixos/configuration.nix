@@ -174,6 +174,7 @@
     legcord
     zsh
     postman
+    playwright-driver
     prisma
     vulkan-tools
     mesa
