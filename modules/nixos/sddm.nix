@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  lib,
   ...
 }: let
    # an exhaustive example can be found in flake.nix
@@ -12,7 +13,7 @@ in  {
    environment.systemPackages = [sddm-theme sddm-theme.test];
    qt.enable = true;
    services.displayManager.sddm = {
-      package = pkgs.kdePackages.sddm; # use qt6 version of sddm
+      package = lib.mkForce pkgs.kdePackages.sddm; # use qt6 version of sddm
       enable = true;
       theme = sddm-theme.pname;
       wayland.enable = true;
