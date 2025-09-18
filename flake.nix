@@ -8,6 +8,11 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    silentSDDM = {
+      url = "github:uiriansan/SilentSDDM";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -19,11 +24,11 @@
     inherit (self) outputs;
     # Supported systems for your flake packages, shell, etc.
     systems = [
-      "aarch64-linux"
-      "i686-linux"
+      # "aarch64-linux"
+      # "i686-linux"
       "x86_64-linux"
-      "aarch64-darwin"
-      "x86_64-darwin"
+      # "aarch64-darwin"
+      # "x86_64-darwin"
     ];
     # This is a function that generates an attribute by calling a function you
     # pass to it, with each system as an argument
@@ -45,25 +50,6 @@
     # These are usually stuff you would upstream into home-manager
     homeManagerModules = import ./modules/home-manager;
 
-    # nixosConfigurations = {
-    #   ozzurep = nixpkgs.lib.nixosSystem {
-    #     # inherit system;
-    #     system = "x86_64-linux";
-    #     modules = [
-    #       ./nixos/configuration.nix
-    #       home-manager.nixosModules.home-manager
-    #       {
-    #         home-manager.useGlobalPkgs = true;
-    #         home-manager.useUserPackages = true;
-    #         home-manager.backupFileExtension = "backup";
-    #         home-manager.users.ozzurep = import ./home-manager/home.nix;
-    #       }
-    #     ];
-    #     specialArgs = {
-    #       inherit home-manager;
-    #     };
-    #   };
-    # };
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
@@ -73,7 +59,7 @@
           ./nixos/configuration.nix
           ./modules/nixos
           # ./modules/home-manager
-           home-manager.nixosModules.home-manager
+          home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -84,23 +70,5 @@
         ];
       };
     };
-
-    # # Standalone home-manager configuration entrypoint
-    # # Available through 'home-manager --flake .#your-username@your-hostname'
-    # homeConfigurations = {
-    #   "ozzurep@ozzurep" = home-manager.lib.homeManagerConfiguration {
-    #     pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-    #     extraSpecialArgs = {inherit inputs outputs;};
-    #     modules = [
-    #       ./home-manager/home.nix
-    #       {
-    #         home-manager.useGlobalPkgs = true;
-    #         home-manager.useUserPackages = true;
-    #         home-manager.backupFileExtension = "backup";
-    #         home-manager.users.ozzurep = import ./home-manager/home.nix;
-    #       }
-    #     ];
-    #   };
-    # };
   };
 }

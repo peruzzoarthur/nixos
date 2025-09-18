@@ -5,6 +5,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }: {
   imports = [
@@ -57,10 +58,30 @@
   # services.xserver.enable = false;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-  };
+  # services.displayManager.sddm = let
+  #   sddm-theme = inputs.silentSDDM.packages.${pkgs.system}.default.override {
+  #     theme = "rei";
+  #   };
+  # in {
+  #   package = lib.mkForce pkgs.kdePackages.sddm;
+  #   enable = true;
+  #   theme = sddm-theme.pname;
+  #   wayland.enable = true;
+  #   extraPackages = sddm-theme.propagatedBuildInputs;
+  #   settings = {
+  #     General = {
+  #       GreeterEnvironment = "QML2_IMPORT_PATH=${sddm-theme}/share/sddm/themes/${sddm-theme.pname}/components/,QT_IM_MODULE=qtvirtualkeyboard";
+  #       InputMethod = "qtvirtualkeyboard";
+  #     };
+  #   };
+  # };
+
+  # Add sddm theme to system packages
+  # environment.systemPackages = with pkgs; [
+  #   (inputs.silentSDDM.packages.${pkgs.system}.default.override {
+  #     theme = "catppuccin-mocha";
+  #   })
+  # ];
 
   xdg.portal = {
     enable = true;
@@ -162,6 +183,9 @@
         sha256 = "sha256-yx3Yk/PbqkxcokCqpxG3HVKTeR4JzBjs/c7insL5lmQ=";
       };
       vendorHash = "sha256-BONP0CHXZkfhYj8zuyB460nvxIo5OXr9TzsI6yTBhFM=";
+    })
+    (inputs.silentSDDM.packages.${pkgs.system}.default.override {
+      theme = "catppuccin-mocha";
     })
     vim
     wget
