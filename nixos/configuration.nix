@@ -1,4 +1,4 @@
-# Edit this configuration file to define what should be installed on
+# Edit this configuration file to define what should oe installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running 'nixos-help').
 {
@@ -63,6 +63,15 @@
       xdg-desktop-portal-hyprland
       xdg-desktop-portal-gtk
     ];
+  };
+
+  # Set default applications
+  xdg.mime.defaultApplications = {
+    "text/html" = "firefox.desktop";
+    "x-scheme-handler/http" = "firefox.desktop";
+    "x-scheme-handler/https" = "firefox.desktop";
+    "x-scheme-handler/about" = "firefox.desktop";
+    "x-scheme-handler/unknown" = "firefox.desktop";
   };
 
   services.desktopManager.plasma6.enable = true;
@@ -174,6 +183,7 @@
     legcord
     zsh
     postman
+    ghostscript
     playwright-driver
     prisma
     vulkan-tools
