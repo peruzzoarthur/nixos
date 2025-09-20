@@ -184,7 +184,7 @@
     zsh
     postman
     openssl
-    direnv
+    # direnv
     gamescope
     mangohud
     ghostscript
