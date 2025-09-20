@@ -183,6 +183,10 @@
     legcord
     zsh
     postman
+    openssl
+    direnv
+    gamescope
+    mangohud
     ghostscript
     playwright-driver
     prisma
