@@ -207,6 +207,7 @@
     xclip
     nwg-look
     python3Packages.gpustat
+    docker-buildx
 
     # Language servers
     nodePackages.vscode-langservers-extracted
@@ -239,6 +240,7 @@
     TERMINAL = "kitty";
     BROWSER = "firefox";
     EDITOR = "nvim";
+    COMPOSE_BAKE = "true";
   };
 
   # Nvidia
