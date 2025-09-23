@@ -7,7 +7,7 @@ let
   avatar = ./icons/xoan.png;
 in
 {
-  config.system.activationScripts.createIcon = "ln -sfn ${avatar} /var/lib/AccountsService/icons/tye";
+  config.system.activationScripts.createIcon = "ln -sfn ${avatar} /var/lib/AccountsService/icons/ozzurep";
 }
 
 # {
