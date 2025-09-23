@@ -110,32 +110,6 @@
   # Docker
   virtualisation.docker.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.ozzurep = {
-    isNormalUser = true;
-    description = "Arthur";
-    extraGroups = ["networkmanager" "wheel" "docker"];
-    shell = pkgs.zsh;
-    packages = with pkgs; [
-      kdePackages.kate
-      #  thunderbird
-    ];
-  };
-
-  # Install firefox.
-  programs.firefox = {
-    enable = true;
-    preferences = {
-      "ui.systemUsesDarkTheme" = 1;
-      "browser.theme.content-theme" = 0; # 0 = auto (dark), 1 = light, 2 = dark
-      "browser.theme.toolbar-theme" = 0; # 0 = auto (dark), 1 = light, 2 = dark
-      "font.name.monospace.x-western" = "JetBrains Mono";
-      "font.name.sans-serif.x-western" = "JetBrains Mono";
-      "font.name.serif.x-western" = "JetBrains Mono";
-    };
-  };
-
-  # Install hyprland
   programs.hyprland.enable = true;
 
   # Allow unfree packages
