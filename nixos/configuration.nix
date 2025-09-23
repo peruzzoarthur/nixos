@@ -174,7 +174,6 @@
     wget
     neovim
     kitty
-    btop
     pfetch
     git
     rofi

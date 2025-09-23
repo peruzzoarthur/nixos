@@ -5,9 +5,11 @@
   ...
 }: {
   imports = [
-    ./bat.nix # (2)
+    ./bat.nix 
     ./nvidia.nix
-    ./sddm.nix  # moved to main config
+    ./sddm.nix
+    ./btop.nix
+    ./firefox.nix
   ];
   _module.args = { inherit inputs; };
 }
