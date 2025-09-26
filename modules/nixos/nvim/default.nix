@@ -15,5 +15,6 @@
     ./colorizer.nix
     ./tmux-navigator.nix
     ./trouble.nix
+    ./nvim-surround.nix
   ];
 }

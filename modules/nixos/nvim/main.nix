@@ -38,7 +38,6 @@
         };
       };
 
-      vim.utility.surround.enable = true;
 
       vim.keymaps = [
         {
