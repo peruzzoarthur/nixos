@@ -7,7 +7,7 @@
     ./zen-mode.nix
     ./none-ls.nix
     ./telescope.nix
-    ./luasnip.nix
+    ./completions.nix
     ./lspconfig.nix
     ./lazygit.nix
     ./which-key.nix
