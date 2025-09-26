@@ -10,5 +10,6 @@
     ./luasnip.nix
     ./lspconfig.nix
     ./lazygit.nix
+    ./which-key.nix
   ];
 }
