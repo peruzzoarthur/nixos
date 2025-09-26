@@ -23,7 +23,7 @@
       }
       {
         mode = "n";
-        key = "<leader>cs";
+        key = "<leader>xs";
         action = "<cmd>Trouble symbols toggle focus=false<cr>";
         desc = "Symbols (Trouble)";
       }
