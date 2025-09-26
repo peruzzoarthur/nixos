@@ -16,5 +16,15 @@
     ./tmux-navigator.nix
     ./trouble.nix
     ./nvim-surround.nix
+    ./custom-lsp.nix
+    ./markdown.nix
+    ./theme.nix
+    ./statusline.nix
+    ./oil.nix
+    ./harpoon.nix
+    ./dashboard.nix
+    ./icons.nix
+    ./noice.nix
+    ./treesitter.nix
   ];
 }
