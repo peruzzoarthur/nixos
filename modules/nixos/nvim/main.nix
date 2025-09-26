@@ -23,7 +23,7 @@
 
       vim.statusline.lualine = {
         enable = true;
-        theme = "dracula";
+        theme = "catppuccin";
       };
 
       # vim.autocomplete.nvim-cmp.enable = true;
@@ -37,6 +37,9 @@
           };
         };
       };
+
+      vim.utility.surround.enable = true;
+
       vim.keymaps = [
         {
           key = "-";
@@ -70,6 +73,9 @@
             enable = true;
             type = "prettierd";
           };
+          treesitter = {
+            enable = true;
+          };
         };
         nix.enable = true;
         go.enable = true;
@@ -91,6 +97,10 @@
         alpha = {
           enable = true;
           theme = "startify";
+        };
+        startify = {
+          enable = true;
+          customHeader = ["Arthur"];
         };
       };
     };

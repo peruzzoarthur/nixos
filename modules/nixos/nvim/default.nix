@@ -14,5 +14,6 @@
     ./cheatsheet.nix
     ./colorizer.nix
     ./tmux-navigator.nix
+    ./trouble.nix
   ];
 }
