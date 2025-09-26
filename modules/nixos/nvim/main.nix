@@ -71,11 +71,14 @@
             type = "prettierd";
           };
         };
-
-        nix.enable = true; # Nix
-        go.enable = true; # Go
-        lua.enable = true; # Lua
-        bash.enable = true; # Bash
+        nix.enable = true;
+        go.enable = true;
+        lua.enable = true;
+        bash.enable = true;
+        terraform.enable = true;
+        tailwind.enable = true;
+        html.enable = true;
+        yaml.enable = true;
       };
 
       vim.mini = {
@@ -87,6 +90,7 @@
       vim.dashboard = {
         alpha = {
           enable = true;
+          theme = "startify";
         };
       };
     };

@@ -11,5 +11,8 @@
     ./lspconfig.nix
     ./lazygit.nix
     ./which-key.nix
+    ./cheatsheet.nix
+    ./colorizer.nix
+    ./tmux-navigator.nix
   ];
 }

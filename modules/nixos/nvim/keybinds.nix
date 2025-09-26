@@ -117,12 +117,12 @@
       # Quickfix navigation
       {
         mode = "n";
-        key = "<C-k>";
+        key = "<leader>cn";
         action = "<cmd>cnext<CR>zz";
       }
       {
         mode = "n";
-        key = "<C-j>";
+        key = "<leader>cp";
         action = "<cmd>cprev<CR>zz";
       }
       
