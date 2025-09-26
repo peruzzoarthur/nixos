@@ -9,22 +9,34 @@
     settings = {
       vim.viAlias = false;
       vim.vimAlias = true;
-      # vim.lsp = {
-      #   enable = true;
-      # };
 
-      # vim.theme = {
-      #   enable = true;
-      #   name = "catppuccin";
-      #   style = "mocha";
-      #   transparent = false;
-      # };
+      vim.lsp = {
+        enable = true;
+      };
 
-      vim.statusline.lualine.enable = true;
+      vim.theme = {
+        enable = true;
+        name = "catppuccin";
+        style = "mocha";
+        transparent = false;
+      };
+
+      vim.statusline.lualine = {
+        enable = true;
+        theme = "dracula";
+      };
+
       # vim.autocomplete.nvim-cmp.enable = true;
 
       vim.treesitter.enable = true;
-      vim.utility.oil-nvim.enable = true;
+      vim.utility.oil-nvim = {
+        enable = true;
+        setupOpts = {
+          view_options = {
+            show_hidden = true;
+          };
+        };
+      };
       vim.keymaps = [
         {
           key = "-";
@@ -52,11 +64,30 @@
 
       # Language-specific configurations
       vim.languages = {
-        ts.enable = true; # TypeScript/JavaScript
+        ts = {
+          enable = true;
+          format = {
+            enable = true;
+            type = "prettierd";
+          };
+        };
+
         nix.enable = true; # Nix
         go.enable = true; # Go
         lua.enable = true; # Lua
         bash.enable = true; # Bash
+      };
+
+      vim.mini = {
+        icons = {
+          enable = true;
+        };
+      };
+
+      vim.dashboard = {
+        alpha = {
+          enable = true;
+        };
       };
     };
   };

@@ -2,13 +2,13 @@
   ...
 }: {
   imports = [
-    ./test.nix 
+    ./main.nix 
     ./keybinds.nix
     ./zen-mode.nix
     ./none-ls.nix
     ./telescope.nix
     ./luasnip.nix
     ./lspconfig.nix
-    ./catppuccin.nix
+    ./lazygit.nix
   ];
 }
