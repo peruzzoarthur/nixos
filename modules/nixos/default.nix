@@ -12,6 +12,7 @@
     ./firefox.nix
     ./users
     ./users/icon.nix
+    ./nvim
   ];
   _module.args = { inherit inputs; user = "ozzurep"; };
 }

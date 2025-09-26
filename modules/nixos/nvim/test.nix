@@ -1,0 +1,63 @@
+{
+  pkgs,
+  lib,
+  ...
+}: {
+  programs.nvf = {
+    enable = true;
+
+    settings = {
+      vim.viAlias = false;
+      vim.vimAlias = true;
+      # vim.lsp = {
+      #   enable = true;
+      # };
+
+      # vim.theme = {
+      #   enable = true;
+      #   name = "catppuccin";
+      #   style = "mocha";
+      #   transparent = false;
+      # };
+
+      vim.statusline.lualine.enable = true;
+      # vim.autocomplete.nvim-cmp.enable = true;
+
+      vim.treesitter.enable = true;
+      vim.utility.oil-nvim.enable = true;
+      vim.keymaps = [
+        {
+          key = "-";
+          mode = ["n"];
+          action = "<CMD>Oil<CR>";
+          silent = true;
+          desc = "Open parent directory";
+        }
+      ];
+      vim.navigation.harpoon = {
+        enable = true;
+        mappings = {
+          markFile = "<leader>a";
+          listMarks = "<leader>ha";
+          file1 = "<M-1>";
+          file2 = "<M-2>";
+          file3 = "<M-3>";
+          file4 = "<M-4>";
+        };
+      };
+
+      vim.ui.noice = {
+        enable = true;
+      };
+
+      # Language-specific configurations
+      vim.languages = {
+        ts.enable = true; # TypeScript/JavaScript
+        nix.enable = true; # Nix
+        go.enable = true; # Go
+        lua.enable = true; # Lua
+        bash.enable = true; # Bash
+      };
+    };
+  };
+}

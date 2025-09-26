@@ -60,7 +60,7 @@
         modules = [
           ./nixos/configuration.nix
           ./modules/nixos
-          nvf.nixOsModules.default
+          nvf.nixosModules.default
           # ./modules/home-manager
           home-manager.nixosModules.home-manager
           {
