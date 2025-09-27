@@ -156,6 +156,7 @@
     legcord
     zsh
     postman
+    dbeaver-bin
     openssl
     # direnv
     gamescope

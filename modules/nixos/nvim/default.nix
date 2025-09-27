@@ -26,5 +26,6 @@
     ./icons.nix
     ./noice.nix
     ./treesitter.nix
+    ./image.nix
   ];
 }

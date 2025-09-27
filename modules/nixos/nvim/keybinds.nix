@@ -178,6 +178,13 @@
         action = ":resize -2<CR>";
         silent = true;
       }
+
+      {
+        mode = "n";
+        key = "<leader><leader>";
+        action = ":";
+        silent = false;
+      }
     ];
   };
 }
