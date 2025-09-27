@@ -28,5 +28,6 @@
     ./snacks.nix
     ./treesitter.nix
     ./image.nix
+    ./fastaction.nix
   ];
 }
