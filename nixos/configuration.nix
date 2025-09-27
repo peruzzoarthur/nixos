@@ -157,6 +157,7 @@
     zsh
     postman
     dbeaver-bin
+    lua
     openssl
     # direnv
     gamescope

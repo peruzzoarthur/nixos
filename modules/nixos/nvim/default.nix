@@ -25,6 +25,7 @@
     ./dashboard.nix
     ./icons.nix
     ./noice.nix
+    ./snacks.nix
     ./treesitter.nix
     ./image.nix
   ];

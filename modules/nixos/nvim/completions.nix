@@ -14,15 +14,19 @@
     };
 
     snippets.luasnip.enable = true;
-
-    keymaps = [
-      {
-        mode = "i";
-        key = "<CR>";
-        action = "<cmd>lua require('cmp').confirm({ select = true })<CR>";
-        desc = "Confirm completion";
-        silent = true;
-      }
-    ];
+    
+    extraPlugins = {
+      cmp-enter-mapping = {
+        package = null;
+        setup = ''
+          local cmp = require('cmp')
+          cmp.setup({
+            mapping = cmp.mapping.preset.insert({
+              ['<CR>'] = cmp.mapping.confirm({ select = true }),
+            }),
+          })
+        '';
+      };
+    };
   };
 }
