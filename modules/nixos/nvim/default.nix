@@ -29,5 +29,7 @@
     ./treesitter.nix
     ./image.nix
     ./fastaction.nix
+    ./git.nix
+    ./flash.nix
   ];
 }
