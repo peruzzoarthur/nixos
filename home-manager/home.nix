@@ -86,10 +86,6 @@
       source = ../config/hypr;
       recursive = true;
     };
-    "tmux/plugins" = {
-      source = ../config/tmux/plugins;
-      recursive = true;
-    };
     "rofi" = {
       source = ../config/rofi;
       recursive = true;
