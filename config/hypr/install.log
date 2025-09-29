@@ -1,0 +1,282 @@
+AUR Explicit (2): hyprland-git-0.48.0.r62.gd775686-1, aquamarine-git-0.8.0.r3.gc8282f4-1
+:: [1mPKGBUILD up to date, skipping download: hyprland-git[0m
+:: [1mPKGBUILD up to date, skipping download: aquamarine-git[0m
+  2 hyprland-git                             (Build Files Exist)
+  1 aquamarine-git                           (Build Files Exist)
+==> Packages to cleanBuild?
+==> [N]one [A]ll [Ab]ort [I]nstalled [No]tInstalled or (1 2 3, 1-3, ^4)
+==> 
+  2 hyprland-git                             (Build Files Exist)
+  1 aquamarine-git                           (Build Files Exist)
+==> Diffs to show?
+==> [N]one [A]ll [Ab]ort [I]nstalled [No]tInstalled or (1 2 3, 1-3, ^4)
+==> 
+==> Making package: hyprland-git 0.48.0.r62.gd775686-1 (Sun 17 Aug 2025 08:55:21 AM -03)
+==> Retrieving sources...
+  -> Updating hyprland git repo...
+  -> Updating udis86 git repo...
+==> WARNING: Skipping verification of source file PGP signatures.
+==> Validating source files with sha256sums...
+    hyprland ... Skipped
+    udis86 ... Skipped
+==> Making package: aquamarine-git 0.8.0.r3.gc8282f4-1 (Sun 17 Aug 2025 08:55:22 AM -03)
+==> Retrieving sources...
+  -> Updating aquamarine git repo...
+==> WARNING: Skipping verification of source file PGP signatures.
+==> Validating source files with sha256sums...
+    aquamarine ... Skipped
+:: [1m(1/2) Parsing SRCINFO: hyprland-git[0m
+:: [1m(2/2) Parsing SRCINFO: aquamarine-git[0m
+==> Making package: aquamarine-git 0.8.0.r3.gc8282f4-1 (Sun 17 Aug 2025 08:55:23 AM -03)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> Retrieving sources...
+  -> Updating aquamarine git repo...
+==> Validating source files with sha256sums...
+    aquamarine ... Skipped
+==> Removing existing $srcdir/ directory...
+==> Extracting sources...
+  -> Creating working copy of aquamarine git repo...
+Cloning into 'aquamarine'...
+done.
+==> Starting pkgver()...
+==> Updated version: aquamarine-git 0.9.2.r4.g498f466-1
+==> Sources are ready.
+==> Making package: aquamarine-git 0.9.2.r4.g498f466-1 (Sun 17 Aug 2025 08:55:25 AM -03)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> WARNING: Using existing $srcdir/ tree
+==> Starting pkgver()...
+==> Removing existing $pkgdir/ directory...
+==> Starting build()...
+-- The C compiler identification is GNU 15.2.1
+-- The CXX compiler identification is GNU 15.2.1
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found PkgConfig: /usr/bin/pkg-config (found version "2.5.1")
+-- Found OpenGL: /usr/lib/libOpenGL.so  found components: GLES3
+-- Checking for modules 'libseat>=0.8.0;libinput>=1.26.0;wayland-client;wayland-protocols;hyprutils>=0.8.0;pixman-1;libdrm;gbm;libudev;libdisplay-info;hwdata'
+--   Found libseat, version 0.9.1
+--   Found libinput, version 1.29.0
+--   Found wayland-client, version 1.24.0
+--   Found wayland-protocols, version 1.45
+--   Found hyprutils, version 0.8.0
+--   Found pixman-1, version 0.46.4
+--   Found libdrm, version 2.4.125
+--   Found gbm, version 25.1.7-arch1.1
+--   Found libudev, version 257
+--   Found libdisplay-info, version 0.2.0
+--   Found hwdata, version 0.397
+-- Configuring aquamarine in Release
+-- Looking for sys/timerfd.h
+-- Looking for sys/timerfd.h - found
+-- Checking for module 'epoll-shim'
+--   Package 'epoll-shim' not found
+-- Found wayland-protocols at //usr/share/wayland-protocols
+-- Found wayland-scanner pkgdatadir at //usr/share/wayland
+-- Running /home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/data/hwdata.sh < //usr/share/hwdata/pnp.ids
+-- Configuring done (0.4s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/ozzurep/.cache/yay/aquamarine-git/src/build
+[0/2] Re-checking globbed directories...
+[1/33] Generating /home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/linux-dmabuf-v1.cpp, /home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/linux-dmabuf-v1.hpp
+[2/33] Generating /home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/xdg-shell.cpp, /home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/xdg-shell.hpp
+[3/33] Generating /home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/wayland.cpp, /home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/wayland.hpp
+[4/33] Building CXX object CMakeFiles/aquamarine.dir/src/misc/Attachment.cpp.o
+[5/33] Building CXX object CMakeFiles/aquamarine.dir/src/allocator/Allocator.cpp.o
+[6/33] Building CXX object CMakeFiles/aquamarine.dir/src/input/Input.cpp.o
+[7/33] Building CXX object CMakeFiles/aquamarine.dir/src/backend/drm/Math.cpp.o
+[8/33] Building CXX object CMakeFiles/aquamarine.dir/src/backend/drm/Props.cpp.o
+[9/33] Building CXX object CMakeFiles/aquamarine.dir/src/utils/FormatUtils.cpp.o
+[10/33] Building CXX object CMakeFiles/aquamarine.dir/protocols/xdg-shell.cpp.o
+FAILED: CMakeFiles/aquamarine.dir/protocols/xdg-shell.cpp.o 
+/usr/bin/c++ -DAQUAMARINE_VERSION=\"0.9.2\" -Daquamarine_EXPORTS -I/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/./include -I/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/./src -I/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/./src/include -I/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/./protocols -I/home/ozzurep/.cache/yay/aquamarine-git/src/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions         -Wp,-D_FORTIFY_SOURCE=3 -Wformat -Werror=format-security         -fstack-clash-protection -fcf-protection         -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -Wp,-D_GLIBCXX_ASSERTIONS -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -MD -MT CMakeFiles/aquamarine.dir/protocols/xdg-shell.cpp.o -MF CMakeFiles/aquamarine.dir/protocols/xdg-shell.cpp.o.d -o CMakeFiles/aquamarine.dir/protocols/xdg-shell.cpp.o -c /home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/xdg-shell.cpp
+/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/xdg-shell.cpp:149:20: error: zero-size array ‘_CCXdgPositionerVTable’
+  149 | static const void* _CCXdgPositionerVTable[] = {
+      |                    ^~~~~~~~~~~~~~~~~~~~~~
+[11/33] Building CXX object CMakeFiles/aquamarine.dir/protocols/wayland.cpp.o
+FAILED: CMakeFiles/aquamarine.dir/protocols/wayland.cpp.o 
+/usr/bin/c++ -DAQUAMARINE_VERSION=\"0.9.2\" -Daquamarine_EXPORTS -I/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/./include -I/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/./src -I/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/./src/include -I/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/./protocols -I/home/ozzurep/.cache/yay/aquamarine-git/src/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions         -Wp,-D_FORTIFY_SOURCE=3 -Wformat -Werror=format-security         -fstack-clash-protection -fcf-protection         -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -Wp,-D_GLIBCXX_ASSERTIONS -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -MD -MT CMakeFiles/aquamarine.dir/protocols/wayland.cpp.o -MF CMakeFiles/aquamarine.dir/protocols/wayland.cpp.o.d -o CMakeFiles/aquamarine.dir/protocols/wayland.cpp.o -c /home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/wayland.cpp
+/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/wayland.cpp:270:20: error: zero-size array ‘_CCWlCompositorVTable’
+  270 | static const void* _CCWlCompositorVTable[] = {
+      |                    ^~~~~~~~~~~~~~~~~~~~~
+/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/wayland.cpp:321:20: error: zero-size array ‘_CCWlShmPoolVTable’
+  321 | static const void* _CCWlShmPoolVTable[] = {
+      |                    ^~~~~~~~~~~~~~~~~~
+/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/wayland.cpp:935:20: error: zero-size array ‘_CCWlDataDeviceManagerVTable’
+  935 | static const void* _CCWlDataDeviceManagerVTable[] = {
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/wayland.cpp:987:20: error: zero-size array ‘_CCWlShellVTable’
+  987 | static const void* _CCWlShellVTable[] = {
+      |                    ^~~~~~~~~~~~~~~~
+/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/wayland.cpp:2216:20: error: zero-size array ‘_CCWlRegionVTable’
+ 2216 | static const void* _CCWlRegionVTable[] = {
+      |                    ^~~~~~~~~~~~~~~~~
+/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/wayland.cpp:2281:20: error: zero-size array ‘_CCWlSubcompositorVTable’
+ 2281 | static const void* _CCWlSubcompositorVTable[] = {
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/wayland.cpp:2331:20: error: zero-size array ‘_CCWlSubsurfaceVTable’
+ 2331 | static const void* _CCWlSubsurfaceVTable[] = {
+      |                    ^~~~~~~~~~~~~~~~~~~~~
+/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/wayland.cpp:2421:20: error: zero-size array ‘_CCWlFixesVTable’
+ 2421 | static const void* _CCWlFixesVTable[] = {
+      |                    ^~~~~~~~~~~~~~~~
+[12/33] Building CXX object CMakeFiles/aquamarine.dir/protocols/linux-dmabuf-v1.cpp.o
+[13/33] Building CXX object CMakeFiles/aquamarine.dir/src/utils/Shared.cpp.o
+[14/33] Building CXX object CMakeFiles/aquamarine.dir/src/output/Output.cpp.o
+[15/33] Building CXX object CMakeFiles/aquamarine.dir/src/buffer/Buffer.cpp.o
+[16/33] Building CXX object CMakeFiles/aquamarine.dir/src/backend/Headless.cpp.o
+[17/33] Building CXX object CMakeFiles/aquamarine.dir/src/allocator/Swapchain.cpp.o
+[18/33] Building CXX object CMakeFiles/aquamarine.dir/src/allocator/DRMDumb.cpp.o
+[19/33] Building CXX object CMakeFiles/aquamarine.dir/src/allocator/GBM.cpp.o
+[20/33] Building CXX object CMakeFiles/aquamarine.dir/src/backend/drm/impl/Legacy.cpp.o
+[21/33] Building CXX object CMakeFiles/aquamarine.dir/src/backend/Backend.cpp.o
+[22/33] Building CXX object CMakeFiles/aquamarine.dir/src/backend/drm/impl/Atomic.cpp.o
+[23/33] Building CXX object CMakeFiles/aquamarine.dir/src/backend/Session.cpp.o
+[24/33] Building CXX object CMakeFiles/simpleWindow.dir/tests/SimpleWindow.cpp.o
+[25/33] Building CXX object CMakeFiles/aquamarine.dir/src/backend/drm/Renderer.cpp.o
+[26/33] Building CXX object CMakeFiles/aquamarine.dir/src/backend/Wayland.cpp.o
+[27/33] Building CXX object CMakeFiles/aquamarine.dir/src/backend/drm/DRM.cpp.o
+ninja: build stopped: subcommand failed.
+==> ERROR: A failure occurred in build().
+    Aborting...
+ -> Failed to install layer, rolling up to next layer.error:error making: aquamarine-git - exit status 4
+==> Making package: hyprland-git 0.48.0.r62.gd775686-1 (Sun 17 Aug 2025 08:55:41 AM -03)
+==> Checking runtime dependencies...
+==> Missing dependencies:
+  -> aquamarine-git
+==> Checking buildtime dependencies...
+==> ERROR: Could not resolve all dependencies.
+ -> error making: hyprland-git-exit status 8
+==> Making package: aquamarine-git 0.9.2.r4.g498f466-1 (Sun 17 Aug 2025 08:55:42 AM -03)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> Retrieving sources...
+  -> Updating aquamarine git repo...
+==> Validating source files with sha256sums...
+    aquamarine ... Skipped
+==> Removing existing $srcdir/ directory...
+==> Extracting sources...
+  -> Creating working copy of aquamarine git repo...
+Cloning into 'aquamarine'...
+done.
+==> Starting pkgver()...
+==> Sources are ready.
+==> Making package: aquamarine-git 0.9.2.r4.g498f466-1 (Sun 17 Aug 2025 08:55:43 AM -03)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> WARNING: Using existing $srcdir/ tree
+==> Starting pkgver()...
+==> Removing existing $pkgdir/ directory...
+==> Starting build()...
+-- The C compiler identification is GNU 15.2.1
+-- The CXX compiler identification is GNU 15.2.1
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found PkgConfig: /usr/bin/pkg-config (found version "2.5.1")
+-- Found OpenGL: /usr/lib/libOpenGL.so  found components: GLES3
+-- Checking for modules 'libseat>=0.8.0;libinput>=1.26.0;wayland-client;wayland-protocols;hyprutils>=0.8.0;pixman-1;libdrm;gbm;libudev;libdisplay-info;hwdata'
+--   Found libseat, version 0.9.1
+--   Found libinput, version 1.29.0
+--   Found wayland-client, version 1.24.0
+--   Found wayland-protocols, version 1.45
+--   Found hyprutils, version 0.8.0
+--   Found pixman-1, version 0.46.4
+--   Found libdrm, version 2.4.125
+--   Found gbm, version 25.1.7-arch1.1
+--   Found libudev, version 257
+--   Found libdisplay-info, version 0.2.0
+--   Found hwdata, version 0.397
+-- Configuring aquamarine in Release
+-- Looking for sys/timerfd.h
+-- Looking for sys/timerfd.h - found
+-- Checking for module 'epoll-shim'
+--   Package 'epoll-shim' not found
+-- Found wayland-protocols at //usr/share/wayland-protocols
+-- Found wayland-scanner pkgdatadir at //usr/share/wayland
+-- Running /home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/data/hwdata.sh < //usr/share/hwdata/pnp.ids
+-- Configuring done (0.4s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/ozzurep/.cache/yay/aquamarine-git/src/build
+[0/2] Re-checking globbed directories...
+[1/33] Generating /home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/linux-dmabuf-v1.cpp, /home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/linux-dmabuf-v1.hpp
+[2/33] Generating /home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/xdg-shell.cpp, /home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/xdg-shell.hpp
+[3/33] Generating /home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/wayland.cpp, /home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/wayland.hpp
+[4/33] Building CXX object CMakeFiles/aquamarine.dir/src/misc/Attachment.cpp.o
+[5/33] Building CXX object CMakeFiles/aquamarine.dir/src/allocator/Allocator.cpp.o
+[6/33] Building CXX object CMakeFiles/aquamarine.dir/src/backend/drm/Math.cpp.o
+[7/33] Building CXX object CMakeFiles/aquamarine.dir/src/backend/drm/Props.cpp.o
+[8/33] Building CXX object CMakeFiles/aquamarine.dir/src/input/Input.cpp.o
+[9/33] Building CXX object CMakeFiles/aquamarine.dir/src/utils/FormatUtils.cpp.o
+[10/33] Building CXX object CMakeFiles/aquamarine.dir/protocols/xdg-shell.cpp.o
+FAILED: CMakeFiles/aquamarine.dir/protocols/xdg-shell.cpp.o 
+/usr/bin/c++ -DAQUAMARINE_VERSION=\"0.9.2\" -Daquamarine_EXPORTS -I/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/./include -I/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/./src -I/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/./src/include -I/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/./protocols -I/home/ozzurep/.cache/yay/aquamarine-git/src/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions         -Wp,-D_FORTIFY_SOURCE=3 -Wformat -Werror=format-security         -fstack-clash-protection -fcf-protection         -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -Wp,-D_GLIBCXX_ASSERTIONS -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -MD -MT CMakeFiles/aquamarine.dir/protocols/xdg-shell.cpp.o -MF CMakeFiles/aquamarine.dir/protocols/xdg-shell.cpp.o.d -o CMakeFiles/aquamarine.dir/protocols/xdg-shell.cpp.o -c /home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/xdg-shell.cpp
+/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/xdg-shell.cpp:149:20: error: zero-size array ‘_CCXdgPositionerVTable’
+  149 | static const void* _CCXdgPositionerVTable[] = {
+      |                    ^~~~~~~~~~~~~~~~~~~~~~
+[11/33] Building CXX object CMakeFiles/aquamarine.dir/protocols/wayland.cpp.o
+FAILED: CMakeFiles/aquamarine.dir/protocols/wayland.cpp.o 
+/usr/bin/c++ -DAQUAMARINE_VERSION=\"0.9.2\" -Daquamarine_EXPORTS -I/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/./include -I/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/./src -I/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/./src/include -I/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/./protocols -I/home/ozzurep/.cache/yay/aquamarine-git/src/build -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions         -Wp,-D_FORTIFY_SOURCE=3 -Wformat -Werror=format-security         -fstack-clash-protection -fcf-protection         -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -Wp,-D_GLIBCXX_ASSERTIONS -std=gnu++23 -fPIC -Wall -Wextra -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wpedantic -O3 -MD -MT CMakeFiles/aquamarine.dir/protocols/wayland.cpp.o -MF CMakeFiles/aquamarine.dir/protocols/wayland.cpp.o.d -o CMakeFiles/aquamarine.dir/protocols/wayland.cpp.o -c /home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/wayland.cpp
+/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/wayland.cpp:270:20: error: zero-size array ‘_CCWlCompositorVTable’
+  270 | static const void* _CCWlCompositorVTable[] = {
+      |                    ^~~~~~~~~~~~~~~~~~~~~
+/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/wayland.cpp:321:20: error: zero-size array ‘_CCWlShmPoolVTable’
+  321 | static const void* _CCWlShmPoolVTable[] = {
+      |                    ^~~~~~~~~~~~~~~~~~
+/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/wayland.cpp:935:20: error: zero-size array ‘_CCWlDataDeviceManagerVTable’
+  935 | static const void* _CCWlDataDeviceManagerVTable[] = {
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/wayland.cpp:987:20: error: zero-size array ‘_CCWlShellVTable’
+  987 | static const void* _CCWlShellVTable[] = {
+      |                    ^~~~~~~~~~~~~~~~
+/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/wayland.cpp:2216:20: error: zero-size array ‘_CCWlRegionVTable’
+ 2216 | static const void* _CCWlRegionVTable[] = {
+      |                    ^~~~~~~~~~~~~~~~~
+/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/wayland.cpp:2281:20: error: zero-size array ‘_CCWlSubcompositorVTable’
+ 2281 | static const void* _CCWlSubcompositorVTable[] = {
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/wayland.cpp:2331:20: error: zero-size array ‘_CCWlSubsurfaceVTable’
+ 2331 | static const void* _CCWlSubsurfaceVTable[] = {
+      |                    ^~~~~~~~~~~~~~~~~~~~~
+/home/ozzurep/.cache/yay/aquamarine-git/src/aquamarine/protocols/wayland.cpp:2421:20: error: zero-size array ‘_CCWlFixesVTable’
+ 2421 | static const void* _CCWlFixesVTable[] = {
+      |                    ^~~~~~~~~~~~~~~~
+[12/33] Building CXX object CMakeFiles/aquamarine.dir/src/utils/Shared.cpp.o
+[13/33] Building CXX object CMakeFiles/aquamarine.dir/protocols/linux-dmabuf-v1.cpp.o
+[14/33] Building CXX object CMakeFiles/aquamarine.dir/src/output/Output.cpp.o
+[15/33] Building CXX object CMakeFiles/aquamarine.dir/src/buffer/Buffer.cpp.o
+[16/33] Building CXX object CMakeFiles/aquamarine.dir/src/allocator/Swapchain.cpp.o
+[17/33] Building CXX object CMakeFiles/aquamarine.dir/src/backend/Headless.cpp.o
+[18/33] Building CXX object CMakeFiles/aquamarine.dir/src/allocator/DRMDumb.cpp.o
+[19/33] Building CXX object CMakeFiles/aquamarine.dir/src/backend/Backend.cpp.o
+[20/33] Building CXX object CMakeFiles/aquamarine.dir/src/backend/drm/impl/Legacy.cpp.o
+[21/33] Building CXX object CMakeFiles/aquamarine.dir/src/allocator/GBM.cpp.o
+[22/33] Building CXX object CMakeFiles/simpleWindow.dir/tests/SimpleWindow.cpp.o
+[23/33] Building CXX object CMakeFiles/aquamarine.dir/src/backend/drm/impl/Atomic.cpp.o
+[24/33] Building CXX object CMakeFiles/aquamarine.dir/src/backend/Session.cpp.o
+[25/33] Building CXX object CMakeFiles/aquamarine.dir/src/backend/drm/Renderer.cpp.o
+[26/33] Building CXX object CMakeFiles/aquamarine.dir/src/backend/Wayland.cpp.o
+[27/33] Building CXX object CMakeFiles/aquamarine.dir/src/backend/drm/DRM.cpp.o
+ninja: build stopped: subcommand failed.
+==> ERROR: A failure occurred in build().
+    Aborting...
+ -> error making: aquamarine-git-exit status 4
+ -> Failed to install the following packages. Manual intervention is required:
+hyprland-git - exit status 8
+aquamarine-git - exit status 4

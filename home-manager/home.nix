@@ -80,6 +80,31 @@
     enable = true;
   };
 
+  # Configuration files
+  xdg.configFile = {
+    "hypr" = {
+      source = ../config/hypr;
+      recursive = true;
+    };
+    "tmux" = {
+      source = ../config/tmux;
+      recursive = true;
+    };
+    "rofi" = {
+      source = ../config/rofi;
+      recursive = true;
+    };
+    "hyprpanel" = {
+      source = ../config/hyprpanel;
+      recursive = true;
+    };
+  };
+
+  home.file = {
+    ".tmux.conf".source = ../config/.tmux.conf;
+    ".zshrc".source = ../config/.zshrc;
+  };
+
   # home.packages = with pkgs; [
   #   bat
   # ];
