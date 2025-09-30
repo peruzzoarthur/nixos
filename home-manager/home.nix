@@ -98,7 +98,7 @@
 
   home.file = {
     ".tmux.conf".source = ../config/.tmux.conf;
-    ".zshrc".source = ../config/.zshrc;
+    # ".zshrc".source = ../config/.zshrc;
   };
 
   # home.packages = with pkgs; [
