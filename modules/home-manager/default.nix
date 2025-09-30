@@ -1,11 +1,7 @@
-
-{
-  config,
-  pkgs,
-  ...
-}: {
+{...}: {
   imports = [
-   ./steam.nix # (2)
-   ./gtk.nix
+    ./steam.nix # (2)
+    ./gtk.nix
+    ./yazi
   ];
 }

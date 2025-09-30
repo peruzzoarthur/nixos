@@ -8,10 +8,10 @@ function M.setup()
 		pattern = "StartifyReady",
 		callback = function()
 			local image = require("image")
-			local briga = "/home/ozzurep/arthur/cats-imgs/images/briga.png"
-			local mari = "/home/ozzurep/arthur/cats-imgs/images/mari1.png"
-			local dusi = "/home/ozzurep/arthur/cats-imgs/images/dusi_abismada.png"
-			local ddds = "/home/ozzurep/arthur/cats-imgs/images/mercedita.png"
+			local briga = "/home/ozzurep/.dotfiles/modules/nixos/nvim/filhos/briga.png"
+			local mari = "/home/ozzurep/.dotfiles/modules/nixos/nvim/filhos/maritapada.png"
+			local dusi = "/home/ozzurep/.dotfiles/modules/nixos/nvim/filhos/dusi_abismada.png"
+			local ddds = "/home/ozzurep/.dotfiles/modules/nixos/nvim/filhos/mercedita.png"
 
 			vim.defer_fn(function()
 				-- First image
