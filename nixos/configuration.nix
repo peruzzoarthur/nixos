@@ -151,7 +151,7 @@
     pfetch
     git
     rofi
-    yazi
+    # yazi
     tmux
     legcord
     zsh
