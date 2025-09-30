@@ -209,6 +209,8 @@
     xclip
     nwg-look
     python3Packages.gpustat
+    python312Packages.pip
+    poetry
     docker-buildx
 
     # Language servers

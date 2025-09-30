@@ -185,6 +185,18 @@
         action = ":";
         silent = false;
       }
+      {
+        mode = "n";
+        key = "<C-d>";
+        action = "<C-d>zz";
+        silent = true;
+      }
+      {
+        mode = "n";
+        key = "<C-u>";
+        action = "<C-u>zz";
+        silent = false;
+      }
     ];
   };
 }
