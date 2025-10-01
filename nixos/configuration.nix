@@ -18,20 +18,15 @@
     };
   };
 
-  boot.initrd.luks.devices = {
-    "luks-854549b9-4b1c-4a64-8d36-b647d3507a65" = {
-      device = "/dev/disk/by-uuid/854549b9-4b1c-4a64-8d36-b647d3507a65";
-    };
-    "luks-73214f6b-4851-40a2-aa44-974aecbf3ba8" = {
-      device = "/dev/disk/by-uuid/73214f6b-4851-40a2-aa44-974aecbf3ba8";
-    };
-  };
+  boot.initrd.luks.devices."luks-1aa6a45e-0937-4531-b4f0-541d4391d332".device = "/dev/disk/by-uuid/1aa6a45e-0937-4531-b4f0-541d4391d332";
+  networking.hostName = "ozzurep"; # Define your hostname.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernel.sysctl = {
-    "fs.inotify.max_user_watches" = 1048576;
-  };
-  networking.hostName = "ozzurep";
+  # Configure network proxy if necessary
+  # networking.proxy.default = "http://user:password@proxy:port/";
+  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
+  # Enable networking
   networking.networkmanager.enable = true;
 
   services.avahi = {
