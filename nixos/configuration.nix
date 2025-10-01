@@ -17,14 +17,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices = {
-    "luks-854549b9-4b1c-4a64-8d36-b647d3507a65" = {
-      device = "/dev/disk/by-uuid/854549b9-4b1c-4a64-8d36-b647d3507a65";
-    };
-    "luks-73214f6b-4851-40a2-aa44-974aecbf3ba8" = {
-      device = "/dev/disk/by-uuid/73214f6b-4851-40a2-aa44-974aecbf3ba8";
-    };
-  };
+  boot.initrd.luks.devices."luks-1aa6a45e-0937-4531-b4f0-541d4391d332".device = "/dev/disk/by-uuid/1aa6a45e-0937-4531-b4f0-541d4391d332";
   networking.hostName = "ozzurep"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -140,9 +133,6 @@
         sha256 = "sha256-yx3Yk/PbqkxcokCqpxG3HVKTeR4JzBjs/c7insL5lmQ=";
       };
       vendorHash = "sha256-BONP0CHXZkfhYj8zuyB460nvxIo5OXr9TzsI6yTBhFM=";
-    })
-    (inputs.silentSDDM.packages.${pkgs.system}.default.override {
-      theme = "catppuccin-mocha";
     })
     vim
     wget

@@ -6,7 +6,7 @@
 }: {
   imports = [
     ./bat.nix 
-    ./nvidia.nix
+    # ./nvidia.nix
     ./sddm.nix
     ./btop.nix
     ./firefox.nix
