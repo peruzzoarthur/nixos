@@ -103,7 +103,7 @@
       
       # Fastfetch on startup
       # if [ -f /usr/bin/fastfetch ]; then
-        fastfetch
+        # fastfetch
       # fi
       
       # CLI colors

@@ -31,5 +31,6 @@
     ./fastaction.nix
     ./git.nix
     ./flash.nix
+    ./multi-cursor.nix
   ];
 }
