@@ -1,7 +1,7 @@
 {
   "bar.customModules.updates.pollingInterval": 1440000,
   "theme.font.size": "0.8rem",
-  "menus.dashboard.powermenu.avatar.image": "/home/ozzurep/arthur/xoan.jpg",
+  "menus.dashboard.powermenu.avatar.image": "/home/ozzurep/.dotfiles/modules/nixos/users/icons/xoan.png",
   "menus.dashboard.powermenu.avatar.name": "system",
   "menus.clock.time.military": true,
   "theme.bar.buttons.modules.cpu.enableBorder": false,
@@ -39,6 +39,7 @@
         "volume",
         "network",
         "systray",
+        "battery",
         "clock",
         "notifications"
       ]
