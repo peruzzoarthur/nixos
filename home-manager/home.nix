@@ -62,7 +62,7 @@
   programs.kitty = {
     enable = true;
     settings = {
-      background_opacity = 0.9;
+      # background_opacity = 1;
       font_family = "JetBrains Mono";
     };
     themeFile = "Catppuccin-Mocha";
