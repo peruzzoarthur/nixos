@@ -1,86 +1,92 @@
 {pkgs, ...}: {
   programs.nvf = {
     settings = {
-      config.vim.lazy.plugins = {
-        # "telescope-luasnip.nvim" = {
-        #   package = pkgs.vimPlugins.telescope-luasnip-nvim;
-        #   # event = ["VeryLazy"];
-        # };
-
-        "telescope.nvim" = {
-          package = pkgs.vimPlugins.telescope-nvim;
-          after = ''
-               vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = "#181826" })
-               vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = "#181826" })
-               vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { fg = "#181826" })
-               vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { fg = "#181826" })
-          '';
-          #
-          # dependencies = [
-          #   pkgs.vimPlugins.plenary-nvim
-          #   pkgs.vimPlugins.telescope-luasnip-nvim
-          # ];
-
-          keys = [
+      config.vim = {
+        telescope = {
+          enable = true;
+          extensions = [
             {
-              key = "<C-p>";
-              action = ":lua require('telescope.builtin').git_files()<CR>";
-              mode = "n";
+              name = "fzf";
+              packages = [pkgs.vimPlugins.telescope-fzf-native-nvim];
+              setup = {
+                fzf = {
+                  fuzzy = true;
+                  override_generic_sorter = true;
+                  override_file_sorter = true;
+                  case_mode = "smart_case";
+                };
+              };
             }
-            {
-              key = "<leader>Fg";
-              action = ":lua require('telescope.builtin').live_grep()<CR>";
-              mode = "n";
-              desc = "Telescope live grep";
-            }
-            {
-              key = "<leader>Fb";
-              action = ":lua require('telescope.builtin').buffers()<CR>";
-              mode = "n";
-              desc = "Telescope buffers";
-            }
-            {
-              key = "<leader>Fh";
-              action = ":lua require('telescope.builtin').help_tags()<CR>";
-              mode = "n";
-              desc = "Telescope help tags";
-            }
-            # {
-            #   key = "<leader>Fs";
-            #   action = ":Telescope luasnip<CR>";
-            #   mode = "n";
-            #   desc = "Telescope LuaSnip";
-            # }
-            # {
-            #   key = "<leader><leader>";
-            #   action = ":Telescope cmdline<CR>";
-            #   mode = "n";
-            #   desc = "Telescope oldfiles";
-            # }
           ];
+          mappings = {
+            findFiles = "<C-p>";
+            liveGrep = "<leader>Fg";
+            buffers = "<leader>Fb";
+            helpTags = "<leader>Fh";
+            findProjects = "<leader>Fp";
+            open = "<leader>Ft";
+            resume = "<leader>Fr";
+            gitCommits = "<leader>Fvcw";
+            gitBufferCommits = "<leader>Fvcb";
+            gitBranches = "<leader>Fvb";
+            gitStatus = "<leader>Fvs";
+            gitStash = "<leader>Fvx";
+            lspDocumentSymbols = "<leader>Flsb";
+            lspWorkspaceSymbols = "<leader>Flsw";
+            lspReferences = "<leader>Flr";
+            lspImplementations = "<leader>Fli";
+            lspDefinitions = "<leader>FlD";
+            lspTypeDefinitions = "<leader>Flt";
+            diagnostics = "<leader>Fld";
+            treesitter = "<leader>Fs";
+          };
+          setupOpts = {
+            defaults = {
+              file_ignore_patterns = [];
+              vimgrep_arguments = [
+                "rg"
+                "--color=never"
+                "--no-heading"
+                "--with-filename"
+                "--line-number"
+                "--column"
+                "--smart-case"
+                "--hidden"
+                "--no-ignore"
+                "--glob=!.git/*"
+              ];
+            };
+            highlights = {
+              TelescopeBorder = { fg = "#181826"; };
+              TelescopePromptBorder = { fg = "#181826"; };
+              TelescopeResultsBorder = { fg = "#181826"; };
+              TelescopePreviewBorder = { fg = "#181826"; };
+            };
+            pickers = {
+              find_files = {
+                hidden = true;
+                no_ignore = true;
+                follow = true;
+                find_command = ["rg" "--files" "--hidden" "--no-ignore" "--glob" "!.git/*"];
+              };
+              live_grep = {
+                glob_pattern = "**/*";
+                search_dirs = ["."];
+              };
+            };
+          };
         };
 
-        # "telescope-ui-select.nvim" = {
-        #   package = pkgs.vimPlugins.telescope-ui-select-nvim;
-        #   after = ''
-        #     require("telescope").setup({
-        #       extensions = {
-        #         ["ui-select"] = {
-        #           require("telescope.themes").get_dropdown({}),
-        #         },
-        #       },
-        #     })
-        #     require("telescope").load_extension("ui-select")
-        #     require("telescope").load_extension("cmdline")
-        #
-        #     -- Set custom highlights
-        #     vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = "#181826" })
-        #     vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = "#181826" })
-        #     vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { fg = "#181826" })
-        #     vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { fg = "#181826" })
-        #   '';
-        #
-        #   # event = ["VeryLazy"];
+        # lazy.plugins = {
+        #   "telescope-highlights" = {
+        #     package = "none";
+        #     after = ''
+        #       vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = "#181826" })
+        #       vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = "#181826" })
+        #       vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { fg = "#181826" })
+        #       vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { fg = "#181826" })
+        #     '';
+        #   };
         # };
       };
     };

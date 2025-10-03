@@ -15,10 +15,10 @@
     };
     
     # Oh My Zsh configuration
-    oh-my-zsh = {
-      enable = true;
-      plugins = [ "git" "sudo" "archlinux" "aws" "kubectl" "kubectx" "command-not-found" ];
-    };
+    # oh-my-zsh = {
+    #   enable = true;
+    #   plugins = [ "git" "sudo" "command-not-found" ];
+    # };
     
     # History configuration
     history = {
@@ -65,46 +65,8 @@
       # Disable Powerlevel10k instant prompt
       typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
       
-      # Custom key bindings
-      bindkey '^p' history-search-backward
-      bindkey '^n' history-search-forward
-      bindkey '^[w' kill-region
-      
-      # Setup bindings for both smkx and rmkx key variants
-      # Home
-      bindkey '\e[H'  beginning-of-line
-      bindkey '\eOH'  beginning-of-line
-      # End
-      bindkey '\e[F'  end-of-line
-      bindkey '\eOF'  end-of-line
-      # Left
-      bindkey '\e[D' backward-char
-      bindkey '\eOD' backward-char
-      # Right
-      bindkey '\e[C' forward-char
-      bindkey '\eOC' forward-char
-      # Delete
-      bindkey '\e[3~' delete-char
-      # Backspace
-      bindkey '\e?' backward-delete-char
-      # PageUp
-      bindkey '\e[5~' up-line-or-history
-      # PageDown
-      bindkey '\e[6~' down-line-or-history
-      # Ctrl+Left
-      bindkey '\e[1;5D' backward-word
-      # Ctrl+Right
-      bindkey '\e[1;5C' forward-word
-      # Shift+Tab
-      bindkey '\e[Z' reverse-menu-complete
-      
       # Load Powerlevel10k config if it exists
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-      
-      # Fastfetch on startup
-      # if [ -f /usr/bin/fastfetch ]; then
-        # fastfetch
-      # fi
       
       # CLI colors
       export CLICOLOR=1
@@ -139,14 +101,12 @@
       export PATH="$PATH:/usr/bin/"
       export PATH="$PATH:/home/ozzurep/.local/bin"
       export PATH="$PATH:/home/ozzurep/.pulumi/bin"
-      export PATH="$HOME/.rbenv/bin:$PATH"
       export PATH="$HOME/.bun/bin:$PATH"
       export BUN_INSTALL="$HOME/.bun"
       
       # Shell integrations
       eval "$(zoxide init zsh | sed 's/zi()/zoxide_zi()/')"
       source <(fzf --zsh)
-      eval "$(rbenv init -)"
       
       # Atuin integration
       [[ -f "$HOME/.atuin/bin/env" ]] && source "$HOME/.atuin/bin/env"
@@ -155,35 +115,20 @@
       # Vi mode
       set -o vi
       
-      # NVM setup
+      # Lazy load NVM
       export NVM_DIR="$HOME/.nvm"
-      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-      [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-      nvm use 22 > /dev/null
-      
-      # Cargo environment
-      [[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
-      
-      # Deno environment
-      [[ -f "$HOME/.deno/env" ]] && source "$HOME/.deno/env"
-      
-      # Terraform completion
-      autoload -U +X bashcompinit && bashcompinit
-      complete -o nospace -C /usr/local/bin/terraform terraform
-      
-      # Function path and completions
-      fpath+=~/.zfunc
-      autoload -Uz compinit && compinit
+      nvm() {
+        unset -f nvm
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+        nvm use 22 > /dev/null
+        nvm "$@"
+      }
       
       # Import .env variables
       if [ -f "$HOME/.env" ]; then
         export $(cat $HOME/.env | xargs)
       fi
-      
-      # Custom functions
-      ccm() {
-        git diff | cody chat --stdin -m 'Write a commit message for this diff'
-      }
       
       function y() {
         local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd

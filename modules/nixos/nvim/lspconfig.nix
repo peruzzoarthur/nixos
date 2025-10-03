@@ -24,6 +24,12 @@
       tailwind.enable = true;
       html.enable = true;
       yaml.enable = true;
+      python = {
+        enable = true;
+        treesitter = {
+          enable = true;
+        };
+      };
     };
   };
 }
