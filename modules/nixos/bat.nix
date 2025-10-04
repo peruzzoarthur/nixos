@@ -1,8 +1,8 @@
-{ pkgs, ... }:
-{
- environment.systemPackages = with pkgs; [
-    # steam
-    bat
-    # code-cursor
-  ];
+{...}: {
+  programs.bat = {
+    enable = true;
+    themes = {
+
+    };
+  };
 }

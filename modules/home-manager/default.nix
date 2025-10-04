@@ -4,5 +4,7 @@
     ./gtk.nix
     ./yazi
     ./zsh
+    ./bat
+    ./btop
   ];
 }

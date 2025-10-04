@@ -43,6 +43,7 @@
           setupOpts = {
             defaults = {
               file_ignore_patterns = [];
+              prompt_prefix = "  󰭎  ";
               vimgrep_arguments = [
                 "rg"
                 "--color=never"
@@ -55,12 +56,6 @@
                 "--no-ignore"
                 "--glob=!.git/*"
               ];
-            };
-            highlights = {
-              TelescopeBorder = { fg = "#181826"; };
-              TelescopePromptBorder = { fg = "#181826"; };
-              TelescopeResultsBorder = { fg = "#181826"; };
-              TelescopePreviewBorder = { fg = "#181826"; };
             };
             pickers = {
               find_files = {
@@ -76,18 +71,6 @@
             };
           };
         };
-
-        # lazy.plugins = {
-        #   "telescope-highlights" = {
-        #     package = "none";
-        #     after = ''
-        #       vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = "#181826" })
-        #       vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = "#181826" })
-        #       vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { fg = "#181826" })
-        #       vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { fg = "#181826" })
-        #     '';
-        #   };
-        # };
       };
     };
   };
