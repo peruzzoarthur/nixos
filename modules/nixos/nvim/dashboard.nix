@@ -5,6 +5,7 @@
         dashboard = {
           startify = {
             enable = true;
+            changeToDir = false;
             customHeader = [
               ""
               ""

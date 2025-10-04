@@ -12,6 +12,13 @@
             file3 = "<M-3>";
             file4 = "<M-4>";
           };
+          setupOpts = {
+            defaults = {
+              save_on_toggle = true;
+              sync_on_ui_close = true;
+              excluded_filetypes = ["harpoon" "alpha" "dashboard" "neo-tree"];
+            };
+          };
         };
         
         extraPlugins = {
