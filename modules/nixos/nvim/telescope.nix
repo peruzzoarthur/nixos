@@ -19,7 +19,7 @@
             }
           ];
           mappings = {
-            findFiles = "<C-p>";
+            findFiles = "<leader>Ff";
             liveGrep = "<leader>Fg";
             buffers = "<leader>Fb";
             helpTags = "<leader>Fh";
@@ -71,6 +71,16 @@
             };
           };
         };
+        
+        keymaps = [
+          {
+            mode = "n";
+            key = "<C-p>";
+            action = ":Telescope git_files<CR>";
+            desc = "Git files [Telescope]";
+            silent = true;
+          }
+        ];
       };
     };
   };
