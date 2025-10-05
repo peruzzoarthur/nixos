@@ -6,5 +6,6 @@
     ./zsh
     ./bat
     ./btop
+    ./npm-lsps
   ];
 }

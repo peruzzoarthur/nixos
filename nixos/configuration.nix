@@ -223,6 +223,10 @@
     lua-language-server
     nil
     gopls
+    
+    # NPM-based language servers from nixos-npm-ls
+    prisma-language-server
+    gh-actions-language-server
 
     # Formatters
     nodePackages.prettier

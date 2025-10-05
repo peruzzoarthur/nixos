@@ -18,6 +18,11 @@
       url = "github:NotAShelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixos-npm-ls = {
+      url = "github:y3owk1n/nixos-npm-ls";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -25,6 +30,7 @@
     nixpkgs,
     home-manager,
     nvf,
+    nixos-npm-ls,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -44,7 +50,7 @@
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
 
     # Your custom packages and modifications, exported as overlays
-    overlays = import ./overlays {inherit inputs;};
+    overlays = import ./overlays {inherit inputs outputs;};
     # Reusable nixos modules you might want to export
     # These are usually stuff you would upstream into nixpkgs
     nixosModules = import ./modules/nixos;
@@ -69,6 +75,12 @@
             home-manager.backupFileExtension = "backup";
             home-manager.extraSpecialArgs = {inherit inputs outputs;};
             home-manager.users.ozzurep = import ./home-manager/home.nix;
+          }
+          {
+            nixpkgs.overlays = with (import ./overlays {inherit inputs;}); [
+              additions
+              modifications
+            ] ++ nixos-npm-ls.overlays;
           }
         ];
       };

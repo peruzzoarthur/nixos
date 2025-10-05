@@ -15,7 +15,7 @@
           setupOpts = {
             defaults = {
               save_on_toggle = true;
-              sync_on_ui_close = true;
+              # sync_on_ui_close = true;
               excluded_filetypes = ["harpoon" "alpha" "dashboard" "neo-tree"];
             };
           };
