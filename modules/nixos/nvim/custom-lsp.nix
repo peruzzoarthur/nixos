@@ -38,6 +38,32 @@
             capabilities = capabilities,
             on_attach = on_attach,
         })
+
+        -- Deno LSP
+    		lspconfig.denols.setup({
+				capabilities = capabilities,
+				root_dir = function(fname)
+					local root_pattern = lspconfig.util.root_pattern("deno.json", "deno.jsonc")
+					local found = root_pattern(fname)
+					if found then
+						return found
+					else
+						return nil -- explicitly disable denols if no Deno config is found
+					end
+				end,
+				single_file_support = false,
+				on_attach = function(client, bufnr)
+					-- Disable TypeScript LSP if denols is active
+					local clients = vim.lsp.get_clients({ bufnr = bufnr })
+					for _, c in ipairs(clients) do
+						if c.name == "ts_ls" or c.name == "vtsls" then
+							c.stop()
+						end
+					end
+					on_attach(client, bufnr)
+				end,
+			})
+
       '';
 
       event = ["BufReadPre"];

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Music Presence
+Exec=musicpresence
+Icon=musicpresence
+Comment=Discord music status for any media player
+Categories=Network;Audio;AudioVideo;Music;Monitor
+Keywords=Discord;Music;Presence;RPC;Media;Activity
+Terminal=false
+StartupNotify=false

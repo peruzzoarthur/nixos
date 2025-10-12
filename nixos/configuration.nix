@@ -141,6 +141,12 @@
       };
       vendorHash = "sha256-BONP0CHXZkfhYj8zuyB460nvxIo5OXr9TzsI6yTBhFM=";
     })
+    # MusicPresence wrapper script
+    (writeScriptBin "musicpresence" ''
+      #!/usr/bin/env bash
+      cd /home/ozzurep/.dotfiles/squashfs-root
+      exec ./AppRun "$@"
+    '')
     (inputs.silentSDDM.packages.${pkgs.system}.default.override {
       theme = "catppuccin-mocha";
     })
@@ -212,6 +218,8 @@
     python312Packages.pip
     poetry
     docker-buildx
+    deno
+    qalculate-gtk
 
     # Language servers
     nodePackages.vscode-langservers-extracted
@@ -223,6 +231,7 @@
     lua-language-server
     nil
     gopls
+    ags
     
     # NPM-based language servers from nixos-npm-ls
     prisma-language-server
@@ -279,6 +288,25 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    stdenv.cc.cc
+    openssl
+    fontconfig
+    freetype
+    xorg.libX11
+    xorg.libXext
+    libGL
+    libglvnd
+    e2fsprogs
+    glib
+    gtk3
+    dbus
+    systemd
+    zlib
+    expat
+    alsa-lib
+    mesa
+  ];
 
   services.hardware.openrgb.enable = true;
 
