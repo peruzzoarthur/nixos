@@ -247,6 +247,7 @@
     
     # TUI applications
     nix-search-tv
+    playerctl
   ];
 
   fonts.packages = with pkgs; [
