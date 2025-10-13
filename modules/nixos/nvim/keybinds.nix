@@ -197,12 +197,6 @@
         action = "<C-u>zz";
         silent = false;
       }
-      {
-        mode = "n";
-        key = "<leader>lg";
-        action = "<cmd>lua Snacks.lazygit()<CR>";
-        silent = false;
-      }
     ];
   };
 }

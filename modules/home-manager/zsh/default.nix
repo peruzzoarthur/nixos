@@ -48,6 +48,7 @@
       cl = "clear && magick \"$(~/scripts/random_image.sh ~/arthur/cats-imgs/images)\" -resize 250x250 png:- | kitty +kitten icat --stdin yes";
       yayf = "yay -Slq | fzf --multi --preview 'yay -Sii {1}' --preview-window=down:75% | xargs -ro yay -S";
       ld = "lazydocker";
+      ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
       
       # Directory navigation
       ".." = "cd ..";

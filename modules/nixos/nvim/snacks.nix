@@ -18,6 +18,27 @@
           words = {enabled = true;};
         };
       };
+
+      vim.keymaps = [
+        {
+          mode = "n";
+          key = "<leader>lg";
+          action = "<cmd>lua Snacks.lazygit()<CR>";
+          silent = false;
+        }
+        {
+          mode = "n";
+          key = "<leader>gb";
+          action = "<cmd>lua Snacks.gitbrowse()<CR>";
+          silent = false;
+        }
+        {
+          mode = "n";
+          key = "<leader>un";
+          action = "<cmd>lua Snacks.notifier.hide()<CR>";
+          silent = false;
+        }
+      ];
     };
   };
 }
