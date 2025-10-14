@@ -220,6 +220,7 @@
     docker-buildx
     deno
     qalculate-gtk
+    jq
 
     # Language servers
     nodePackages.vscode-langservers-extracted

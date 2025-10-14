@@ -9,7 +9,7 @@ in {
         enable = true;
         name = "catppuccin";
         style = "mocha";
-        transparent = false;
+        transparent = true;
         extraConfig = ''
           vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = "${borderColor}" })
           vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = "${borderColor}" })

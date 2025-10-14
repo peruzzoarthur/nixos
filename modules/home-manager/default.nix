@@ -7,5 +7,6 @@
     ./bat
     ./btop
     ./npm-lsps
+    ./cron
   ];
 }
