@@ -17,10 +17,10 @@
           };
         };
         
-        maps.normal."<leader>z" = {
-          action = ":ZenMode<CR>";
-          desc = "Toggle Zen Mode";
-        };
+        # maps.normal."<leader>z" = {
+        #   action = ":ZenMode<CR>";
+        #   desc = "Toggle Zen Mode";
+        # };
       };
     };
   };

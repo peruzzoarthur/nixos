@@ -38,6 +38,18 @@
           action = "<cmd>lua Snacks.notifier.hide()<CR>";
           silent = false;
         }
+        {
+          mode = "n";
+          key = "<leader>nh";
+          action = "<cmd>lua Snacks.notifier.show_history()<CR>";
+          silent = false;
+        }
+        {
+          mode = "n";
+          key = "<leader>zz";
+          action = "<cmd>lua Snacks.zen()<CR>";
+          silent = false;
+        }
       ];
     };
   };

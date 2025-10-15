@@ -14,7 +14,7 @@
       Description = "Change wallpaper every 30 minutes";
     };
     Timer = {
-      OnCalendar = "*:0/1";
+      OnCalendar = "*:0/30";
       Persistent = true;
     };
     Install = {

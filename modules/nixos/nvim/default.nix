@@ -32,5 +32,6 @@
     ./git.nix
     ./flash.nix
     ./multi-cursor.nix
+    ./csv.nix
   ];
 }

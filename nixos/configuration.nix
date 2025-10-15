@@ -221,6 +221,7 @@
     deno
     qalculate-gtk
     jq
+    sqlite
 
     # Language servers
     nodePackages.vscode-langservers-extracted
