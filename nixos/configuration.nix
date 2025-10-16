@@ -222,6 +222,7 @@
     qalculate-gtk
     jq
     sqlite
+    ffmpeg
 
     # Language servers
     nodePackages.vscode-langservers-extracted

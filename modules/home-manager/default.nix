@@ -8,5 +8,6 @@
     ./btop
     ./npm-lsps
     ./cron
+    # ./claude-code
   ];
 }
