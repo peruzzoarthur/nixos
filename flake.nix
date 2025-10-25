@@ -23,6 +23,13 @@
       url = "github:y3owk1n/nixos-npm-ls";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hyprland.url = "github:hyprwm/Hyprland";
+
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
   };
 
   outputs = {
@@ -72,15 +79,17 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "backup";
+            home-manager.backupFileExtension = "bak2";
             home-manager.extraSpecialArgs = {inherit inputs outputs;};
             home-manager.users.ozzurep = import ./home-manager/home.nix;
           }
           {
-            nixpkgs.overlays = with (import ./overlays {inherit inputs;}); [
-              additions
-              modifications
-            ] ++ nixos-npm-ls.overlays;
+            nixpkgs.overlays = with (import ./overlays {inherit inputs;});
+              [
+                additions
+                modifications
+              ]
+              ++ nixos-npm-ls.overlays;
           }
         ];
       };

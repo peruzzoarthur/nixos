@@ -82,10 +82,10 @@
 
   # Configuration files
   xdg.configFile = {
-    "hypr" = {
-      source = ../config/hypr;
-      recursive = true;
-    };
+    # "hypr" = {
+    #   source = ../config/hypr;
+    #   recursive = true;
+    # };
     "rofi" = {
       source = ../config/rofi;
       recursive = true;

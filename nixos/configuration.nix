@@ -60,7 +60,6 @@
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
-      xdg-desktop-portal-hyprland
       xdg-desktop-portal-gtk
     ];
   };
@@ -75,6 +74,10 @@
   };
 
   services.desktopManager.plasma6.enable = true;
+  
+  # Enable SDDM display manager
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
 
   # Enable PolicyKit for authentication
   security.polkit.enable = true;
@@ -110,7 +113,10 @@
   # Docker
   virtualisation.docker.enable = true;
 
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true; # Needed for SDDM detection
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -177,6 +183,7 @@
     waybar
     zig
     gcc
+    gnumake
     nodejs_22
     go
     hyprpaper
