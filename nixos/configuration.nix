@@ -135,6 +135,15 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    # ResponsivelyApp AppImage
+    (appimageTools.wrapType2 {
+      pname = "responsively";
+      version = "1.17.1";
+      src = fetchurl {
+        url = "https://github.com/responsively-org/responsively-app-releases/releases/download/v1.17.1/ResponsivelyApp-1.17.1.AppImage";
+        sha256 = "sha256-GiHwWSP/iQ9AOosOor6vUoKr/ztbTfFbjytEHJjNoz4=";
+      };
+    })
     # Custom Go module: cold-note CLI tool
     (buildGoModule {
       pname = "cold-note";

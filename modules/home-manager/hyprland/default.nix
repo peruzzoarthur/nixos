@@ -3,18 +3,6 @@
   pkgs,
   ...
 }: {
-  wayland.windowManager.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-    systemd = {
-      enable = true;
-    };
-    plugins = [
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprscrolling
-      inputs.hyprland-plugins.packages.${pkgs.system}.csgo-vulkan-fix
-    ];
-  };
-
   services.hyprpaper = {
     enable = true;
     settings = {
@@ -33,6 +21,15 @@
   };
 
   wayland.windowManager.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    systemd = {
+      enable = true;
+    };
+    plugins = [
+      inputs.hyprland-plugins.packages.${pkgs.system}.hyprscrolling
+      inputs.hyprland-plugins.packages.${pkgs.system}.csgo-vulkan-fix
+    ];
     settings = {
       # Monitor configuration
       monitor = [
@@ -68,9 +65,6 @@
       exec-once = [
         "hyprctl setcursor Bibata-Modern-Ice 24"
         "systemctl --user start hyprpolkitagent"
-      ];
-      
-      exec = [
         "${pkgs.writeShellScript "hyprpanel-launcher" ''
           export GI_TYPELIB_PATH=/usr/local/lib/girepository-1.0:$GI_TYPELIB_PATH
           export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
