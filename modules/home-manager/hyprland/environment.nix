@@ -1,0 +1,25 @@
+{
+  # Environment variables
+  env = [
+    "XDG_CURRENT_DESKTOP,Hyprland"
+    "XDG_SESSION_TYPE,wayland"
+    "XDG_SESSION_DESKTOP,Hyprland"
+    "QT_QPA_PLATFORM,wayland;xcb"
+    "QT_QPA_PLATFORMTHEME,qt6ct"
+    "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+    "QT_AUTO_SCREEN_SCALE_FACTOR,1"
+    "GDK_SCALE,1"
+    "MOZ_ENABLE_WAYLAND,1"
+    "XCURSOR_SIZE,24"
+    "APPIMAGELAUNCHER_DISABLE,1"
+    "OZONE_PLATFORM,wayland"
+    "LIBVA_DRIVER_NAME,nvidia"
+    "GBM_BACKEND,nvidia-drm"
+    "__GLX_VENDOR_LIBRARY_NAME,nvidia"
+    "__GL_VRR_ALLOWED,1"
+    "WLR_DRM_NO_ATOMIC,1"
+    "WLR_NO_HARDWARE_CURSORS,1"
+    "HYPRCURSOR_THEME,Bibata-Modern-Ice"
+    "HYPRCURSOR_SIZE,24"
+  ];
+}
