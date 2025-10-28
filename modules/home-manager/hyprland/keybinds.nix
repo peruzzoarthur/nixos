@@ -92,17 +92,29 @@
     ", XF86Calculator, exec, ~/.config/ml4w/settings/calculator.sh"
     ", XF86Lock, exec, hyprlock"
 
-    # Move windows
-    "$mainMod SHIFT, L, moveactive, 30 0"
-    "$mainMod SHIFT, H, moveactive, -30 0"
-    "$mainMod SHIFT, K, moveactive, 0 -30"
-    "$mainMod SHIFT, J, moveactive, 0 30"
+    # Move windows (other layouts)
+    # "$mainMod SHIFT, L, moveactive, 30 0"
+    # "$mainMod SHIFT, H, moveactive, -30 0"
+    # "$mainMod SHIFT, K, moveactive, 0 -30"
+    # "$mainMod SHIFT, J, moveactive, 0 30"
 
-    # Resize windows
-    "$mainMod ALT, h, resizeactive, -40 0"
-    "$mainMod ALT, l, resizeactive, 40 0"
-    "$mainMod ALT, k, resizeactive, 0 -40"
-    "$mainMod ALT, j, resizeactive, 0 40"
+    # Move windows (hyprscrolling layout)
+    "$mainMod SHIFT, h, layoutmsg, movewindowto l"
+    "$mainMod SHIFT, l, layoutmsg, movewindowto r"
+    "$mainMod SHIFT, k, layoutmsg, movewindowto u"
+    "$mainMod SHIFT, j, layoutmsg, movewindowto d"
+
+    # Resize windows (other layouts)
+    # "$mainMod ALT, h, resizeactive, -40 0"
+    # "$mainMod ALT, l, resizeactive, 40 0"
+    # "$mainMod ALT, k, resizeactive, 0 -40"
+    # "$mainMod ALT, j, resizeactive, 0 40"
+
+    # Resize columns (hyprscrolling layout)
+    "$mainMod ALT, h, layoutmsg, colresize -0.1"
+    "$mainMod ALT, l, layoutmsg, colresize +0.1"
+    "$mainMod ALT, k, layoutmsg, colresize -0.1"
+    "$mainMod ALT, j, layoutmsg, colresize +0.1"
 
     # Mouse control
     "$mainMod CTRL, P, exec, wlrctl pointer click left"

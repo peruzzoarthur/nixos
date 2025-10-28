@@ -30,6 +30,8 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
+
+    catppuccin.url = "github:catppuccin/nix/release-25.05";
   };
 
   outputs = {
@@ -38,6 +40,7 @@
     home-manager,
     nvf,
     nixos-npm-ls,
+    catppuccin,
     ...
   } @ inputs: let
     inherit (self) outputs;

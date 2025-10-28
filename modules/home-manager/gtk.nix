@@ -1,12 +1,12 @@
 {
   pkgs,
   config,
+  inputs,
   ...
 }:
 {
-  # If your themes for mouse cursor, icons or windows don’t load correctly,
-  # try setting them with home.pointerCursor and gtk.theme,
-  # which enable a bunch of compatibility options that should make the themes load in all situations.
+  imports = [inputs.catppuccin.homeModules.catppuccin];
+
 
   home.pointerCursor = {
     gtk.enable = true;
@@ -23,20 +23,31 @@
     HYPRCURSOR_SIZE = "24";
   };
 
-  # set dpi for 4k monitor
   xresources.properties = {
-    # dpi for Xorg's font
     "Xft.dpi" = 150;
-    # or set a generic dpi
     "*.dpi" = 150;
   };
 
-  # gtk's theme settings, generate files:
-  #   1. ~/.gtkrc-2.0
-  #   2. ~/.config/gtk-3.0/settings.ini
-  #   3. ~/.config/gtk-4.0/settings.ini
   gtk = {
     enable = true;
+
+    theme = {
+      name = "catppuccin-mocha-mauve-standard+normal";
+      package = pkgs.catppuccin-gtk.override {
+        accents = [ "mauve" ];
+        size = "standard";
+        tweaks = [ "normal" ];
+        variant = "mocha";
+      };
+    };
+
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.catppuccin-papirus-folders.override {
+        flavor = "mocha";
+        accent = "mauve";
+      };
+    };
 
     font = {
       name = "Noto Sans";

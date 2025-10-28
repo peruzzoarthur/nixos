@@ -42,7 +42,7 @@
           };
           setupOpts = {
             defaults = {
-              file_ignore_patterns = [];
+              file_ignore_patterns = ["node_modules" "%.git/" "dist/" "build/" "target/" "result/" ".next/" "package-lock.json"];
               prompt_prefix = "  󰭎  ";
               vimgrep_arguments = [
                 "rg"
@@ -55,6 +55,8 @@
                 "--hidden"
                 "--no-ignore"
                 "--glob=!.git/*"
+                "--glob=!node_modules/*"
+                "--glob=!dist/*"
               ];
             };
             pickers = {
