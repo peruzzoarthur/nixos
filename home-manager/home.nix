@@ -63,7 +63,8 @@
     enable = true;
     settings = {
       background_opacity = 0.9;
-      font_family = "JetBrains Mono";
+      font_family = "JetBrainsMono Nerd Font Mono";
+      font_size = 13;
     };
     themeFile = "Catppuccin-Mocha";
   };

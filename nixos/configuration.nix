@@ -187,7 +187,6 @@
     dbeaver-bin
     lua
     openssl
-    # direnv
     gamescope
     mangohud
     ghostscript
@@ -225,7 +224,6 @@
     obs-studio
     libreoffice
     vlc
-    # steam
     wlrctl
     ripgrep
     hyprshot
@@ -248,6 +246,7 @@
     ffmpeg
     xfce.tumbler
     ffmpegthumbnailer
+    rubik
 
     # Language servers
     nodePackages.vscode-langservers-extracted
