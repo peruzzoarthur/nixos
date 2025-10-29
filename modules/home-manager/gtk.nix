@@ -7,7 +7,6 @@
 {
   imports = [inputs.catppuccin.homeModules.catppuccin];
 
-
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;

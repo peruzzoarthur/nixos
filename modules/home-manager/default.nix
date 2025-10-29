@@ -2,6 +2,7 @@
   imports = [
     ./steam.nix # (2)
     ./gtk.nix
+    ./atuin.nix
     ./yazi
     ./zsh
     ./bat
