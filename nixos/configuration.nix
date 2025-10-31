@@ -247,6 +247,8 @@
     xfce.tumbler
     ffmpegthumbnailer
     rubik
+    auto-cpufreq
+    gparted
 
     # Language servers
     nodePackages.vscode-langservers-extracted
@@ -340,6 +342,9 @@
   ];
 
   services.hardware.openrgb.enable = true;
+
+  services.auto-cpufreq.enable = true;
+  services.power-profiles-daemon.enable = false;
 
   systemd.services.hyprland-suspend = {
     description = "Suspend hyprland";

@@ -33,5 +33,6 @@
     ./flash.nix
     ./multi-cursor.nix
     ./csv.nix
+    ./firenvim.nix
   ];
 }

@@ -9,7 +9,7 @@ in {
         enable = true;
         name = "catppuccin";
         style = "mocha";
-        transparent = true;
+        transparent = false;
         extraConfig = ''
           vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = "${borderColor}" })
           vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = "${borderColor}" })
@@ -22,13 +22,16 @@ in {
           
           -- Force set after plugins load
           vim.defer_fn(function()
-            vim.api.nvim_set_hl(0, "FloatBorder", { fg = "${borderColor}" })
             -- Noice borders with specific color, only border color
+            vim.api.nvim_set_hl(0, "FloatBorder", { fg = "${borderColor}" })
             vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { fg = "${noiceBorderColor}" })
             vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorderInput", { fg = "${noiceBorderColor}" })
             vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorderSearch", { fg = "${noiceBorderColor}" })
             vim.api.nvim_set_hl(0, "NoicePopupBorder", { fg = "${noiceBorderColor}" })
             vim.api.nvim_set_hl(0, "NoiceConfirmBorder", { fg = "${noiceBorderColor}" })
+            -- Snacks Colors
+            vim.api.nvim_set_hl(0, "SnacksZenBg", { bg = "#1E1E2E" })
+            vim.api.nvim_set_hl(0, "SnacksZenBorder", { fg = "#181826", bg = "#1E1E2E" })
           end, 100)
         '';
       };

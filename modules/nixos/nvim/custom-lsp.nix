@@ -33,12 +33,6 @@
             on_attach = on_attach,
         })
 
-        -- GitHub Actions LSP
-        lspconfig.github_actions_ls.setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
-        })
-
         -- Deno LSP
     		lspconfig.denols.setup({
 				capabilities = capabilities,
