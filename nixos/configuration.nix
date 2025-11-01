@@ -249,6 +249,7 @@
     rubik
     auto-cpufreq
     gparted
+    goose-cli
 
     # Language servers
     nodePackages.vscode-langservers-extracted
