@@ -82,6 +82,9 @@
   # Enable PolicyKit for authentication
   security.polkit.enable = true;
 
+  # Auto-unlock gnome-keyring on login
+  security.pam.services.sddm.enableGnomeKeyring = true;
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -99,7 +102,6 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
     jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
@@ -110,19 +112,15 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Docker
   virtualisation.docker.enable = true;
 
   programs.hyprland = {
-    enable = true; # Needed for SDDM detection
+    enable = true; 
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
 
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # programs.command-not-found.enable = true;
-  # programs.command-not-found.dbPath = "/nix/var/nix/profiles/per-user/root/channels/nixos/programs.sqlite";
   programs.command-not-found.enable = false;
   programs.nix-index = {
     enable = true;
@@ -171,6 +169,8 @@
     (inputs.silentSDDM.packages.${pkgs.system}.default.override {
       theme = "catppuccin-mocha";
     })
+
+    # General packages
     vim
     wget
     neovim
@@ -178,7 +178,6 @@
     pfetch
     git
     rofi
-    # yazi
     tmux
     legcord
     zsh
@@ -347,6 +346,8 @@
   services.auto-cpufreq.enable = true;
   services.power-profiles-daemon.enable = false;
 
+  services.gnome.gnome-keyring.enable = true;
+
   systemd.services.hyprland-suspend = {
     description = "Suspend hyprland";
     before = ["systemd-suspend.service" "systemd-hibernate.service"];
@@ -368,6 +369,7 @@
   };
 
   programs.gamemode.enable = true;
+
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

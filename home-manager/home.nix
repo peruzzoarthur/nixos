@@ -73,8 +73,10 @@
 
   programs.git = {
     enable = true;
-    userEmail = "peruzzoarthur@gmail.com";
-    userName = "Arthur Sperotto Peruzzo";
+    settings.user = {
+      email = "peruzzoarthur@gmail.com";
+      name = "Arthur Sperotto Peruzzo";
+    };
   };
 
   programs.gpg = {
@@ -107,4 +109,9 @@
   # ];
 
   systemd.user.startServices = "sd-switch";
+
+  services.gnome-keyring = {
+    enable = true;
+    components = ["secrets"];
+  };
 }
