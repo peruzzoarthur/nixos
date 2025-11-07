@@ -249,6 +249,7 @@
     auto-cpufreq
     gparted
     goose-cli
+    zip
 
     # Language servers
     nodePackages.vscode-langservers-extracted
@@ -291,6 +292,7 @@
     BROWSER = "firefox";
     EDITOR = "nvim";
     COMPOSE_BAKE = "true";
+    DOCKER_BUILDKIT=1;
   };
 
   # Nvidia
