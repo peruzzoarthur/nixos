@@ -250,6 +250,8 @@
     gparted
     goose-cli
     zip
+    gimp
+    qbittorrent
 
     # Language servers
     nodePackages.vscode-langservers-extracted
