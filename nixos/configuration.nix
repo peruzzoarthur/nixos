@@ -252,6 +252,7 @@
     zip
     gimp
     qbittorrent
+    noisetorch
 
     # Language servers
     nodePackages.vscode-langservers-extracted
@@ -373,6 +374,7 @@
   };
 
   programs.gamemode.enable = true;
+  programs.noisetorch.enable = true;
 
 
   # This value determines the NixOS release from which the default
