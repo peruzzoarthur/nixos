@@ -8,17 +8,11 @@
       plugins = [
         { name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; }
         { name = "zsh-users/zsh-syntax-highlighting"; }
-        { name = "zsh-users/zsh-completions"; }
-        { name = "zsh-users/zsh-autosuggestions"; }
+        # { name = "zsh-users/zsh-completions"; }
+        # { name = "zsh-users/zsh-autosuggestions"; }
         { name = "Aloxaf/fzf-tab"; }
       ];
     };
-    
-    # Oh My Zsh configuration
-    # oh-my-zsh = {
-    #   enable = true;
-    #   plugins = [ "git" "sudo" "command-not-found" ];
-    # };
     
     # History configuration
     history = {
@@ -106,7 +100,7 @@
       
       # Shell integrations
       eval "$(zoxide init zsh | sed 's/zi()/zoxide_zi()/')"
-      source <(fzf --zsh)
+      # source <(fzf --zsh)
       
       # Atuin integration
       [[ -f "$HOME/.atuin/bin/env" ]] && source "$HOME/.atuin/bin/env"
@@ -114,6 +108,12 @@
       
       # Vi mode
       set -o vi
+
+      # Carapace integration
+      export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
+      zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+      source <(carapace _carapace)
+
       
       # Lazy load NVM
       export NVM_DIR="$HOME/.nvm"

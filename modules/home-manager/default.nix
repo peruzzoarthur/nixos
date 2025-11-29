@@ -10,5 +10,7 @@
     ./npm-lsps
     ./cron
     ./hyprland
+    ./carapace
+    ./pipewire
   ];
 }

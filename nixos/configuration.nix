@@ -253,6 +253,9 @@
     gimp
     qbittorrent
     noisetorch
+    discord
+    # rnnoise
+    deepfilternet
 
     # Language servers
     nodePackages.vscode-langservers-extracted
@@ -374,8 +377,7 @@
   };
 
   programs.gamemode.enable = true;
-  programs.noisetorch.enable = true;
-
+  # programs.noisetorch.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
