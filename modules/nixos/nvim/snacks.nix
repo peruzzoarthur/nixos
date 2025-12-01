@@ -77,12 +77,12 @@
           action = "<cmd>lua Snacks.notifier.show_history()<CR>";
           silent = false;
         }
-        {
-          mode = "n";
-          key = "<leader>zz";
-          action = "<cmd>lua Snacks.zen()<CR>";
-          silent = false;
-        }
+        # {
+        #   mode = "n";
+        #   key = "<leader>zz";
+        #   action = "<cmd>lua Snacks.zen()<CR>";
+        #   silent = false;
+        # }
       ];
     };
   };
