@@ -6,7 +6,6 @@
   programs.hyprlock = {
     enable = true;
     settings = {
-      # BACKGROUND
       background = [
         {
           monitor = "";
@@ -19,14 +18,12 @@
         }
       ];
 
-      # GENERAL
       general = {
         no_fade_in = false;
         grace = 0;
         disable_loading_bar = false;
       };
 
-      # INPUT FIELD
       input-field = [
         {
           monitor = "";
@@ -39,7 +36,7 @@
           inner_color = "rgba(100, 114, 125, 0.4)";
           font_color = "rgb(200, 200, 200)";
           fade_on_empty = false;
-          font_family = "Rubik Bold";
+          font_family = "JetBrainsMono Nerd Font";
           placeholder_text = "<i><span foreground=\"##ffffff99\">Enter Pass</span></i>";
           hide_input = false;
           position = "0, -225";
@@ -48,54 +45,51 @@
         }
       ];
 
-      # Time
       label = [
         {
           monitor = "";
           text = "cmd[update:1000] echo \"<span>$(date +\"%H:%M\")</span>\"";
           color = "rgba(216, 222, 233, 0.70)";
           font_size = 130;
-          font_family = "Rubik Bold";
+          font_family = "JetBrainsMono Nerd Font";
           position = "0, 240";
           halign = "center";
           valign = "center";
         }
-        # Day-Month-Date
         {
           monitor = "";
           text = "cmd[update:1000] echo -e \"$(date +\"%A, %d %B\")\"";
           color = "rgba(216, 222, 233, 0.70)";
           font_size = 30;
-          font_family = "Rubik Bold";
+          font_family = "JetBrainsMono Nerd Font";
           position = "0, 105";
           halign = "center";
           valign = "center";
         }
         # USER
-        {
-          monitor = "";
-          text = "Hi, $USER";
-          color = "rgba(216, 222, 233, 0.70)";
-          font_size = 25;
-          font_family = "Rubik Bold";
-          position = "0, -130";
-          halign = "center";
-          valign = "center";
-        }
+        # {
+        #   monitor = "";
+        #   text = "Hi, $USER";
+        #   color = "rgba(216, 222, 233, 0.70)";
+        #   font_size = 25;
+        #   font_family = "JetBrainsMono Nerd Font";
+        #   position = "0, -130";
+        #   halign = "center";
+        #   valign = "center";
+        # }
         # CURRENT SONG
-        {
-          monitor = "";
-          text = "cmd[update:1000] echo \"$(${config.home.homeDirectory}/.config/hypr/Scripts/songdetail.sh)\"";
-          color = "rgba(255, 255, 255, 0.7)";
-          font_size = 18;
-          font_family = "JetBrains Mono Nerd, Rubik Bold";
-          position = "0, 60";
-          halign = "center";
-          valign = "bottom";
-        }
+        # {
+        #   monitor = "";
+        #   text = "cmd[update:1000] echo \"$(${config.home.homeDirectory}/.config/hypr/Scripts/songdetail.sh)\"";
+        #   color = "rgba(255, 255, 255, 0.7)";
+        #   font_size = 18;
+        #   font_family = "JetBrainsMono Nerd Font";
+        #   position = "0, 60";
+        #   halign = "center";
+        #   valign = "bottom";
+        # }
       ];
 
-      # Profile Photo
       image = [
         {
           monitor = "";
