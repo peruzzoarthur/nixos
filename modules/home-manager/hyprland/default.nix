@@ -48,6 +48,7 @@
             exec hyprpanel
           ''}"
           "openrgb -p ozzu"
+          "hypridle"
         ];
       };
   };

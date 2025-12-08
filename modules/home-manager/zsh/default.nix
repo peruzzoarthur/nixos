@@ -8,8 +8,8 @@
       plugins = [
         { name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; }
         { name = "zsh-users/zsh-syntax-highlighting"; }
-        # { name = "zsh-users/zsh-completions"; }
-        # { name = "zsh-users/zsh-autosuggestions"; }
+        { name = "zsh-users/zsh-completions"; }
+        { name = "zsh-users/zsh-autosuggestions"; }
         { name = "Aloxaf/fzf-tab"; }
       ];
     };
