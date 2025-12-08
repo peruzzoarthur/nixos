@@ -12,5 +12,7 @@
     ./hyprland
     ./carapace
     ./pipewire
+    ./hypridle
+    ./hyprlock
   ];
 }
