@@ -254,6 +254,8 @@
     qbittorrent
     discord
     deepfilternet
+    nh
+    gh
 
     # Language servers
     nodePackages.vscode-langservers-extracted
@@ -276,9 +278,6 @@
     alejandra
     stylua
 
-    # Runners
-    nodePackages.ts-node
-    
     # TUI applications
     nix-search-tv
     playerctl

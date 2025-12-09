@@ -2,7 +2,9 @@
   # Monitor configuration
   monitor = [
     "DP-1,1920x1080@239.96Hz,0x0,1"
+    "DP-1,addreserved,0,20,20,20"
     "HDMI-1,1920x1080@60.00Hz,1920x0,1"
+    # "HDMI-1,addreserved,0,20,20,20"
   ];
 
   # Workspace rules

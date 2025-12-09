@@ -92,7 +92,7 @@
                 additions
                 modifications
               ]
-              ++ nixos-npm-ls.overlays;
+              ++ [ nixos-npm-ls.overlays.default ];
           }
         ];
       };

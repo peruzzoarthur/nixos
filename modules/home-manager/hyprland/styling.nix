@@ -2,11 +2,11 @@
   # General settings
   general = {
     gaps_in = 5;
-    gaps_out = 20;
     border_size = 2;
     "col.active_border" = "rgba(685778ff) rgba(2c1647e5) 45deg";
     "col.inactive_border" = "rgba(595959aa)";
     layout = "scrolling";
+    gaps_out = 20;
     resize_on_border = true;
   };
 
