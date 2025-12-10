@@ -116,4 +116,12 @@
   };
 
   programs.hyprlock.enable = true;
+
+  # Set Thunar as default file manager
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "inode/directory" = "thunar.desktop";
+    };
+  };
 }

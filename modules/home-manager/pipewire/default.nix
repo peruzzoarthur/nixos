@@ -1,5 +1,24 @@
 { pkgs, ... }:
 {
+  xdg.configFile."wireplumber/wireplumber.conf.d/51-default-devices.conf" = {
+    text = ''
+      monitor.alsa.rules = [
+        {
+          matches = [
+            {
+              node.name = "~alsa_input.usb-0c76_USB_PnP_Audio_Device.*"
+            }
+          ]
+          actions = {
+            update-props = {
+              priority.session = 1000
+            }
+          }
+        }
+      ]
+    '';
+  };
+
   xdg.configFile."pipewire/pipewire.conf.d/99-deepfilternet.conf" = {
     text = builtins.toJSON {
       "context.properties" = {

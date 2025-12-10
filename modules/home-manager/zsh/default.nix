@@ -60,6 +60,8 @@
       nhh = "nh home switch .";
       nhs = "nh os switch .";
       nhus = "nh os switch -u .";
+
+      coldnote = "bun run ~/coldLab/tui/cold-note-opentui/src/index.tsx";
     };
 
     # Key bindings
