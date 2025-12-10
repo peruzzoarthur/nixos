@@ -14,5 +14,6 @@
     ./pipewire
     ./hypridle
     ./hyprlock
+    ./firefox
   ];
 }
