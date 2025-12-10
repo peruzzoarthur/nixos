@@ -15,5 +15,6 @@
     ./hypridle
     ./hyprlock
     ./firefox
+    ./lazysql
   ];
 }
