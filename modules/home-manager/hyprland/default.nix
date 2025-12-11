@@ -5,15 +5,16 @@
 }: {
   services.hyprpaper = {
     enable = true;
+    package = inputs.hyprpaper.packages.${pkgs.system}.hyprpaper;
     settings = {
       ipc = "on";
       splash = false;
       splash_offset = 2.0;
-      
+
       preload = [
         "~/coldLab/photos/maria_espelhada.jpg"
       ];
-      
+
       wallpaper = [
         ",~/coldLab/photos/maria_espelhada.jpg"
       ];

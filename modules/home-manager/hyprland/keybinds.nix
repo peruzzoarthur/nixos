@@ -64,18 +64,12 @@
     # Wallpaper randomizer
     "$mainMod SHIFT, W, exec, ${pkgs.writeShellScript "wallpapers" ''
       WALLPAPER_DIR="$HOME/wallpapers/"
-      CURRENT_WALL=$(hyprctl hyprpaper listloaded | head -1)
-      
-      # Get a random wallpaper that is not the current one
-      WALLPAPER=$(find "$WALLPAPER_DIR" -type f \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" \) ! -name "$(basename "$CURRENT_WALL")" | shuf -n 1)
-      
+
+      # Get a random wallpaper
+      WALLPAPER=$(find "$WALLPAPER_DIR" -type f \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" -o -name "*.webp" \) | shuf -n 1)
+
       if [ -n "$WALLPAPER" ]; then
-        # Preload the new wallpaper
-        hyprctl hyprpaper preload "$WALLPAPER"
-        # Apply the selected wallpaper
         hyprctl hyprpaper wallpaper ",$WALLPAPER"
-        # Unload the old wallpaper to save memory
-        hyprctl hyprpaper unload "$CURRENT_WALL"
       fi
     ''}"
 
