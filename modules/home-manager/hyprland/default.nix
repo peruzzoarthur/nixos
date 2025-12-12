@@ -12,11 +12,11 @@
       splash_offset = 2.0;
 
       preload = [
-        "~/coldLab/photos/maria_espelhada.jpg"
+        "/home/ozzurep/coldLab/photos/maria_espelhada.jpg"
       ];
 
       wallpaper = [
-        ",~/coldLab/photos/maria_espelhada.jpg"
+        ",/home/ozzurep/coldLab/photos/maria_espelhada.jpg"
       ];
     };
   };
@@ -42,6 +42,7 @@
         # Autostart
         exec-once = [
           "hyprctl setcursor Bibata-Modern-Ice 24"
+          "hyprpaper"
           "systemctl --user start hyprpolkitagent"
           "${pkgs.writeShellScript "hyprpanel-launcher" ''
             export GI_TYPELIB_PATH=/usr/local/lib/girepository-1.0:$GI_TYPELIB_PATH
