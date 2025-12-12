@@ -21,6 +21,7 @@
     ./theme.nix
     ./statusline.nix
     ./oil.nix
+    ./yazi.nix
     ./harpoon.nix
     ./dashboard.nix
     ./icons.nix

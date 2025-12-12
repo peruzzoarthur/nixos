@@ -7,7 +7,7 @@
         enabled = false;
       };
       mgr = {
-        ratio = [2 4 2];
+        ratio = [2 2 4];
         show_hidden = false;
         sort_by = "mtime";
         sort_dir_first = true;
