@@ -27,6 +27,8 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.networkmanager.wifi.backend = "iwd";
+  networking.wireless.iwd.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/Sao_Paulo";
@@ -202,6 +204,17 @@
     python312Packages.pip
     poetry
     docker-buildx
+    gtk4-layer-shell
+    aircrack-ng
+    iw
+    wireshark
+    wirelesstools
+    hcxtools
+    hashcat
+    impala
+    wifite2
+    qbittorrent
+
 
     # Language servers
     nodePackages.vscode-langservers-extracted
