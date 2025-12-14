@@ -4,7 +4,6 @@
       enable = true;
     };
 
-    # Language-specific configurations
     languages = {
       ts = {
         enable = true;

@@ -3,8 +3,6 @@
     "nvim-lspconfig" = {
       package = pkgs.vimPlugins.nvim-lspconfig;
       after = ''
-        local lspconfig = require("lspconfig")
-
         local capabilities = require("cmp_nvim_lsp").default_capabilities()
             or vim.lsp.protocol.make_client_capabilities()
 
@@ -14,50 +12,45 @@
         end
 
         -- Additional language servers not covered by nvf built-ins
-        
+        -- Using vim.lsp.config (Neovim 0.11+) instead of deprecated lspconfig.*.setup()
+
         -- JSON LSP
-        lspconfig.jsonls.setup({
+        vim.lsp.config("jsonls", {
             capabilities = capabilities,
             on_attach = on_attach,
         })
 
         -- Docker LSP
-        lspconfig.dockerls.setup({
+        vim.lsp.config("dockerls", {
             capabilities = capabilities,
             on_attach = on_attach,
         })
 
         -- Prisma LSP
-        lspconfig.prismals.setup({
+        vim.lsp.config("prismals", {
             capabilities = capabilities,
             on_attach = on_attach,
         })
 
         -- Deno LSP
-    		lspconfig.denols.setup({
-				capabilities = capabilities,
-				root_dir = function(fname)
-					local root_pattern = lspconfig.util.root_pattern("deno.json", "deno.jsonc")
-					local found = root_pattern(fname)
-					if found then
-						return found
-					else
-						return nil -- explicitly disable denols if no Deno config is found
-					end
-				end,
-				single_file_support = false,
-				on_attach = function(client, bufnr)
-					-- Disable TypeScript LSP if denols is active
-					local clients = vim.lsp.get_clients({ bufnr = bufnr })
-					for _, c in ipairs(clients) do
-						if c.name == "ts_ls" or c.name == "vtsls" then
-							c.stop()
-						end
-					end
-					on_attach(client, bufnr)
-				end,
-			})
+        vim.lsp.config("denols", {
+            capabilities = capabilities,
+            root_markers = { "deno.json", "deno.jsonc" },
+            workspace_required = true,
+            on_attach = function(client, bufnr)
+                -- Disable TypeScript LSP if denols is active
+                local clients = vim.lsp.get_clients({ bufnr = bufnr })
+                for _, c in ipairs(clients) do
+                    if c.name == "ts_ls" or c.name == "vtsls" then
+                        c.stop()
+                    end
+                end
+                on_attach(client, bufnr)
+            end,
+        })
 
+        -- Enable the configured LSPs
+        vim.lsp.enable({ "jsonls", "dockerls", "prismals", "denols" })
       '';
 
       event = ["BufReadPre"];
