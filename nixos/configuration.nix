@@ -116,7 +116,7 @@
 
   programs.hyprland = {
     enable = true; 
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -166,7 +166,7 @@
       cd /home/ozzurep/.dotfiles/squashfs-root
       exec ./AppRun "$@"
     '')
-    (inputs.silentSDDM.packages.${pkgs.system}.default.override {
+    (inputs.silentSDDM.packages.${pkgs.stdenv.hostPlatform.system}.default.override {
       theme = "catppuccin-mocha";
     })
 

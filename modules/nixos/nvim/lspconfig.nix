@@ -10,7 +10,7 @@
         enable = true;
         format = {
           enable = true;
-          type = "prettierd";
+          type = ["prettierd"];
         };
         treesitter = {
           enable = true;

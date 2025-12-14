@@ -5,7 +5,7 @@
 }: {
   services.hyprpaper = {
     enable = true;
-    package = inputs.hyprpaper.packages.${pkgs.system}.hyprpaper;
+    package = inputs.hyprpaper.packages.${pkgs.stdenv.hostPlatform.system}.hyprpaper;
     settings = {
       ipc = "on";
       splash = false;
@@ -23,13 +23,13 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     systemd = {
       enable = true;
     };
     plugins = [
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprscrolling
-      inputs.hyprland-plugins.packages.${pkgs.system}.csgo-vulkan-fix
+      inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprscrolling
+      inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.csgo-vulkan-fix
     ];
     settings = 
       (import ./monitors.nix) //
