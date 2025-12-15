@@ -25,10 +25,6 @@
             };
           };
         };
-        # borders.plugins.fastaction = {
-        #   enable = true;
-        #   style = "none";
-        # };
       };
     };
   };

@@ -2,38 +2,14 @@
   ...
 }: {
   imports = [
-    ./main.nix 
+    ./main.nix
     ./keybinds.nix
-    ./zen-mode.nix
-    ./none-ls.nix
-    ./telescope.nix
-    ./completions.nix
-    ./lspconfig.nix
-    ./lazygit.nix
-    ./which-key.nix
-    ./cheatsheet.nix
-    ./colorizer.nix
-    ./tmux-navigator.nix
-    ./trouble.nix
-    ./nvim-surround.nix
-    ./custom-lsp.nix
-    ./markdown.nix
-    ./theme.nix
-    ./statusline.nix
-    ./oil.nix
-    ./yazi.nix
-    ./harpoon.nix
-    ./dashboard.nix
-    ./icons.nix
-    ./noice.nix
-    ./snacks.nix
-    ./treesitter.nix
-    ./image.nix
-    ./fastaction.nix
-    ./git.nix
-    ./flash.nix
-    ./multi-cursor.nix
-    ./csv.nix
-    ./firenvim.nix
+    ./ui
+    ./navigation
+    ./git
+    ./editing
+    ./utils
+    ./integrations
+    ./lsp
   ];
 }

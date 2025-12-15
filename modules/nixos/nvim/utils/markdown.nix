@@ -6,6 +6,13 @@
         extensions = {
           render-markdown-nvim.enable = true;
         };
+        lsp = {
+          enable = true;
+          servers = ["marksman"];
+        };
+        treesitter = {
+          enable = true;
+        };
       };
     };
   };
