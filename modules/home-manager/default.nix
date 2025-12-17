@@ -16,5 +16,6 @@
     ./hyprlock
     ./firefox
     ./lazysql
+    ./librewolf
   ];
 }

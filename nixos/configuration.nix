@@ -256,6 +256,9 @@
     deepfilternet
     nh
     gh
+    chromedriver
+    playwright
+    playwright-mcp
 
     # Language servers
     nodePackages.vscode-langservers-extracted
