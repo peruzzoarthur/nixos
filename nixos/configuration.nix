@@ -258,6 +258,7 @@
     gh
     chromedriver
     playwright
+    playwright-test
     playwright-mcp
 
     # Language servers
@@ -296,7 +297,10 @@
     BROWSER = "firefox";
     EDITOR = "nvim";
     COMPOSE_BAKE = "true";
-    DOCKER_BUILDKIT=1;
+    DOCKER_BUILDKIT = "1";
+    # Playwright configuration for NixOS
+    PLAYWRIGHT_BROWSERS_PATH = "${pkgs.playwright-driver.browsers}";
+    PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD = "1";
   };
 
   # Nvidia
@@ -345,6 +349,28 @@
     expat
     alsa-lib
     mesa
+    # Additional libraries for Playwright browsers
+    xorg.libXcomposite
+    xorg.libXcursor
+    xorg.libXdamage
+    xorg.libXfixes
+    xorg.libXi
+    xorg.libXrandr
+    xorg.libXrender
+    xorg.libxcb
+    xorg.libXScrnSaver
+    xorg.libXtst
+    pango
+    cairo
+    gdk-pixbuf
+    atk
+    at-spi2-atk
+    at-spi2-core
+    cups
+    nss
+    nspr
+    libdrm
+    libxkbcommon
   ];
 
   services.hardware.openrgb.enable = true;
