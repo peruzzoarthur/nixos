@@ -5,6 +5,7 @@
     ./atuin.nix
     ./yazi
     ./zsh
+    ./starship
     ./bat
     ./btop
     ./npm-lsps

@@ -1,4 +1,4 @@
-# Edit this configuration file to define what should oe installed on
+#as any Edit this configuration file to define what should oe installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running 'nixos-help').
 {
@@ -260,6 +260,7 @@
     playwright
     playwright-test
     playwright-mcp
+    solaar
 
     # Language servers
     nodePackages.vscode-langservers-extracted

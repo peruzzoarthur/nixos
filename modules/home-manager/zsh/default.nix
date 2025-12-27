@@ -6,10 +6,10 @@
     zplug = {
       enable = true;
       plugins = [
-        {
-          name = "romkatv/powerlevel10k";
-          tags = [as:theme depth:1];
-        }
+        # {
+        #   name = "romkatv/powerlevel10k";
+        #   tags = [as:theme depth:1];
+        # }
         {name = "zsh-users/zsh-syntax-highlighting";}
         {name = "zsh-users/zsh-completions";}
         {name = "zsh-users/zsh-autosuggestions";}
@@ -68,10 +68,10 @@
     defaultKeymap = "emacs";
     initContent = ''
       # Disable Powerlevel10k instant prompt
-      typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+      # typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
       # Load Powerlevel10k config if it exists
-      [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+      # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
       # CLI colors
       export CLICOLOR=1
