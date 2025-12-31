@@ -147,6 +147,22 @@
         [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
         rm -f -- "$tmp"
       }
+
+      autoload -Uz edit-command-line
+      zle -N edit-command-line
+      bindkey '^x^e' edit-command-line
+
+      # Redirect stderr to /dev/null
+      alias -g NE='2>/dev/null'
+
+      # Redirect stdout to /dev/null
+      alias -g NO='>/dev/null'
+
+      # Redirect both stdout and stderr to /dev/null
+      alias -g NUL='>/dev/null 2>&1'
+    
+      # Pipe to jq
+      alias -g J='| jq'
     '';
   };
 }
