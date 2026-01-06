@@ -108,21 +108,32 @@
       export PATH="$HOME/.bun/bin:$PATH"
       export BUN_INSTALL="$HOME/.bun"
 
-      # Shell integrations
-      eval "$(zoxide init zsh | sed 's/zi()/zoxide_zi()/')"
-      # source <(fzf --zsh)
-
-      # Atuin integration
-      [[ -f "$HOME/.atuin/bin/env" ]] && source "$HOME/.atuin/bin/env"
-      eval "$(atuin init zsh --disable-up-arrow)"
-
       # Vi mode
       set -o vi
 
-      # Carapace integration
-      export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
-      zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
-      source <(carapace _carapace)
+      # === DEFERRED SHELL INTEGRATIONS ===
+      # These run after prompt is ready (non-blocking)
+      zsh-defer() {
+        if [[ -z "$ZSH_DEFER_LOADED" ]]; then
+          ZSH_DEFER_LOADED=1
+          # Zoxide
+          eval "$(zoxide init zsh | sed 's/zi()/zoxide_zi()/')"
+          # Atuin
+          [[ -f "$HOME/.atuin/bin/env" ]] && source "$HOME/.atuin/bin/env"
+          eval "$(atuin init zsh --disable-up-arrow)"
+          # Carapace
+          export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
+          zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+          source <(carapace _carapace)
+        fi
+      }
+      # Defer loading until first prompt (uses precmd hook)
+      autoload -Uz add-zsh-hook
+      __defer_init() {
+        add-zsh-hook -d precmd __defer_init
+        zsh-defer
+      }
+      add-zsh-hook precmd __defer_init
 
 
       # Lazy load NVM
