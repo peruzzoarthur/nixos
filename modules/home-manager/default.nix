@@ -18,5 +18,6 @@
     ./firefox
     ./lazysql
     ./librewolf
+    ./zathura
   ];
 }

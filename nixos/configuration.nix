@@ -261,6 +261,7 @@
     playwright-test
     playwright-mcp
     solaar
+    zotero
 
     # Language servers
     nodePackages.vscode-langservers-extracted

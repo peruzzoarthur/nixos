@@ -62,6 +62,8 @@
       nhus = "nh os switch -u .";
 
       coldnote = "bun run ~/coldLab/tui/cold-note-opentui/src/index.tsx";
+
+      za = "setsid -f zathura";
     };
 
     # Key bindings
