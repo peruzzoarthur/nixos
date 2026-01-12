@@ -118,6 +118,9 @@
     # Zoom
     "$mainMod, mouse_down, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor | awk '/^float.*/ {print $2 * 1.1}')"
     "$mainMod, mouse_up, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor | awk '/^float.*/ {print $2 * 0.9}')"
+
+    # Press key
+    "$mainMod CTRL ALT, C, exec, wlrctl pointer button left down"
   ];
 
   # Bind with repeat
@@ -137,4 +140,9 @@
     "$mainMod, mouse:272, movewindow"
     "$mainMod, mouse:273, resizewindow"
   ];
+
+  bindr = [
+    "$mainMod CTRL ALT, C, exec, wlrctl pointer button left up"
+  ];
+
 }
