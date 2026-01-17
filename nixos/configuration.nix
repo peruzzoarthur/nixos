@@ -262,6 +262,9 @@
     playwright-mcp
     solaar
     zotero
+    postgresql_16
+    awscli
+    # toybox
 
     # Language servers
     nodePackages.vscode-langservers-extracted
