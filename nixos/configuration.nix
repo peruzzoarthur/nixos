@@ -236,7 +236,7 @@
     nwg-look
     python3Packages.gpustat
     python312Packages.pip
-    poetry
+    # poetry
     docker-buildx
     deno
     qalculate-gtk

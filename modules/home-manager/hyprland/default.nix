@@ -3,13 +3,17 @@
   pkgs,
   ...
 }: {
+  home.packages = [
+    inputs.hyprpaper.packages.${pkgs.stdenv.hostPlatform.system}.hyprpaper
+  ];
+
   services.hyprpaper = {
     enable = true;
     package = inputs.hyprpaper.packages.${pkgs.stdenv.hostPlatform.system}.hyprpaper;
     settings = {
       ipc = "on";
       splash = false;
-      splash_offset = 2.0;
+      splash_offset = 2;
 
       preload = [
         "/home/ozzurep/coldLab/photos/maria_espelhada.jpg"
@@ -42,7 +46,7 @@
         # Autostart
         exec-once = [
           "hyprctl setcursor Bibata-Modern-Ice 24"
-          "hyprpaper"
+          # hyprpaper managed by services.hyprpaper systemd service
           "systemctl --user start hyprpolkitagent"
           "${pkgs.writeShellScript "hyprpanel-launcher" ''
             export GI_TYPELIB_PATH=/usr/local/lib/girepository-1.0:$GI_TYPELIB_PATH
