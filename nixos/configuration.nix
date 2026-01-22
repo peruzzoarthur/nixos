@@ -265,6 +265,7 @@
     postgresql_16
     awscli
     # toybox
+    nest-cli
 
     # Language servers
     nodePackages.vscode-langservers-extracted

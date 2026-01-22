@@ -19,5 +19,6 @@
     ./lazysql
     ./librewolf
     ./zathura
+    ./opencode
   ];
 }
