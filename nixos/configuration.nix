@@ -266,6 +266,7 @@
     awscli
     # toybox
     nest-cli
+    pnpm
 
     # Language servers
     nodePackages.vscode-langservers-extracted
