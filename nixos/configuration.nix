@@ -267,6 +267,8 @@
     # toybox
     nest-cli
     pnpm
+    bruno
+    bruno-cli
 
     # Language servers
     nodePackages.vscode-langservers-extracted

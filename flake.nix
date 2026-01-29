@@ -81,7 +81,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "bak2";
-            home-manager.extraSpecialArgs = {inherit inputs outputs;};
+            home-manager.extraSpecialArgs = {inherit inputs outputs self;};
             home-manager.users.ozzurep = import ./home-manager/home.nix;
           }
           {

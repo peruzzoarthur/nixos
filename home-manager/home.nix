@@ -2,6 +2,7 @@
   config,
   pkgs,
   outputs,
+  inputs,
   ...
 }: {
   imports = [

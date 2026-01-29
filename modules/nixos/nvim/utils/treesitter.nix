@@ -15,10 +15,10 @@ in {
       vim.languages.enableTreesitter = true;
 
       # Add nvim-treesitter runtime to rtp for ecma/jsx queries (ts/js inheritance)
-      vim.luaConfigRC.treesitter-ecma-fix = ''
-        -- Add nvim-treesitter runtime queries (ecma, jsx) for ts/js highlighting
-        vim.opt.runtimepath:prepend("${treesitterRuntime}")
-      '';
+      # vim.luaConfigRC.treesitter-ecma-fix = ''
+      #   -- Add nvim-treesitter runtime queries (ecma, jsx) for ts/js highlighting
+      #   vim.opt.runtimepath:prepend("${treesitterRuntime}")
+      # '';
     };
   };
 }

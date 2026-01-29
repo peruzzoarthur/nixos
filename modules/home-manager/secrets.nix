@@ -2,10 +2,11 @@
   config,
   pkgs,
   inputs,
+  self,
   ...
 }: {
   age.secrets.CONTEXT7_API_KEY = {
-    file = ./secrets/CONTEXT7_API_KEY.age;
+    file = "${self}/modules/home-manager/secrets/CONTEXT7_API_KEY.age";
     mode = "600";
   };
 }
