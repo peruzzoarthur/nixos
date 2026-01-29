@@ -5,6 +5,17 @@
       theme = "catppuccin";
       autoshare = false;
       autoupdate = true;
+      mcp = {
+        context7 = {
+          type = "remote";
+          url = "https://mcp.context7.com/mcp";
+          headers = {
+            CONTEXT7_API_KEY = "{env:CONTEXT7_API_KEY}";
+          };
+          enabled = true;
+        };
+      };
     };
   };
 }
+

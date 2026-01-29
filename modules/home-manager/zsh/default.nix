@@ -64,6 +64,8 @@
       coldnote = "bun run ~/coldLab/tui/cold-note-opentui/src/index.tsx";
 
       za = "setsid -f zathura";
+
+      claudio = "~/.local/bin/claude";
     };
 
     # Key bindings

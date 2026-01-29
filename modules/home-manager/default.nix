@@ -1,6 +1,8 @@
 {...}: {
   imports = [
     ./steam.nix # (2)
+    ./environment.nix
+    ./secrets.nix
     ./gtk.nix
     ./atuin.nix
     ./yazi
