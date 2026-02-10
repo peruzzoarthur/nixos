@@ -269,6 +269,7 @@
     pnpm
     bruno
     bruno-cli
+    tree
 
     # Language servers
     nodePackages.vscode-langservers-extracted

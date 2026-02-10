@@ -9,6 +9,7 @@ in {
         enable = true;
         grammars = [
           pkgs.vimPlugins.nvim-treesitter.builtGrammars.prisma
+          pkgs.vimPlugins.nvim-treesitter.builtGrammars.mermaid
         ];
         indent.enable = true;
       };
