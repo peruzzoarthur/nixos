@@ -1,6 +1,4 @@
-{
-  ...
-}: {
+{...}: {
   programs.nvf.settings.vim = {
     options = {
       expandtab = true;
@@ -23,21 +21,21 @@
         action = "\"+y";
         # options.noremap = true;
       }
-      
+
       # Disable Ctrl+Z
       {
         mode = "n";
         key = "<C-z>";
         action = "<Nop>";
       }
-      
+
       # File explorer
       {
         mode = "n";
         key = "<leader>pv";
         action = ":Ex<CR>";
       }
-      
+
       # Move selected lines up/down
       {
         mode = "v";
@@ -49,14 +47,14 @@
         key = "K";
         action = ":m '<-2<CR>gv=gv";
       }
-      
+
       # Join lines while keeping cursor position
       {
         mode = "n";
         key = "J";
         action = "mzJ`z";
       }
-      
+
       # Half page scroll with cursor centering
       {
         mode = "n";
@@ -68,7 +66,7 @@
         key = "<C-u>";
         action = "<C-u>zz";
       }
-      
+
       # Search navigation with cursor centering
       {
         mode = "n";
@@ -80,14 +78,14 @@
         key = "N";
         action = "Nzzzv";
       }
-      
+
       # Paste without overwriting register
       {
         mode = "x";
         key = "<leader>p";
         action = "\"_dP";
       }
-      
+
       # Copy to system clipboard
       {
         mode = ["n" "v"];
@@ -99,21 +97,21 @@
         key = "<leader>Y";
         action = "\"+Y";
       }
-      
+
       # Disable Q
       {
         mode = "n";
         key = "Q";
         action = "<nop>";
       }
-      
+
       # Format with null-ls
       {
         mode = "n";
         key = "<leader>f";
         action = "<cmd>lua vim.lsp.buf.format({ filter = function(client) return client.name == 'null-ls' end })<CR>";
       }
-      
+
       # Quickfix navigation
       {
         mode = "n";
@@ -125,7 +123,7 @@
         key = "<leader>cp";
         action = "<cmd>cprev<CR>zz";
       }
-      
+
       # Location list navigation
       {
         mode = "n";
@@ -137,14 +135,14 @@
         key = "<leader>j";
         action = "<cmd>lprev<CR>zz";
       }
-      
+
       # Search and replace current word
       {
         mode = "n";
         key = "<leader>s";
         action = ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>";
       }
-      
+
       # Show diagnostics
       {
         mode = "n";
@@ -152,7 +150,7 @@
         action = "<cmd>lua vim.diagnostic.open_float()<CR>";
         silent = true;
       }
-      
+
       # Window resizing
       {
         mode = "n";
@@ -196,6 +194,11 @@
         key = "<C-u>";
         action = "<C-u>zz";
         silent = false;
+      }
+      {
+        mode = "n";
+        key = "<leader>mp";
+        action = "<cmd>MarkdownPreview<cr>";
       }
     ];
   };

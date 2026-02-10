@@ -4,6 +4,7 @@
   imports = [
     ./treesitter.nix
     ./markdown.nix
+    ./markdown-preview.nix
     ./csv.nix
     ./image.nix
     ./cheatsheet.nix
