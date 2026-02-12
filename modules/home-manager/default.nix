@@ -22,5 +22,6 @@
     ./librewolf
     ./zathura
     ./opencode
+    ./obsidian
   ];
 }
