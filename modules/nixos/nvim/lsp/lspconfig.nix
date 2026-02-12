@@ -21,7 +21,8 @@
       bash.enable = true;
       terraform.enable = true;
       tailwind.enable = true;
-      html.enable = true;
+      # RE ADD LATER
+      html.enable = false;
       yaml.enable = true;
       python = {
         enable = true;

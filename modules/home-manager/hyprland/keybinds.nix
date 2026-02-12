@@ -11,6 +11,7 @@
     "$mainMod, E, exec, kitty -e yazi"
     "$mainMod, P, exec, kitty -e btop"
     "$mainMod, N, exec, kitty -e bun run ~/coldLab/tui/cold-note-opentui/src/index.tsx"
+    "$mainMod, O, exec, kitty -e obsidian"
     "$mainMod, T, togglefloating"
     "$mainMod, F, fullscreen"
     "$mainMod CTRL, SPACE, exec, rofi -show drun"

@@ -195,11 +195,11 @@
         action = "<C-u>zz";
         silent = false;
       }
-      {
-        mode = "n";
-        key = "<leader>mp";
-        action = "<cmd>MarkdownPreview<cr>";
-      }
+      # {
+      #   mode = "n";
+      #   key = "<leader>mp";
+      #   action = "<cmd>MarkdownPreview<cr>";
+      # }
     ];
   };
 }
