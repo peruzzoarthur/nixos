@@ -25,6 +25,9 @@
       device = "/dev/disk/by-uuid/73214f6b-4851-40a2-aa44-974aecbf3ba8";
     };
   };
+
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   networking.hostName = "ozzurep"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
