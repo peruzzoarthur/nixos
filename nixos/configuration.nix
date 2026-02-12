@@ -220,7 +220,6 @@
     rbenv
     eza
     lazydocker
-    lazygit
     openrgb
     hyprpolkitagent
     obs-studio

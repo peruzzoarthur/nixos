@@ -23,5 +23,6 @@
     ./zathura
     ./opencode
     ./obsidian
+    ./lazygit
   ];
 }
