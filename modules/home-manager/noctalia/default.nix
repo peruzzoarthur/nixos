@@ -21,8 +21,8 @@
         showCapsule = false;
         capsuleOpacity = 1;
         capsuleColorKey = "none";
-        backgroundOpacity = 0.93;
-        useSeparateOpacity = false;
+        backgroundOpacity = 0.95;
+        useSeparateOpacity = true;
         floating = true;
         marginVertical = 4;
         marginHorizontal = 4;
@@ -51,14 +51,6 @@
               textColor = "none";
             }
             {
-              displayMode = "onhover";
-              iconColor = "none";
-              id = "Bluetooth";
-              textColor = "none";
-            }
-          ];
-          center = [
-            {
               characterCount = 2;
               colorizeIcons = false;
               emptyColor = "secondary";
@@ -69,7 +61,7 @@
               hideUnoccupied = false;
               iconScale = 0.8;
               id = "Workspace";
-              labelMode = "none";
+              labelMode = "index";
               occupiedColor = "secondary";
               pillSize = 0.6;
               reverseScroll = false;
@@ -77,6 +69,27 @@
               showBadge = true;
               showLabelsOnlyWhenOccupied = true;
               unfocusedIconsOpacity = 1;
+            }
+          ];
+          center = [
+            {
+              compactMode = false;
+              compactShowAlbumArt = true;
+              compactShowVisualizer = false;
+              hideMode = "hidden";
+              hideWhenIdle = false;
+              id = "MediaMini";
+              maxWidth = 145;
+              panelShowAlbumArt = true;
+              panelShowVisualizer = true;
+              scrollingMode = "hover";
+              showAlbumArt = true;
+              showArtistFirst = true;
+              showProgressRing = true;
+              showVisualizer = false;
+              textColor = "none";
+              useFixedWidth = false;
+              visualizerType = "linear";
             }
           ];
           right = [
