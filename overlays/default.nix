@@ -5,6 +5,12 @@
 
   # This one contains whatever you want to overlay
   modifications = final: prev: {
+    # Workaround for broken superhtml-0.6.2 in nixpkgs
+    # The package tries to create symlinks in / which fails
+    superhtml = prev.superhtml.overrideAttrs (old: {
+      postPatch = "";
+      prePatch = "";
+    });
   };
 }
 

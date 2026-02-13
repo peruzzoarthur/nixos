@@ -122,6 +122,10 @@
 
     # Press key
     "$mainMod CTRL ALT, C, exec, wlrctl pointer button left down"
+
+    # Noctalia
+    "$mainMod, S, exec, noctalia-shell ipc call controlCenter toggle"
+    "$mainMod, comma, exec, noctalia-shell ipc call settings toggle"
   ];
 
   # Bind with repeat

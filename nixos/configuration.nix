@@ -77,7 +77,7 @@
   };
 
   services.desktopManager.plasma6.enable = true;
-  
+
   # Enable SDDM display manager
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
@@ -118,7 +118,7 @@
   virtualisation.docker.enable = true;
 
   programs.hyprland = {
-    enable = true; 
+    enable = true;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
   };
 
@@ -284,7 +284,7 @@
     nil
     gopls
     ags
-    
+
     # NPM-based language servers from nixos-npm-ls
     prisma-language-server
     gh-actions-language-server
@@ -387,8 +387,9 @@
 
   services.hardware.openrgb.enable = true;
 
-  services.auto-cpufreq.enable = true;
-  services.power-profiles-daemon.enable = false;
+  # services.auto-cpufreq.enable = true;
+  services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
 
   services.gnome.gnome-keyring.enable = true;
 

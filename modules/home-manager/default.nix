@@ -24,5 +24,7 @@
     ./opencode
     ./obsidian
     ./lazygit
+    ./noctalia
+    ./quickshell
   ];
 }

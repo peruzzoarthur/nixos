@@ -1,9 +1,9 @@
-{ config, lib, pkgs, ... }:
+{ ... }:
 
 {
   programs.lazygit = {
     enable = true;
-    enableZshIntegrations = true;
+    enableZshIntegration = true;
     settings = {
       gui.theme = {
         bgColor = [ "#1e1e2e" ];

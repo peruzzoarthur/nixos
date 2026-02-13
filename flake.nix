@@ -42,6 +42,11 @@
     };
 
     catppuccin.url = "github:catppuccin/nix";
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -51,6 +56,7 @@
     nvf,
     nixos-npm-ls,
     catppuccin,
+    noctalia,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -90,7 +96,7 @@
                 additions
                 modifications
               ]
-              ++ [ nixos-npm-ls.overlays.default ];
+              ++ [nixos-npm-ls.overlays.default];
           }
         ];
       };
