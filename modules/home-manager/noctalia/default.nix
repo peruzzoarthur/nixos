@@ -117,6 +117,19 @@
               tooltipFormat = "HH:mm ddd, MMM dd";
               useCustomFont = false;
             }
+            {
+              colorizeIcons = false;
+              hideMode = "visible";
+              iconScale = 0.8;
+              id = "Taskbar";
+              maxTaskbarWidth = 40;
+              onlyActiveWorkspaces = true;
+              onlySameOutput = true;
+              showPinnedApps = true;
+              showTitle = false;
+              smartWidth = true;
+              titleWidth = 120;
+            }
           ];
         };
         screenOverrides = [];
@@ -282,7 +295,7 @@
       };
 
       controlCenter = {
-        position = "center";
+        position = "top_left";
         diskPath = "/";
         shortcuts = {
           left = [
@@ -550,9 +563,27 @@
       };
 
       desktopWidgets = {
-        enabled = true;
+        enabled = false;
         gridSnap = false;
-        monitorWidgets = [];
+        monitorWidgets = [
+          {
+            name = "DP-1";
+            widgets = [
+              {
+                hideMode = "visible";
+                id = "MediaPlayer";
+                roundedCorners = true;
+                showAlbumArt = true;
+                showBackground = true;
+                showButtons = true;
+                showVisualizer = true;
+                visualizerType = "linear";
+                x = 100;
+                y = 200;
+              }
+            ];
+          }
+        ];
       };
     };
   };
