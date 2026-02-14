@@ -8,7 +8,7 @@
           enable = true;
           setupOpts = {
             backend = "kitty";
-            integrations.markdown.enabled = true;
+            integrations.markdown.enabled = false;
           };
         };
       };

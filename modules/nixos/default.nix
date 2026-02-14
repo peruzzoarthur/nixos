@@ -12,6 +12,7 @@
     ./users/icon.nix
     ./nvim
     ./networking.nix
+    ./niri
   ];
   _module.args = { inherit inputs; user = "ozzurep"; };
 }

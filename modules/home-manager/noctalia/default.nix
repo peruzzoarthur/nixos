@@ -13,7 +13,7 @@
       settingsVersion = 53;
 
       bar = {
-        barType = "floating";
+        barType = "simple";
         position = "top";
         monitors = [];
         density = "compact";
@@ -94,7 +94,7 @@
           ];
           right = [
             {
-              compactMode = false;
+              compactMode = true;
               diskPath = "/";
               iconColor = "none";
               id = "SystemMonitor";
@@ -104,7 +104,7 @@
               showDiskAvailable = false;
               showDiskUsage = true;
               showDiskUsageAsPercent = true;
-              showGpuTemp = false;
+              showGpuTemp = true;
               showLoadAverage = false;
               showMemoryAsPercent = false;
               showMemoryUsage = true;
@@ -393,8 +393,8 @@
         networkPollingInterval = 1000;
         loadAvgPollingInterval = 3000;
         useCustomColors = false;
-        warningColor = "";
-        criticalColor = "";
+        warningColor = "#cccccc";
+        criticalColor = "#dddddd";
         externalMonitor = "resources || missioncenter || jdsystemmonitor || corestats || system-monitoring-center || gnome-system-monitor || plasma-systemmonitor || mate-system-monitor || ukui-system-monitor || deepin-system-monitor || pantheon-system-monitor";
       };
 
