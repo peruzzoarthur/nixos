@@ -242,6 +242,9 @@
     wlrctl
     ripgrep
     hyprshot
+    grim
+    slurp
+    imagemagick
     spotify
     bun
     yarn

@@ -81,6 +81,13 @@
               };
               id = "plugin:pomodoro";
             }
+            {
+              defaultSettings = {
+                backgroundColor = "transparent";
+                message = "Color Picker";
+              };
+              id = "plugin:noctalia-color-picker";
+            }
           ];
           center = [
             {
