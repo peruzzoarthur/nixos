@@ -47,6 +47,11 @@
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    quickshell = {
+      url = "github:quickshell-mirror/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -57,6 +62,7 @@
     nixos-npm-ls,
     catppuccin,
     noctalia,
+    quickshell,
     ...
   } @ inputs: let
     inherit (self) outputs;

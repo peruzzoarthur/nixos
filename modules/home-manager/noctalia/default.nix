@@ -70,6 +70,17 @@
               showLabelsOnlyWhenOccupied = true;
               unfocusedIconsOpacity = 1;
             }
+            {
+              defaultSettings = {
+                autoStartBreaks = false;
+                autoStartWork = false;
+                longBreakDuration = 15;
+                sessionsBeforeLongBreak = 4;
+                shortBreakDuration = 5;
+                workDuration = 25;
+              };
+              id = "plugin:pomodoro";
+            }
           ];
           center = [
             {
@@ -91,8 +102,28 @@
               useFixedWidth = false;
               visualizerType = "linear";
             }
+            {
+              defaultSettings = {
+                hideBackground = false;
+                minimumThreshold = 10;
+              };
+              id = "plugin:catwalk";
+            }
           ];
           right = [
+            {
+              colorizeIcons = false;
+              hideMode = "visible";
+              iconScale = 0.8;
+              id = "Taskbar";
+              maxTaskbarWidth = 40;
+              onlyActiveWorkspaces = true;
+              onlySameOutput = true;
+              showPinnedApps = true;
+              showTitle = false;
+              smartWidth = true;
+              titleWidth = 120;
+            }
             {
               compactMode = true;
               diskPath = "/";
@@ -130,22 +161,14 @@
               tooltipFormat = "HH:mm ddd, MMM dd";
               useCustomFont = false;
             }
-            {
-              colorizeIcons = false;
-              hideMode = "visible";
-              iconScale = 0.8;
-              id = "Taskbar";
-              maxTaskbarWidth = 40;
-              onlyActiveWorkspaces = true;
-              onlySameOutput = true;
-              showPinnedApps = true;
-              showTitle = false;
-              smartWidth = true;
-              titleWidth = 120;
-            }
           ];
         };
-        screenOverrides = [];
+        screenOverrides = [
+          {
+            enabled = false;
+            name = "HDMI-A-1";
+          }
+        ];
       };
 
       general = {
@@ -476,7 +499,7 @@
 
       notifications = {
         enabled = true;
-        density = "default";
+        density = "compact";
         monitors = [];
         location = "top_right";
         overlayLayer = true;
