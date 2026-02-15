@@ -61,11 +61,25 @@
   # services.xserver.enable = false;
 
   xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-    ];
+  enable = true;
+  extraPortals = with pkgs; [
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-gnome
+  ];
+  config = {
+    common = {
+      default = [ "gtk" ];
+    };
+    niri = {
+      default = lib.mkForce [
+        "gtk"
+        "gnome"
+      ];
+      "org.freedesktop.impl.portal.ScreenCast" = lib.mkForce [ "gnome" ];
+      "org.freedesktop.impl.portal.Screenshot" = lib.mkForce [ "gnome" ];
+    };
   };
+};
 
   # Set default applications
   xdg.mime.defaultApplications = {
@@ -284,6 +298,7 @@
     nil
     gopls
     ags
+    nautilus
 
     # NPM-based language servers from nixos-npm-ls
     prisma-language-server
@@ -299,12 +314,14 @@
     playerctl
   ];
 
+
+
   fonts.packages = with pkgs; [
     jetbrains-mono
     pkgs.nerd-fonts.jetbrains-mono
   ];
 
-  environment.variables = {
+  environment.sessionVariables = {
     TERMINAL = "kitty";
     BROWSER = "firefox";
     EDITOR = "nvim";
@@ -313,6 +330,9 @@
     # Playwright configuration for NixOS
     PLAYWRIGHT_BROWSERS_PATH = "${pkgs.playwright-driver.browsers}";
     PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD = "1";
+    XDG_CURRENT_DESKTOP = "niri";
+    XDG_SESSION_TYPE = "wayland";
+    XDG_SESSION_DESKTOP = "niri";
   };
 
   # Nvidia

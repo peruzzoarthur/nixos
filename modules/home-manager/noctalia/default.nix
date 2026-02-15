@@ -21,9 +21,9 @@
         showCapsule = false;
         capsuleOpacity = 1;
         capsuleColorKey = "none";
-        backgroundOpacity = 0.95;
+        backgroundOpacity = 0.8;
         useSeparateOpacity = true;
-        floating = true;
+        floating = false;
         marginVertical = 4;
         marginHorizontal = 4;
         frameThickness = 8;
@@ -385,13 +385,7 @@
         diskAvailCriticalThreshold = 10;
         batteryWarningThreshold = 20;
         batteryCriticalThreshold = 5;
-        cpuPollingInterval = 1000;
-        gpuPollingInterval = 3000;
         enableDgpuMonitoring = true;
-        memPollingInterval = 1000;
-        diskPollingInterval = 30000;
-        networkPollingInterval = 1000;
-        loadAvgPollingInterval = 3000;
         useCustomColors = false;
         warningColor = "#cccccc";
         criticalColor = "#dddddd";
@@ -417,11 +411,13 @@
 
       network = {
         wifiEnabled = true;
+        airplaneModeEnabled = false;
         bluetoothRssiPollingEnabled = false;
         bluetoothRssiPollIntervalMs = 10000;
         wifiDetailsViewMode = "grid";
         bluetoothDetailsViewMode = "grid";
         bluetoothHideUnnamedDevices = false;
+        disableDiscoverability = false;
       };
 
       sessionMenu = {
@@ -429,6 +425,7 @@
         countdownDuration = 10000;
         position = "center";
         showHeader = true;
+        showKeybinds = true;
         largeButtonsStyle = true;
         largeButtonsLayout = "single-row";
         powerOptions = [

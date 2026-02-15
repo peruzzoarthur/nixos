@@ -5,6 +5,8 @@
 }: {
   home.packages = [
     inputs.hyprpaper.packages.${pkgs.stdenv.hostPlatform.system}.hyprpaper
+    pkgs.xdg-desktop-portal-gnome
+    pkgs.xdg-desktop-portal-gtk
   ];
 
   services.hyprpaper = {
