@@ -236,6 +236,7 @@
     lazydocker
     openrgb
     hyprpolkitagent
+    polkit_gnome
     obs-studio
     libreoffice
     vlc
