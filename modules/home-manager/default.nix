@@ -16,6 +16,7 @@
     ./carapace
     ./pipewire
     ./hypridle
+    ./swayidle
     ./hyprlock
     ./firefox
     ./lazysql
