@@ -1,32 +1,26 @@
-{...}: {
+{pkgs, lib, ...}: {
   services.swayidle = {
     enable = true;
 
+    systemdTarget = "graphical-session.target";
+
     timeouts = [
-      # Lock screen after 15 minutes (900s)
+      # Lock screen after 5 minutes (300s)
       {
-        timeout = 900;
-        command = "hyprlock";
+        timeout = 300;
+        # timeout = 10;
+        command = "${lib.getExe pkgs.noctalia-shell} ipc call lockScreen lock";
       }
-      # Turn off monitors after 20 minutes (1200s)
+      # Lock and suspend after 10 minutes (600s)
       {
-        timeout = 1200;
-        command = "niri msg action power-off-monitors";
-        resumeCommand = "niri msg action power-on-monitors";
+        timeout = 600;
+        # timeout = 15;
+        command = "${lib.getExe pkgs.noctalia-shell} ipc call sessionMenu lockAndSuspend";
       }
     ];
 
-    events = [
-      # Lock before sleep for security
-      {
-        event = "before-sleep";
-        command = "hyprlock";
-      }
-      # Ensure monitors power on after resume
-      {
-        event = "after-resume";
-        command = "niri msg action power-on-monitors";
-      }
-    ];
+    events = {
+      "before-sleep" = "${lib.getExe pkgs.noctalia-shell} ipc call lockScreen lock";
+    };
   };
 }
