@@ -88,6 +88,16 @@
               };
               id = "plugin:noctalia-color-picker";
             }
+            {
+              defaultSettings = {
+                customColor = "none";
+                showConditionIcon = true;
+                showTempUnit = true;
+                showTempValue = true;
+                tooltipOption = "everything";
+              };
+              id = "plugin:weather-indicator";
+            }
           ];
           center = [
             {
@@ -603,23 +613,60 @@
       };
 
       desktopWidgets = {
-        enabled = false;
-        gridSnap = false;
+        enabled = true;
+        gridSnap = true;
         monitorWidgets = [
           {
             name = "DP-1";
+            widgets = [];
+          }
+          {
+            name = "HDMI-A-1";
             widgets = [
+              {
+                defaultSettings = {
+                  hideBackground = false;
+                  minimumThreshold = 10;
+                };
+                id = "plugin:catwalk";
+                scale = 1;
+                showBackground = true;
+                x = 6;
+                y = 992;
+              }
+              {
+                defaultSettings = {
+                  barWidth = 0.6;
+                  bloomIntensity = 0.5;
+                  customPrimaryColor = "#6750A4";
+                  customSecondaryColor = "#625B71";
+                  fadeWhenIdle = false;
+                  innerDiameter = 0.7;
+                  ringOpacity = 0.8;
+                  rotationSpeed = 0.5;
+                  sensitivity = 1.5;
+                  useCustomColors = false;
+                  visualizationMode = 3;
+                  waveThickness = 1;
+                };
+                id = "plugin:fancy-audiovisualizer";
+                scale = 1;
+                showBackground = true;
+                x = 1613;
+                y = 774;
+              }
               {
                 hideMode = "visible";
                 id = "MediaPlayer";
                 roundedCorners = true;
+                scale = 1;
                 showAlbumArt = true;
                 showBackground = true;
                 showButtons = true;
-                showVisualizer = true;
+                showVisualizer = false;
                 visualizerType = "linear";
-                x = 100;
-                y = 200;
+                x = 729;
+                y = 992;
               }
             ];
           }
