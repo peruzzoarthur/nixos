@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  config,
   ...
 }: {
   imports = [
@@ -675,14 +676,13 @@
     };
   };
 
-  # Run noctalia-shell as a systemd service for better IPC integration
   systemd.user.services.noctalia = {
     Unit = {
       Description = "Noctalia Shell Service";
       PartOf = "graphical-session.target";
     };
     Service = {
-      ExecStart = "${pkgs.noctalia-shell}/bin/noctalia-shell";
+      ExecStart = "${config.programs.noctalia-shell.package}/bin/noctalia-shell";
       Restart = "on-failure";
       RestartSec = 1;
     };

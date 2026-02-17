@@ -11,13 +11,13 @@
     ./bat
     ./btop
     ./npm-lsps
-    ./cron
-    ./hyprland
     ./carapace
     ./pipewire
-    ./hypridle
+    # ./cron
+    # ./hyprland
+    # ./hypridle
+    # ./hyprlock
     ./swayidle
-    ./hyprlock
     ./firefox
     ./lazysql
     ./librewolf
@@ -27,5 +27,6 @@
     ./lazygit
     ./noctalia
     ./quickshell
+    ./niri
   ];
 }

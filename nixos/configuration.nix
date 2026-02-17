@@ -131,10 +131,10 @@
 
   virtualisation.docker.enable = true;
 
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-  };
+  # programs.hyprland = {
+  #   enable = true;
+  #   package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+  # };
 
   nixpkgs.config.allowUnfree = true;
 
@@ -217,11 +217,13 @@
     gnumake
     nodejs_22
     go
-    hyprpaper
-    hyprsunset
+    # hyprpaper
+    # hyprsunset
+    # hyprpanel
+    # hyprpolkitagent
+    # hyprshot
     qogir-icon-theme
     qogir-kde
-    hyprpanel
     python3
     fastfetch
     cargo
@@ -235,14 +237,12 @@
     eza
     lazydocker
     openrgb
-    hyprpolkitagent
     polkit_gnome
     obs-studio
     libreoffice
     vlc
     wlrctl
     ripgrep
-    hyprshot
     grim
     slurp
     imagemagick
@@ -417,25 +417,25 @@
 
   services.gnome.gnome-keyring.enable = true;
 
-  systemd.services.hyprland-suspend = {
-    description = "Suspend hyprland";
-    before = ["systemd-suspend.service" "systemd-hibernate.service"];
-    serviceConfig = {
-      Type = "oneshot";
-      ExecStart = "/root/bin/suspend-hyprland.sh suspend";
-    };
-    wantedBy = ["systemd-suspend.service" "systemd-hibernate.service"];
-  };
-
-  systemd.services.hyprland-resume = {
-    description = "Resume hyprland";
-    after = ["systemd-suspend.service" "systemd-hibernate.service"];
-    serviceConfig = {
-      Type = "oneshot";
-      ExecStart = "/root/bin/suspend-hyprland.sh resume";
-    };
-    wantedBy = ["systemd-suspend.service" "systemd-hibernate.service"];
-  };
+  # systemd.services.hyprland-suspend = {
+  #   description = "Suspend hyprland";
+  #   before = ["systemd-suspend.service" "systemd-hibernate.service"];
+  #   serviceConfig = {
+  #     Type = "oneshot";
+  #     ExecStart = "/root/bin/suspend-hyprland.sh suspend";
+  #   };
+  #   wantedBy = ["systemd-suspend.service" "systemd-hibernate.service"];
+  # };
+  #
+  # systemd.services.hyprland-resume = {
+  #   description = "Resume hyprland";
+  #   after = ["systemd-suspend.service" "systemd-hibernate.service"];
+  #   serviceConfig = {
+  #     Type = "oneshot";
+  #     ExecStart = "/root/bin/suspend-hyprland.sh resume";
+  #   };
+  #   wantedBy = ["systemd-suspend.service" "systemd-hibernate.service"];
+  # };
 
   programs.gamemode.enable = true;
 
