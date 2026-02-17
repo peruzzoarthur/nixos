@@ -217,6 +217,7 @@
     gnumake
     nodejs_22
     go
+    wlsunset
     # hyprpaper
     # hyprsunset
     # hyprpanel

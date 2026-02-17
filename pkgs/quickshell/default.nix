@@ -57,6 +57,8 @@
       qt6.qtdeclarative
       qt6.qtsvg
       qt6.qtwayland
+      qt6.qtquick3d
+      qt6.qtmultimedia
       cli11
       wayland
       wayland-protocols
