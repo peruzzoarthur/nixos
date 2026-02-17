@@ -237,7 +237,7 @@
     eza
     lazydocker
     openrgb
-    polkit_gnome
+    # polkit_gnome # replaced by noctalia polkit agent
     obs-studio
     libreoffice
     vlc
