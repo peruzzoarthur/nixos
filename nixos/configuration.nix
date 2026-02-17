@@ -293,6 +293,7 @@
     wlr-which-key
     xwayland-satellite
     pavucontrol
+    home-manager
 
     # Language servers
     nodePackages.vscode-langservers-extracted

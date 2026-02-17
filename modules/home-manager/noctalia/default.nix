@@ -682,7 +682,8 @@
       PartOf = "graphical-session.target";
     };
     Service = {
-      ExecStart = "${config.programs.noctalia-shell.package}/bin/noctalia-shell";
+      # Use our custom quickshell (with polkit support) to run noctalia-shell config
+      ExecStart = "${pkgs.quickshell}/bin/qs -p ${config.programs.noctalia-shell.package}/share/noctalia-shell";
       Restart = "on-failure";
       RestartSec = 1;
     };

@@ -11,6 +11,9 @@
       postPatch = "";
       prePatch = "";
     });
+
+    # Quickshell now comes from our custom build in pkgs/quickshell/default.nix
+    # which includes polkit support and the qmldir fix
   };
 }
 

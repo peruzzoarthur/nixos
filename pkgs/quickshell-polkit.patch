@@ -1,0 +1,11 @@
+diff --git a/lib/qt-6/qml/Quickshell/Services/Polkit/qmldir b/lib/qt-6/qml/Quickshell/Services/Polkit/qmldir
+index 1111111..2222222 100644
+--- a/lib/qt-6/qml/Quickshell/Services/Polkit/qmldir
++++ b/lib/qt-6/qml/Quickshell/Services/Polkit/qmldir
+@@ -4,5 +4,6 @@ optional plugin quickshell-service-polkitplugin
+ classname Quickshell_Services_PolkitPlugin
+ typeinfo quickshell-service-polkit.qmltypes
+ depends QtQml
++depends Quickshell
+ prefer :/qt/qml/Quickshell/Services/Polkit/
+ depends QtQuick
