@@ -27,6 +27,5 @@
     ./lazygit
     ./noctalia
     ./quickshell
-    ./niri
   ];
 }
