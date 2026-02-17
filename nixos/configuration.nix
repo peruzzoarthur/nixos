@@ -290,6 +290,9 @@
     bruno
     bruno-cli
     tree
+    wlr-which-key
+    xwayland-satellite
+    pavucontrol
 
     # Language servers
     nodePackages.vscode-langservers-extracted
