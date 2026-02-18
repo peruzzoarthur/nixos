@@ -79,7 +79,7 @@
 
       # CLI colors
       export CLICOLOR=1
-      export LS_COLORS='di=1;36:ln=1;35:ex=1;32:so=1;31:pi=1;33:bd=1;34:cd=1;33:su=0;41:sg=0;46:tw=0;42:ow=0;43'
+      # export LS_COLORS='di=1;36:ln=1;35:ex=1;32:so=1;31:pi=1;33:bd=1;34:cd=1;33:su=0;41:sg=0;46:tw=0;42:ow=0;43'
 
       # Completion styling
       zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
@@ -178,6 +178,8 @@
     
       # Pipe to jq
       alias -g J='| jq'
+
+      export PATH="$HOME/.local/bin:$PATH"
     '';
   };
 }

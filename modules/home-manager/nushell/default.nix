@@ -1,6 +1,11 @@
 {...}: {
   programs.nushell = {
     enable = true;
+    envFile = {
+      text = ''
+        $env.PATH = ($env.PATH | split row (char esep) | prepend $"($env.HOME)/.local/bin")
+      '';
+    };
     configFile = {
       text = ''
         $env.LS_COLORS = (vivid generate catppuccin-mocha)
@@ -15,6 +20,9 @@
         alias .. = cd ..
         alias ... = cd ../..
         alias .... = cd ../../..
+        alias y = yazi
+        def claudio [...args] { ~/.local/bin/claude ...$args }
+
         def cl [] { clear; magick (~/scripts/random_image.sh ~/arthur/cats-imgs/images | str trim) -resize 250x250 png:- | kitty +kitten icat --stdin yes }
        '';
      };
