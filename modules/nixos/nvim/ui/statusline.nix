@@ -3,7 +3,7 @@
     settings = {
       vim.statusline.lualine = {
         enable = true;
-        theme = "catppuccin";
+        theme = "auto"; # catppuccin: set back to "catppuccin"
         activeSection = {
           z = [
             ''

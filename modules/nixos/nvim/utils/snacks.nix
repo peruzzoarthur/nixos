@@ -16,39 +16,7 @@
           scroll = {enabled = true;};
           statuscolumn = {enabled = true;};
           words = {enabled = true;};
-          zen = {
-            toggles = {
-              dim = true;
-              git_signs = false;
-              mini_diff_signs = false;
-              diagnostics = false;
-              inlay_hints = false;
-              dashboard = true;
-            };
-
-            show = {
-              statusline = true;
-              tabline = false;
-            };
-
-            backdrop = {
-              transparent = false;
-            };
-            win = {
-              style = "zen";
-              minimal = true;
-              wo = {
-                winhighlight = "NormalFloat:Normal";
-                # winhighlight = "Normal:SnacksZenBg,FloatBorder:SnacksZenBorder";
-                signcolumn = "no";
-                foldcolumn = "0";
-              };
-              width = 120;
-              backdrop = {
-                transparent = false;
-              };
-            };
-          };
+          zen = {enabled = false;};
         };
       };
 
@@ -79,7 +47,7 @@
         }
         # {
         #   mode = "n";
-        #   key = "<leader>zz";
+        #   key = "<leader>z";
         #   action = "<cmd>lua Snacks.zen()<CR>";
         #   silent = false;
         # }

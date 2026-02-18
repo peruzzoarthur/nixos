@@ -1,4 +1,10 @@
-{pkgs, lib, ...}: {
+{
+  lib,
+  config,
+  ...
+}: let
+  noctalia-ipc = "${lib.getExe config.programs.noctalia-shell.package} ipc call";
+in {
   services.swayidle = {
     enable = true;
 
@@ -7,16 +13,16 @@
     timeouts = [
       {
         timeout = 300;
-        command = "${lib.getExe pkgs.noctalia-shell} ipc call lockScreen lock";
+        command = "${noctalia-ipc} lockScreen lock";
       }
       {
-        timeout = 600;
-        command = "${lib.getExe pkgs.noctalia-shell} ipc call sessionMenu lockAndSuspend";
+        timeout = 900;
+        command = "${noctalia-ipc} sessionMenu lockAndSuspend";
       }
     ];
 
     events = {
-      "before-sleep" = "${lib.getExe pkgs.noctalia-shell} ipc call lockScreen lock";
+      "before-sleep" = "${noctalia-ipc} lockScreen lock";
     };
   };
 }
