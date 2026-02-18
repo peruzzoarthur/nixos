@@ -48,11 +48,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # quickshell flake input unused — custom build in pkgs/quickshell/default.nix
-    # quickshell = {
-    #   url = "github:quickshell-mirror/quickshell";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    quickshell = {
+      url = "github:quickshell-mirror/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -63,7 +62,7 @@
     nixos-npm-ls,
     catppuccin,
     noctalia,
-    # quickshell, # unused - custom build in pkgs/quickshell/default.nix
+    quickshell,
     ...
   } @ inputs: let
     inherit (self) outputs;
