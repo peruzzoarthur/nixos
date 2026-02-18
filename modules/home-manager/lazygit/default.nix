@@ -4,6 +4,7 @@
   programs.lazygit = {
     enable = true;
     enableZshIntegration = true;
+    enableNushellIntegration = true;
     settings = {
       gui.theme = {
         bgColor = [ "#1e1e2e" ];

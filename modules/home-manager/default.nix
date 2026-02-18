@@ -27,5 +27,7 @@
     ./lazygit
     ./noctalia
     ./quickshell
+    ./zoxide
+    ./nushell
   ];
 }

@@ -145,6 +145,12 @@
   };
 
   programs.zsh.enable = true;
+  environment.shells = with pkgs; [ nushell ];
+  programs.zsh.interactiveShellInit = ''
+    if [[ $TERM != "dumb" ]]; then
+      exec nu
+    fi
+  '';
   programs.thunar = {
     enable = true;
     plugins = with pkgs.xfce; [
@@ -198,6 +204,7 @@
     tmux
     legcord
     zsh
+    nushell
     postman
     burpsuite
     dbeaver-bin
@@ -229,9 +236,9 @@
     fastfetch
     cargo
     sqlite
-    zoxide
+    # zoxide
     fzf
-    atuin
+    # atuin
     unzip
     docker-compose
     rbenv
@@ -295,6 +302,7 @@
     xwayland-satellite
     pavucontrol
     home-manager
+    vivid
 
     # Language servers
     nodePackages.vscode-langservers-extracted
