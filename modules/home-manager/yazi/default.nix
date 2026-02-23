@@ -16,7 +16,7 @@
       };
     };
     flavors = {
-      catppuccin-mocha = ./catppuccin-mocha;
+      vague = ./vague-yazi;
     };
   };
 }

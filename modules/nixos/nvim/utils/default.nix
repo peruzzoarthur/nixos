@@ -10,5 +10,6 @@
     ./snacks.nix
     ./which-key.nix
     ./zen-mode.nix
+    ./supermaven.nix
   ];
 }

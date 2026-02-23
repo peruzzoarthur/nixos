@@ -61,25 +61,25 @@
   # services.xserver.enable = false;
 
   xdg.portal = {
-  enable = true;
-  extraPortals = with pkgs; [
-    xdg-desktop-portal-gtk
-    xdg-desktop-portal-gnome
-  ];
-  config = {
-    common = {
-      default = [ "gtk" ];
-    };
-    niri = {
-      default = lib.mkForce [
-        "gtk"
-        "gnome"
-      ];
-      "org.freedesktop.impl.portal.ScreenCast" = lib.mkForce [ "gnome" ];
-      "org.freedesktop.impl.portal.Screenshot" = lib.mkForce [ "gnome" ];
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-gnome
+    ];
+    config = {
+      common = {
+        default = ["gtk"];
+      };
+      niri = {
+        default = lib.mkForce [
+          "gtk"
+          "gnome"
+        ];
+        "org.freedesktop.impl.portal.ScreenCast" = lib.mkForce ["gnome"];
+        "org.freedesktop.impl.portal.Screenshot" = lib.mkForce ["gnome"];
+      };
     };
   };
-};
 
   # Set default applications
   xdg.mime.defaultApplications = {
@@ -145,7 +145,7 @@
   };
 
   programs.zsh.enable = true;
-  environment.shells = with pkgs; [ nushell ];
+  environment.shells = with pkgs; [nushell];
   programs.zsh.interactiveShellInit = ''
     if [[ $TERM != "dumb" ]]; then
       exec nu
@@ -303,6 +303,8 @@
     pavucontrol
     home-manager
     vivid
+    qpdf
+    tldr
 
     # Language servers
     nodePackages.vscode-langservers-extracted
@@ -330,8 +332,6 @@
     nix-search-tv
     playerctl
   ];
-
-
 
   fonts.packages = with pkgs; [
     jetbrains-mono

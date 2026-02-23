@@ -310,8 +310,8 @@
         wallpaperChangeMode = "random";
         randomIntervalSec = 300;
         transitionDuration = 1500;
-        transitionType = "random";
-        skipStartupTransition = false;
+        transitionType = "none";
+        skipStartupTransition = true;
         transitionEdgeSmoothness = 0.05;
         panelPosition = "follow_bar";
         hideWallpaperFilenames = false;
