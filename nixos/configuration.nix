@@ -14,8 +14,18 @@
   ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
+  # boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    limine = {
+      enable = true;
+      style.wallpapers = lib.filesystem.listFilesRecursive ./wallpapers/limine;
+      #style.wallpaperStyle = "centered";
+      extraConfig = ''
+        remember_last_entry: yes
+      '';
+    };
+  };
 
   boot.initrd.luks.devices = {
     "luks-854549b9-4b1c-4a64-8d36-b647d3507a65" = {
@@ -305,6 +315,7 @@
     vivid
     qpdf
     tldr
+    fnm
 
     # Language servers
     nodePackages.vscode-langservers-extracted
@@ -429,6 +440,10 @@
   services.upower.enable = true;
 
   services.gnome.gnome-keyring.enable = true;
+
+  systemd.tmpfiles.rules = [
+    "f /var/lib/systemd/linger/ozzurep 0644 root root -"
+  ];
 
   # systemd.services.hyprland-suspend = {
   #   description = "Suspend hyprland";
