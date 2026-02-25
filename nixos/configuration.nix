@@ -19,12 +19,13 @@
   boot.loader = {
     limine = {
       enable = true;
+      maxGenerations = 2;
       style.wallpapers = lib.filesystem.listFilesRecursive ./wallpapers/limine-images;
       style.wallpaperStyle = "centered"; 
       # "centered", "streched", "tiled"
-      extraConfig = ''
-        remember_last_entry: yes
-      '';
+      # extraConfig = ''
+      #   remember_last_entry: yes
+      # '';
     };
   };
 
