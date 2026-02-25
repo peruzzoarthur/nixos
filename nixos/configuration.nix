@@ -319,6 +319,7 @@
     tldr
     fnm
     file
+    efibootmgr
 
     # Language servers
     nodePackages.vscode-langservers-extracted
