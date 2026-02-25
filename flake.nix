@@ -102,7 +102,16 @@
                 additions
                 modifications
               ]
-              ++ [nixos-npm-ls.overlays.default];
+              # ++ [nixos-npm-ls.overlays.default]; # old config (dream2nix prisma-language-server breaks with current nixpkgs)
+              ++ [nixos-npm-ls.overlays.default]
+              ++ [
+                # nixos-npm-ls overrides prisma-language-server with a dream2nix build
+                # that requires nodejs.src, which is missing in current nixpkgs.
+                # Restore the native nixpkgs version instead.
+                (_final: _prev: {
+                  prisma-language-server = nixpkgs.legacyPackages."x86_64-linux".prisma-language-server;
+                })
+              ];
           }
         ];
       };
