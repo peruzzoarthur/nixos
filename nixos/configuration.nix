@@ -19,8 +19,8 @@
   boot.loader = {
     limine = {
       enable = true;
-      style.wallpapers = lib.filesystem.listFilesRecursive ./wallpapers/limine;
-      #style.wallpaperStyle = "centered";
+      style.wallpapers = lib.filesystem.listFilesRecursive ./wallpapers/limine-images;
+      #style.wallpaperStyle = "centered"; "centered", "streched", "tiled"
       extraConfig = ''
         remember_last_entry: yes
       '';
@@ -316,6 +316,7 @@
     qpdf
     tldr
     fnm
+    file
 
     # Language servers
     nodePackages.vscode-langservers-extracted
