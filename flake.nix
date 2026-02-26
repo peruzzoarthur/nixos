@@ -26,7 +26,8 @@
 
     nixos-npm-ls = {
       url = "github:y3owk1n/nixos-npm-ls";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs"; # removed: nixpkgs >=2fc6539b dropped nodejs.src, breaking dream2nix's nodejs-granular-v3
+      # nixos-npm-ls now uses dream2nix's own pinned nixpkgs where nodejs.src exists
     };
 
     # hyprland.url = "github:hyprwm/Hyprland";

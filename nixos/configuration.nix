@@ -19,9 +19,9 @@
   boot.loader = {
     limine = {
       enable = true;
-      maxGenerations = 2;
+      maxGenerations = 5;
       style.wallpapers = lib.filesystem.listFilesRecursive ./wallpapers/limine-images;
-      style.wallpaperStyle = "centered"; 
+      # style.wallpaperStyle = "centered"; 
       # "centered", "streched", "tiled"
       # extraConfig = ''
       #   remember_last_entry: yes
@@ -175,14 +175,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # ResponsivelyApp AppImage
-    (appimageTools.wrapType2 {
-      pname = "responsively";
-      version = "1.17.1";
-      src = fetchurl {
-        url = "https://github.com/responsively-org/responsively-app-releases/releases/download/v1.17.1/ResponsivelyApp-1.17.1.AppImage";
-        sha256 = "sha256-GiHwWSP/iQ9AOosOor6vUoKr/ztbTfFbjytEHJjNoz4=";
-      };
-    })
     # Custom Go module: cold-note CLI tool
     (buildGoModule {
       pname = "cold-note";
@@ -235,6 +227,7 @@
     gcc
     gnumake
     nodejs_22
+    # nodejs-24.13.0
     go
     wlsunset
     # hyprpaper
@@ -288,7 +281,7 @@
     rubik
     auto-cpufreq
     gparted
-    goose-cli
+    # goose-cli
     zip
     gimp
     qbittorrent
@@ -349,8 +342,7 @@
   ];
 
   fonts.packages = with pkgs; [
-    jetbrains-mono
-    pkgs.nerd-fonts.jetbrains-mono
+    nerd-fonts.jetbrains-mono
   ];
 
   environment.sessionVariables = {
