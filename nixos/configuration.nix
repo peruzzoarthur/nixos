@@ -313,6 +313,7 @@
     fnm
     file
     efibootmgr
+    baobab
 
     # Language servers
     nodePackages.vscode-langservers-extracted

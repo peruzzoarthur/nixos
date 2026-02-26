@@ -25,17 +25,21 @@
       settingsVersion = 53;
 
       bar = {
-        barType = "simple";
+        barType = "floating";
         position = "top";
         monitors = [];
         density = "compact";
         showOutline = false;
         showCapsule = false;
+        showOnWorkspaceSwitch = true;
         capsuleOpacity = 1;
         capsuleColorKey = "none";
+        contentPadding = 0;
         backgroundOpacity = 0.8;
         useSeparateOpacity = true;
-        floating = false;
+        widgetSpacing = 6;
+        floating = true;
+        fontScale = 1;
         marginVertical = 4;
         marginHorizontal = 4;
         frameThickness = 8;
@@ -76,7 +80,6 @@
               labelMode = "index";
               occupiedColor = "secondary";
               pillSize = 0.6;
-              reverseScroll = false;
               showApplications = false;
               showBadge = true;
               showLabelsOnlyWhenOccupied = true;
@@ -234,6 +237,8 @@
         lockScreenMonitors = [];
         lockScreenBlur = 0;
         lockScreenTint = 0;
+        passwordChars = false;
+        reverseScroll = false;
         keybinds = {
           keyUp = ["Up"];
           keyDown = ["Down"];
@@ -254,10 +259,7 @@
         panelBackgroundOpacity = 0.93;
         panelsAttachedToBar = true;
         settingsPanelMode = "attached";
-        wifiDetailsViewMode = "grid";
-        bluetoothDetailsViewMode = "grid";
-        networkPanelView = "wifi";
-        bluetoothHideUnnamedDevices = false;
+        settingsPanelSideBarCardStyle = false;
         boxBorderEnabled = false;
       };
 
@@ -448,6 +450,7 @@
         enabled = false;
         position = "bottom";
         displayMode = "auto_hide";
+        dockType = "floating";
         backgroundOpacity = 1;
         floatingRatio = 1;
         size = 1;
@@ -459,6 +462,15 @@
         inactiveIndicators = false;
         deadOpacity = 0.6;
         animationSpeed = 1;
+        groupApps = false;
+        groupClickAction = "cycle";
+        groupContextMenuMode = "extended";
+        groupIndicatorStyle = "dots";
+        launcherIconColor = "none";
+        launcherPosition = "end";
+        showFrameIndicator = true;
+        showLauncherIcon = false;
+        sitOnFrame = false;
       };
 
       network = {
@@ -470,6 +482,7 @@
         bluetoothDetailsViewMode = "grid";
         bluetoothHideUnnamedDevices = false;
         disableDiscoverability = false;
+        networkPanelView = "wifi";
       };
 
       sessionMenu = {
@@ -523,6 +536,13 @@
             enabled = true;
             keybind = "6";
           }
+          {
+            action = "rebootToUefi";
+            command = "";
+            countdownEnabled = true;
+            enabled = true;
+            keybind = "";
+          }
         ];
       };
 
@@ -533,6 +553,7 @@
         location = "top_right";
         overlayLayer = true;
         backgroundOpacity = 1;
+        clearDismissed = true;
         respectExpireTimeout = false;
         lowUrgencyDuration = 3;
         normalUrgencyDuration = 8;
@@ -552,6 +573,7 @@
           excludedApps = "discord,firefox,chrome,chromium,edge";
         };
         enableMediaToast = false;
+        enableMarkdown = false;
         enableKeyboardLayoutToast = true;
         enableBatteryToast = true;
       };
@@ -574,9 +596,11 @@
         mprisBlacklist = [];
         preferredPlayer = "";
         volumeFeedback = false;
+        volumeFeedbackSoundFile = "";
       };
 
       brightness = {
+        backlightDeviceMappings = [];
         brightnessStep = 5;
         enforceMinimum = true;
         enableDdcSupport = false;
@@ -589,8 +613,8 @@
         schedulingMode = "off";
         manualSunrise = "06:30";
         manualSunset = "18:30";
-        generationMethod = "tonal-spot";
-        monitorForColors = "";
+        generationMethod = "muted";
+        monitorForColors = "DP-1";
       };
 
       templates = {
@@ -599,7 +623,7 @@
       };
 
       nightLight = {
-        enabled = false;
+        enabled = true;
         forced = false;
         autoSchedule = true;
         nightTemp = "4000";
@@ -683,6 +707,7 @@
             ];
           }
         ];
+        overviewEnabled = true;
       };
     };
   };
