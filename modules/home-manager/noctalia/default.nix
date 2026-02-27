@@ -240,8 +240,8 @@
         passwordChars = false;
         reverseScroll = false;
         keybinds = {
-          keyUp = ["Up"];
-          keyDown = ["Down"];
+          keyUp = ["Up" "Ctrl+P"];
+          keyDown = ["Down" "Ctrl+N"];
           keyLeft = ["Left"];
           keyRight = ["Right"];
           keyEnter = ["Return"];
