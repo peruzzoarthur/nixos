@@ -108,14 +108,7 @@
   # ];
   # systemd.suppressedSystemUnits = [ "drkonqi-coredump-processor@.service" ];
 
-  # Enable SDDM display manager
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
-  services.displayManager.sddm.wayland.compositor = "kwin";
-  services.displayManager.sddm.extraPackages = with pkgs.kdePackages; [
-    plasma-workspace
-    kwin
-  ];
+  # SDDM display manager is configured in modules/nixos/sddm.nix
 
   # Enable PolicyKit for authentication
   security.polkit.enable = true;
@@ -202,9 +195,6 @@
       cd /home/ozzurep/.dotfiles/squashfs-root
       exec ./AppRun "$@"
     '')
-    (inputs.silentSDDM.packages.${pkgs.stdenv.hostPlatform.system}.default.override {
-      theme = "catppuccin-mocha";
-    })
 
     # General packages
     vim

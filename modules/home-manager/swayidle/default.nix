@@ -1,7 +1,7 @@
 {
+  pkgs,
   lib,
   config,
-  pkgs,
   ...
 }: let
   noctalia-ipc = "${lib.getExe config.programs.noctalia-shell.package} ipc call";
