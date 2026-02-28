@@ -102,11 +102,20 @@
     "x-scheme-handler/unknown" = "firefox.desktop";
   };
 
-  services.desktopManager.plasma6.enable = true;
+  # services.desktopManager.plasma6.enable = true;
+  # environment.plasma6.excludePackages = with pkgs.kdePackages; [
+  #   drkonqi
+  # ];
+  # systemd.suppressedSystemUnits = [ "drkonqi-coredump-processor@.service" ];
 
   # Enable SDDM display manager
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.sddm.wayland.compositor = "kwin";
+  services.displayManager.sddm.extraPackages = with pkgs.kdePackages; [
+    plasma-workspace
+    kwin
+  ];
 
   # Enable PolicyKit for authentication
   security.polkit.enable = true;

@@ -1,23 +1,10 @@
 {
-  pkgs,
   inputs,
-  config,
   ...
 }: {
   imports = [
     inputs.noctalia.homeModules.default
   ];
-
-  # Re-wrap the noctalia-shell binary to point at pkgs.quickshell (from the
-  # flake overlay) instead of the nixpkgs quickshell baked into the package.
-  # This keeps the IPC client and server on the same binary.
-  programs.noctalia-shell.package = (inputs.noctalia.packages.${pkgs.system}.default).overrideAttrs (_old: {
-    installPhase = ''
-      mkdir -p $out/share/noctalia-shell $out/bin
-      cp -r . $out/share/noctalia-shell
-      ln -s ${pkgs.quickshell}/bin/qs $out/bin/noctalia-shell
-    '';
-  });
 
   programs.noctalia-shell = {
     enable = true;
@@ -712,18 +699,4 @@
     };
   };
 
-  systemd.user.services.noctalia = {
-    Unit = {
-      Description = "Noctalia Shell Service";
-      PartOf = "graphical-session.target";
-    };
-    Service = {
-      ExecStart = "${config.programs.noctalia-shell.package}/bin/noctalia-shell";
-      Restart = "on-failure";
-      RestartSec = 1;
-    };
-    Install = {
-      WantedBy = ["graphical-session.target"];
-    };
-  };
 }

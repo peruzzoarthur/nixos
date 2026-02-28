@@ -12,9 +12,6 @@
       prePatch = "";
     });
 
-    # Use quickshell from the flake so the version is explicitly pinned
-    # and both the IPC server and client use the same binary.
-    quickshell = inputs.quickshell.packages.${prev.system}.default;
   };
 }
 
