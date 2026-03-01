@@ -62,17 +62,6 @@
     '';
   };
 
-  programs.kitty = {
-    enable = true;
-    settings = {
-      background_opacity = 0.95;
-      font_family = "JetBrainsMono Nerd Font Mono";
-      font_size = 13;
-    };
-    # themeFile = "Catppuccin-Mocha";
-    themeFile = "vague";
-  };
-
   programs.home-manager.enable = true;
 
   programs.git = {

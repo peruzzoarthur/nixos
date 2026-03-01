@@ -29,5 +29,6 @@
     ./quickshell
     ./zoxide
     ./nushell
+    ./kitty
   ];
 }
