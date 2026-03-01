@@ -29,8 +29,9 @@
                   vim.loop.spawn("kitten", {
                     args = {"@", "action", "set_background_opacity", "0.95"}
                   })
-                  -- hide tmux statusline (per-pane, tmux 3.3+)
-                  vim.fn.system("tmux set-option -p status off")
+                  -- rename window to mark as zen and hide status
+                  vim.fn.system("tmux rename-window zen")
+                  vim.fn.system("tmux set-option -g status off")
                 end,
 
                 -- callback where you can add custom code when the Zen window closes
@@ -38,8 +39,9 @@
                   vim.loop.spawn("kitten", {
                     args = {"@", "action", "set_background_opacity", "0.8"}
                   })
-                  -- show tmux statusline (per-pane, tmux 3.3+)
-                  vim.fn.system("tmux set-option -p status on")
+                  -- restore window name and show status
+                  vim.fn.system("tmux rename-window nvim")
+                  vim.fn.system("tmux set-option -g status on")
                 end,
               })
             '';
