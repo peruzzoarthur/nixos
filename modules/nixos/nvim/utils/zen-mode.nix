@@ -29,6 +29,8 @@
                   vim.loop.spawn("kitten", {
                     args = {"@", "action", "set_background_opacity", "0.95"}
                   })
+                  -- hide tmux statusline (per-pane, tmux 3.3+)
+                  vim.fn.system("tmux set-option -p status off")
                 end,
 
                 -- callback where you can add custom code when the Zen window closes
@@ -36,6 +38,8 @@
                   vim.loop.spawn("kitten", {
                     args = {"@", "action", "set_background_opacity", "0.8"}
                   })
+                  -- show tmux statusline (per-pane, tmux 3.3+)
+                  vim.fn.system("tmux set-option -p status on")
                 end,
               })
             '';
