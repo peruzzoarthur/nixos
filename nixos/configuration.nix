@@ -313,6 +313,7 @@
     file
     efibootmgr
     baobab
+    localstack
 
     # Language servers
     nodePackages.vscode-langservers-extracted
