@@ -41,8 +41,8 @@
       "alt+8" = "goto_tab 8";
       "alt+9" = "goto_tab 9";
       # Session management (spawn new kitty windows with sessions)
-      "ctrl+alt+s" = "new_os_window kitty --session=~/.config/kitty/sessions/default.conf";
-      "ctrl+alt+p" = "new_os_window /home/ozzurep/.dotfiles/scripts/kitty-session-picker";
+      "ctrl+alt+s" = "launch --type=os-window -- kitty --session=~/.config/kitty/sessions/default.conf";
+      "ctrl+alt+p" = "launch --type=os-window -- /home/ozzurep/.dotfiles/scripts/kitty-session-picker";
     };
     # map alt+1 goto_tab 1
     #   map alt+2 goto_tab 2
