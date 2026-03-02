@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Kitty session picker using fzf
+
+SESSION_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/kitty/sessions"
+
+# List sessions and let user pick
+SESSION=$(find "$SESSION_DIR" -type f -name "*.conf" 2>/dev/null | fzf --prompt="Kitty Session: " --preview='head -20 {}' --preview-window=right:40%:border-rounded)
+
+if [[ -n "$SESSION" ]]; then
+  kitty --session="$SESSION"
+else
+  echo "No session selected"
+  exit 1
+fi

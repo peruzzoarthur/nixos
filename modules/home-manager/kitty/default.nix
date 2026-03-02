@@ -29,8 +29,8 @@
       "ctrl+w" = "close_tab";
       "ctrl+page_up" = "move_tab_backward";
       "ctrl+page_down" = "move_tab_forward";
-      "alt+shift+h" = "move_tab_backward";
-      "alt+shift+l" = "move_tab_forward";
+      # "alt+shift+h" = "move_tab_backward";
+      # "alt+shift+l" = "move_tab_forward";
       "alt+1" = "goto_tab 1";
       "alt+2" = "goto_tab 2";
       "alt+3" = "goto_tab 3";
@@ -41,25 +41,9 @@
       "alt+8" = "goto_tab 8";
       "alt+9" = "goto_tab 9";
       # Session management (spawn new kitty windows with sessions)
-      "ctrl+alt+s" = "launch --type=os-window -- kitty --session=~/.config/kitty/sessions/default.conf";
-      "ctrl+alt+p" = "launch --type=os-window -- /home/ozzurep/.dotfiles/scripts/kitty-session-picker";
+      # "ctrl+alt+s" = "launch --type=os-window -- kitty --session=~/.config/kitty/sessions/default.conf";
+      # "ctrl+alt+p" = "launch --type=os-window -- /home/ozzurep/.dotfiles/scripts/kitty-session-picker";
     };
-    # map alt+1 goto_tab 1
-    #   map alt+2 goto_tab 2
-    #   map alt+3 goto_tab 3
-    #   map alt+4 goto_tab 4
-    #   map alt+5 goto_tab 5
-    #   map alt+6 goto_tab 6
-    #   map alt+7 goto_tab 7
-    #   map alt+8 goto_tab 8
-    #   map alt+9 goto_tab 9
-    #
-    #   map ctrl+t new_tab
-    #   map ctrl+w close_tab
-    #
-    #   map ctrl+shift+page_up move_tab_backward
-    #   map ctrl+shift+page_down move_tab_forward
-    # themeFile = "Catppuccin-Mocha";
     themeFile = "vague";
   };
 }
