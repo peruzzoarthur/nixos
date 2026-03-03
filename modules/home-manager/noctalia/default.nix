@@ -9,12 +9,14 @@
   programs.noctalia-shell = {
     enable = true;
     settings = {
-      settingsVersion = 53;
+      settingsVersion = 54;
 
       bar = {
         barType = "floating";
         position = "top";
         monitors = [];
+        mouseWheelAction = "none";
+        mouseWheelWrap = true;
         density = "compact";
         showOutline = false;
         showCapsule = false;
@@ -32,6 +34,7 @@
         frameThickness = 8;
         frameRadius = 12;
         outerCorners = true;
+        reverseScroll = false;
         hideOnOverview = false;
         displayMode = "always_visible";
         autoHideDelay = 500;
@@ -85,13 +88,6 @@
             }
             {
               defaultSettings = {
-                backgroundColor = "transparent";
-                message = "Color Picker";
-              };
-              id = "plugin:noctalia-color-picker";
-            }
-            {
-              defaultSettings = {
                 customColor = "none";
                 showConditionIcon = true;
                 showTempUnit = true;
@@ -104,14 +100,11 @@
           center = [
             {
               compactMode = false;
-              compactShowAlbumArt = true;
-              compactShowVisualizer = false;
               hideMode = "hidden";
               hideWhenIdle = false;
               id = "MediaMini";
               maxWidth = 145;
               panelShowAlbumArt = true;
-              panelShowVisualizer = true;
               scrollingMode = "hover";
               showAlbumArt = true;
               showArtistFirst = true;
@@ -216,6 +209,7 @@
         showChangelogOnStartup = true;
         telemetryEnabled = false;
         enableLockScreenCountdown = true;
+        enableLockScreenMediaControls = false;
         lockScreenCountdownDuration = 10000;
         autoStartAuth = false;
         allowPasswordWithFprintd = false;
@@ -231,7 +225,7 @@
           keyDown = ["Down" "Ctrl+N"];
           keyLeft = ["Left"];
           keyRight = ["Right"];
-          keyEnter = ["Return"];
+          keyEnter = ["Return" "Enter"];
           keyEscape = ["Esc"];
           keyRemove = ["Del"];
         };
@@ -299,7 +293,7 @@
         wallpaperChangeMode = "random";
         randomIntervalSec = 300;
         transitionDuration = 1500;
-        transitionType = "none";
+        transitionType = "fade";
         skipStartupTransition = true;
         transitionEdgeSmoothness = 0.05;
         panelPosition = "follow_bar";
@@ -322,7 +316,7 @@
       };
 
       appLauncher = {
-        enableClipboardHistory = false;
+        enableClipboardHistory = true;
         autoPasteClipboard = false;
         enableClipPreview = true;
         clipboardWrapText = true;
@@ -332,7 +326,7 @@
         pinnedApps = [];
         useApp2Unit = false;
         sortByMostUsed = true;
-        terminalCommand = "alacritty -e";
+        terminalCommand = "kitty -e";
         customLaunchPrefixEnabled = false;
         customLaunchPrefix = "";
         viewMode = "list";
@@ -350,6 +344,7 @@
 
       controlCenter = {
         position = "top_left";
+        openAtMouseOnBarRightClick = true;
         diskPath = "/";
         shortcuts = {
           left = [
@@ -447,6 +442,9 @@
         colorizeIcons = false;
         pinnedStatic = false;
         inactiveIndicators = false;
+        indicatorColor = "primary";
+        indicatorOpacity = 0.6;
+        indicatorThickness = 3;
         deadOpacity = 0.6;
         animationSpeed = 1;
         groupApps = false;
@@ -455,7 +453,7 @@
         groupIndicatorStyle = "dots";
         launcherIconColor = "none";
         launcherPosition = "end";
-        showFrameIndicator = true;
+        showDockIndicator = false;
         showLauncherIcon = false;
         sitOnFrame = false;
       };
@@ -629,6 +627,21 @@
         performanceModeDisabled = "";
         startup = "";
         session = "";
+      };
+
+      idle = {
+        customCommands = "[]";
+        enabled = false;
+        fadeDuration = 5;
+        lockCommand = "";
+        lockTimeout = 660;
+        resumeLockCommand = "";
+        resumeScreenOffCommand = "";
+        resumeSuspendCommand = "";
+        screenOffCommand = "";
+        screenOffTimeout = 600;
+        suspendCommand = "";
+        suspendTimeout = 1800;
       };
 
       plugins = {
