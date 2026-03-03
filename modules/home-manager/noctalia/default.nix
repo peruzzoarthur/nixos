@@ -137,7 +137,7 @@
               titleWidth = 120;
             }
             {
-              compactMode = true;
+              compactMode = false;
               diskPath = "/";
               iconColor = "none";
               id = "SystemMonitor";
@@ -155,7 +155,7 @@
               showSwapUsage = false;
               textColor = "none";
               useMonospaceFont = true;
-              usePadding = true;
+              usePadding = false;
             }
             {
               displayMode = "forceOpen";
