@@ -49,6 +49,7 @@
         alias za = setsid -f zathura
         alias coldnote = bun run ~/coldLab/tui/cold-note-opentui/src/index.tsx
         alias ns = nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history
+        alias s = sesh connect (sesh list --icons | fzf --ansi)
         alias yayf = yay -Slq | fzf --multi --preview 'yay -Sii {1}' --preview-window=down:75% | xargs -ro yay -S
         def claudio [...args] { ~/.local/bin/claude ...$args }
         def cl [] { clear; magick (~/scripts/random_image.sh ~/arthur/cats-imgs/images | str trim) -resize 250x250 png:- | kitty +kitten icat --stdin yes }
@@ -69,6 +70,10 @@
               let pair = $l | split row "=" | each { |x| $x | str trim }
               load-env { ($pair.0): ($pair | skip 1 | str join "=") }
             }
+        }
+
+        def tns [sessionName: string] {
+          tmux new -s $sessionName
         }
 
           # Kitty remote control helper

@@ -30,5 +30,7 @@
     ./zoxide
     ./nushell
     ./kitty
+    ./sesh
+    ./fzf
   ];
 }

@@ -12,6 +12,13 @@
       prePatch = "";
     });
 
+    # Fix plux tests that fail with newer pytest (metadata["License"] returns None)
+    python313Packages = prev.python313Packages.overrideScope (pyfinal: pyprev: {
+      plux = pyprev.plux.overridePythonAttrs (_: {
+        doCheck = false;
+      });
+    });
+
   };
 }
 

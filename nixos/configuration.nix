@@ -167,7 +167,7 @@
   '';
   programs.thunar = {
     enable = true;
-    plugins = with pkgs.xfce; [
+    plugins = with pkgs; [
       thunar-archive-plugin
       thunar-volman
     ];
@@ -241,8 +241,9 @@
     cargo
     sqlite
     # zoxide
-    fzf
+    # fzf
     # atuin
+    gum
     unzip
     docker-compose
     rbenv
@@ -275,7 +276,7 @@
     jq
     sqlite
     ffmpeg
-    xfce.tumbler
+    tumbler
     ffmpegthumbnailer
     rubik
     auto-cpufreq
@@ -313,7 +314,6 @@
     file
     efibootmgr
     baobab
-    localstack
 
     # Language servers
     nodePackages.vscode-langservers-extracted
@@ -393,8 +393,8 @@
     openssl
     fontconfig
     freetype
-    xorg.libX11
-    xorg.libXext
+    libx11
+    libxext
     libGL
     libglvnd
     e2fsprogs
@@ -407,16 +407,16 @@
     alsa-lib
     mesa
     # Additional libraries for Playwright browsers
-    xorg.libXcomposite
-    xorg.libXcursor
-    xorg.libXdamage
-    xorg.libXfixes
-    xorg.libXi
-    xorg.libXrandr
-    xorg.libXrender
-    xorg.libxcb
-    xorg.libXScrnSaver
-    xorg.libXtst
+    libxcomposite
+    libxcursor
+    libxdamage
+    libxfixes
+    libxi
+    libxrandr
+    libxrender
+    libxcb
+    libxscrnsaver
+    libxtst
     pango
     cairo
     gdk-pixbuf
