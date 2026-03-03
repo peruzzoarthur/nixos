@@ -52,7 +52,8 @@
         alias s = sesh connect (sesh list --icons | fzf --ansi)
         alias yayf = yay -Slq | fzf --multi --preview 'yay -Sii {1}' --preview-window=down:75% | xargs -ro yay -S
         def claudio [...args] { ~/.local/bin/claude ...$args }
-        def cl [] { clear; magick (~/scripts/random_image.sh ~/arthur/cats-imgs/images | str trim) -resize 250x250 png:- | kitty +kitten icat --stdin yes }
+        def random_image [] { magick (~/scripts/random_image.sh ~/arthur/cats-imgs/images | str trim) -resize 250x250 png:- | kitty +kitten icat --stdin yes }
+        def cl [] { clear; random_image }
         def tn [] { cd ~/Notes/ColdNotes; tmux new -s ColdNotes }
         def gitbrave [] {
           git config user.email "arthur.peruzzo@brave.ag"
@@ -90,6 +91,8 @@
                }
            }
          }
+
+         random_image
       '';
     };
   };
