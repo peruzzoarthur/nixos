@@ -98,22 +98,22 @@
             }
           ];
           center = [
-            {
-              compactMode = false;
-              hideMode = "hidden";
-              hideWhenIdle = false;
-              id = "MediaMini";
-              maxWidth = 145;
-              panelShowAlbumArt = true;
-              scrollingMode = "hover";
-              showAlbumArt = true;
-              showArtistFirst = true;
-              showProgressRing = true;
-              showVisualizer = false;
-              textColor = "none";
-              useFixedWidth = false;
-              visualizerType = "linear";
-            }
+            # {
+            #   compactMode = false;
+            #   hideMode = "hidden";
+            #   hideWhenIdle = false;
+            #   id = "MediaMini";
+            #   maxWidth = 145;
+            #   panelShowAlbumArt = true;
+            #   scrollingMode = "hover";
+            #   showAlbumArt = true;
+            #   showArtistFirst = true;
+            #   showProgressRing = true;
+            #   showVisualizer = false;
+            #   textColor = "none";
+            #   useFixedWidth = false;
+            #   visualizerType = "linear";
+            # }
             {
               defaultSettings = {
                 hideBackground = false;
