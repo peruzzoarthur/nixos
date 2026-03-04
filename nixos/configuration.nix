@@ -314,6 +314,7 @@
     file
     efibootmgr
     baobab
+    libnotify
 
     # Language servers
     nodePackages.vscode-langservers-extracted
