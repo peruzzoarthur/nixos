@@ -218,7 +218,7 @@
         lockScreenMonitors = [];
         lockScreenBlur = 0;
         lockScreenTint = 0;
-        passwordChars = false;
+        passwordChars = true;
         reverseScroll = false;
         keybinds = {
           keyUp = ["Up" "Ctrl+P"];
