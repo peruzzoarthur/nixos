@@ -618,14 +618,14 @@
       };
 
       hooks = {
-        enabled = false;
+        enabled = true;
         wallpaperChange = "";
         darkModeChange = "";
         screenLock = "";
         screenUnlock = "";
         performanceModeEnabled = "";
         performanceModeDisabled = "";
-        startup = "";
+        startup = "notify-send 'Noctalia loaded 🦉'";
         session = "";
       };
 
