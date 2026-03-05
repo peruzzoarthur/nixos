@@ -97,9 +97,9 @@
     # ".zshrc".source = ../config/.zshrc;
   };
 
-  # home.packages = with pkgs; [
-  #   bat
-  # ];
+  home.packages = with pkgs; [
+    js-util
+  ];
 
   systemd.user.startServices = "sd-switch";
 

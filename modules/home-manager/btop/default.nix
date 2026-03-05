@@ -1,6 +1,50 @@
-{...}: {
+{pkgs, ...}: {
   programs.btop = {
     enable = true;
+    package = pkgs.symlinkJoin {
+      name = "btop";
+      paths = [ pkgs.btop ];
+      buildInputs = [ pkgs.makeWrapper ];
+      postBuild = ''
+        wrapProgram $out/bin/btop \
+          --prefix LD_LIBRARY_PATH : /run/opengl-driver/lib
+      '';
+    };
+    settings = {
+      color_theme = "catppuccin";
+      update_ms = 1000;
+      monitor = 0;
+      width = 100;
+      height = 20;
+      borderless = true;
+      border = true;
+      margin = 5;
+      padding = 5;
+      # background_color = "#1e1e2e";
+      # foreground_color = "#cdd6f4";
+      font = "JetBrainsMono Nerd Font Mono";
+      font_size = 13;
+      presets = "net:0:default,mem:0:default,cpu:0:default,gpu1:0:default,proc:0:default,gpu0:0:default";
+      show_output = true;
+      show_cpu_usage = true;
+      show_cpu_frequency = true;
+      show_cpu_temp = true;
+      show_ram_usage = true;
+      show_ram_temp = true;
+      show_network_download = true;
+      show_network_upload = true;
+      show_network_total = true;
+      show_swap_usage = true;
+      show_swap_temp = true;
+      show_disk_usage = true;
+      show_disk_io_time = true;
+      show_disk_total = true;
+      show_battery = true;
+      show_load_average = true;
+      show_uptime = true;
+      show_processes = true;
+      show_processes_sort = true;
+     };
     themes = {
       catppuccin = ''
          # Main background, empty for terminal default, need to be empty if you want transparent background
