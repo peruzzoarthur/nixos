@@ -32,5 +32,6 @@
     ./kitty
     ./sesh
     ./fzf
+    ./git
   ];
 }

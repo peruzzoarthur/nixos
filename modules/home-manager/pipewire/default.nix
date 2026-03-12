@@ -54,7 +54,10 @@
             "audio.rate" = 48000;
             "audio.position" = "[MONO]";
 
-            "capture.props"."node.passive" = true;
+            "capture.props" = {
+              "node.passive" = true;
+              "target.object" = "alsa_input.usb-0c76_USB_PnP_Audio_Device-00.mono-fallback";
+            };
             "playback.props"."media.class" = "Audio/Source";
           };
         }
