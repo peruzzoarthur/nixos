@@ -172,8 +172,8 @@ rules = [
 	# Virtual file system
 	{ mime = "vfs/{absent,stale}", fg = "#90a0b5" },
 	# Fallback
-	{ url = "*", fg = "#cdcdcd" },
 	{ url = "*/", fg = "#b4a4d4" },
+	{ url = "*", fg = "#cdcdcd" },
 ]
 
 # : }}}
