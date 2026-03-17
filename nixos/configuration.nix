@@ -316,6 +316,7 @@
     baobab
     libnotify
     meld
+    blender
 
     # Language servers
     nodePackages.vscode-langservers-extracted

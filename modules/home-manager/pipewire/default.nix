@@ -21,15 +21,6 @@
 
   xdg.configFile."pipewire/pipewire.conf.d/99-deepfilternet.conf" = {
     text = builtins.toJSON {
-      "context.properties" = {
-        "link.max-buffers" = 16;
-        "core.daemon" = true;
-        "core.name" = "pipewire-0";
-        "module.x11.bell" = false;
-        "module.access" = true;
-        "module.jackdbus-detect" = false;
-      };
-
       "context.modules" = [
         {
           name = "libpipewire-module-filter-chain";
@@ -52,13 +43,14 @@
             };
 
             "audio.rate" = 48000;
-            "audio.position" = "[MONO]";
+            "audio.position" = [ "MONO" ];
 
             "capture.props" = {
               "node.passive" = true;
-              "target.object" = "alsa_input.usb-0c76_USB_PnP_Audio_Device-00.mono-fallback";
             };
-            "playback.props"."media.class" = "Audio/Source";
+            "playback.props" = {
+              "media.class" = "Audio/Source";
+            };
           };
         }
       ];
