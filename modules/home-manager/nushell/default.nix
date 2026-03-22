@@ -49,7 +49,7 @@
         alias za = setsid -f zathura
         alias coldnote = bun run ~/coldLab/tui/cold-note-opentui/src/index.tsx
         alias ns = nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history
-        alias s = sesh connect (sesh list --icons | fzf --ansi)
+        alias s = sesh connect (sesh list --icons | gum filter --limit 1 --no-sort --fuzzy --no-strip-ansi --placeholder 'Pick a sesh' --height 50 --indicator.foreground='#b4a4d4' | str trim)
         alias yayf = yay -Slq | fzf --multi --preview 'yay -Sii {1}' --preview-window=down:75% | xargs -ro yay -S
         def claudio [...args] { ~/.local/bin/claude ...$args }
         def random_image [] { magick (~/scripts/random_image.sh ~/arthur/cats-imgs/images | str trim) -resize 250x250 png:- | kitty +kitten icat --stdin yes }
