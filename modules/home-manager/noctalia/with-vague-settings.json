@@ -612,7 +612,7 @@
     },
     "colorSchemes": {
       "useWallpaperColors": false,
-      "predefinedScheme": "Vague",
+      "predefinedScheme": "Monochrome",
       "darkMode": true,
       "schedulingMode": "off",
       "manualSunrise": "06:30",
