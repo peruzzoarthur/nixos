@@ -217,7 +217,7 @@
     mangohud
     ghostscript
     playwright-driver
-    prisma
+    # prisma # use per-project via flakes
     vulkan-tools
     mesa
     claude-code

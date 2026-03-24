@@ -55,68 +55,17 @@
       inputs.noctalia-qs.follows = "noctalia-qs";
     };
 
-  };
-
-  outputs = {
-    self,
-    nixpkgs,
-    home-manager,
-    nvf,
-    nixos-npm-ls,
-    catppuccin,
-    noctalia,
-    ...
-  } @ inputs: let
-    inherit (self) outputs;
-    systems = [
-      "x86_64-linux"
-    ];
-    forAllSystems = nixpkgs.lib.genAttrs systems;
-  in {
-    packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
-    formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
-
-    # Your custom packages and modifications, exported as overlays
-    overlays = import ./overlays {inherit inputs outputs;};
-    nixosModules = import ./modules/nixos;
-    homeManagerModules = import ./modules/home-manager;
-
-    # NixOS configuration entrypoint
-    # Available through 'nixos-rebuild --flake .#your-hostname'
-    nixosConfigurations = {
-      ozzurep = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [
-          ./nixos/configuration.nix
-          ./modules/nixos
-          nvf.nixosModules.default
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "bak2";
-            home-manager.extraSpecialArgs = {inherit inputs outputs self;};
-            home-manager.users.ozzurep = import ./home-manager/home.nix;
-          }
-          {
-            nixpkgs.overlays = with (import ./overlays {inherit inputs;});
-              [
-                additions
-                modifications
-              ]
-              # ++ [nixos-npm-ls.overlays.default]; # old config (dream2nix prisma-language-server breaks with current nixpkgs)
-              ++ [nixos-npm-ls.overlays.default]
-              ++ [
-                # nixos-npm-ls overrides prisma-language-server with a dream2nix build
-                # that requires nodejs.src, which is missing in current nixpkgs.
-                # Restore the native nixpkgs version instead.
-                (_final: _prev: {
-                  prisma-language-server = nixpkgs.legacyPackages."x86_64-linux".prisma-language-server;
-                })
-              ];
-          }
-        ];
-      };
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
     };
+
+    import-tree.url = "github:vic/import-tree";
+
   };
+
+  outputs = inputs @ {flake-parts, ...}:
+    flake-parts.lib.mkFlake {inherit inputs;} {
+      imports = [./modules];
+    };
 }

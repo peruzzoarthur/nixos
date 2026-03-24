@@ -17,7 +17,7 @@
     # You can also split up your configuration and import pieces of it here:
     ./bash.nix
     ./direnv.nix
-    ../modules/home-manager
+    (inputs.import-tree ../modules/home-manager)
   ];
 
   # nixpkgs = {
