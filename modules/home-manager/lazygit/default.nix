@@ -1,11 +1,18 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
+  home.packages = [ pkgs.delta ];
+
   programs.lazygit = {
     enable = true;
     enableZshIntegration = true;
     enableNushellIntegration = true;
     settings = {
+      git.pagers = [
+        {
+          pager = ''delta --dark --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}" --syntax-theme="vague"'';
+        }
+      ];
       gui.theme = {
         bgColor = [ "#1e1e2e" ];
         activeBorderColor = [ "#b4befe" "bold" ];
