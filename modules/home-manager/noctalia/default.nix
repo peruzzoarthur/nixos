@@ -9,4 +9,6 @@
       (builtins.fromJSON
         (builtins.readFile ./settings.json)).settings;
   };
+
+  home.file.".config/noctalia/colorschemes/Vague/Vague.json".source = ./Vague/Vague.json;
 }
