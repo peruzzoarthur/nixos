@@ -9,6 +9,11 @@
           setupOpts = {
             backend = "kitty";
             integrations.markdown.enabled = false;
+            debug = {
+              enabled = true;
+              level = "debug";
+              file_path = "/tmp/image.nvim.log";
+            };
           };
         };
       };
