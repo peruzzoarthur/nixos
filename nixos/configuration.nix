@@ -317,6 +317,7 @@
     libnotify
     meld
     blender
+    teamspeak6-client
 
     # Language servers
     nodePackages.vscode-langservers-extracted
