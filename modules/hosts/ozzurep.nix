@@ -16,11 +16,12 @@
       ovs = import ../../overlays {inherit inputs;};
     in
     [ovs.additions ovs.modifications]
-    ++ [inputs.nixos-npm-ls.overlays.default]
     ++ [
-      (_final: _prev: {
+      (_final: prev: {
         prisma-language-server =
-          inputs.nixpkgs.legacyPackages."x86_64-linux".prisma-language-server;
+          inputs.nixpkgs.legacyPackages.${prev.stdenv.hostPlatform.system}.prisma-language-server;
+        gh-actions-language-server =
+          inputs.nixos-npm-ls.packages.${prev.stdenv.hostPlatform.system}.gh-actions-language-server;
       })
     ];
 }
