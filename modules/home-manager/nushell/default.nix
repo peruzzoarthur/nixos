@@ -92,6 +92,10 @@
            }
          }
 
+        def kill-docker [] {
+          docker ps -a -q | lines | each { |id| docker stop $id }
+        }
+
          random_image
       '';
     };
