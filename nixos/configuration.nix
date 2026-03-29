@@ -317,7 +317,8 @@
     libnotify
     meld
     blender
-    teamspeak6-client
+    sonar-scanner-cli
+    qgis
 
     # Language servers
     nodePackages.vscode-langservers-extracted
