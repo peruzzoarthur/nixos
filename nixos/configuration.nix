@@ -102,14 +102,6 @@
     "x-scheme-handler/unknown" = "firefox.desktop";
   };
 
-  # services.desktopManager.plasma6.enable = true;
-  # environment.plasma6.excludePackages = with pkgs.kdePackages; [
-  #   drkonqi
-  # ];
-  # systemd.suppressedSystemUnits = [ "drkonqi-coredump-processor@.service" ];
-
-  # SDDM display manager is configured in modules/nixos/sddm.nix
-
   # Enable PolicyKit for authentication
   security.polkit.enable = true;
 
@@ -319,6 +311,7 @@
     blender
     sonar-scanner-cli
     qgis
+    kdePackages.gwenview
 
     # Language servers
     nodePackages.vscode-langservers-extracted
