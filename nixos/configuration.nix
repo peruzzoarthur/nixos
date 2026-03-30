@@ -324,6 +324,7 @@
     })
     kdePackages.gwenview
     libsForQt5.qtstyleplugin-kvantum
+    inkscape
 
     # Language servers
     nodePackages.vscode-langservers-extracted
