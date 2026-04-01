@@ -322,9 +322,10 @@
           --prefix QT_PLUGIN_PATH : "${pkgs.libsForQt5.qtstyleplugin-kvantum}/lib/qt-${pkgs.libsForQt5.qtbase.version}/plugins"
       '';
     })
-    kdePackages.gwenview
     libsForQt5.qtstyleplugin-kvantum
     inkscape
+    graphviz
+    mermaid-cli
 
     # Language servers
     nodePackages.vscode-langservers-extracted
