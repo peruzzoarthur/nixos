@@ -212,7 +212,7 @@
     # prisma # use per-project via flakes
     vulkan-tools
     mesa
-    claude-code
+    # claude-code # nixpkgs 2.1.88 doesn't exist on npm, re-enable after nixpkgs updates
     waybar
     zig
     gcc
@@ -330,10 +330,10 @@
     gdal
 
     # Language servers
-    nodePackages.vscode-langservers-extracted
+    vscode-langservers-extracted
     vtsls
-    nodePackages.typescript-language-server
-    nodePackages."@tailwindcss/language-server"
+    typescript-language-server
+    tailwindcss-language-server
     bash-language-server
     yaml-language-server
     lua-language-server
@@ -347,7 +347,7 @@
     gh-actions-language-server
 
     # Formatters
-    nodePackages.prettier
+    prettier
     alejandra
     stylua
 
