@@ -39,6 +39,7 @@
         alias lta = eza --tree --level=2 --long --icons --git -a
         alias ll = eza -lh --group-directories-first --icons=auto -l
         alias ld = lazydocker
+        alias lg = lazygit
         alias .. = cd ..
         alias ... = cd ../..
         alias .... = cd ../../..
