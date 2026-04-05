@@ -135,7 +135,13 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  virtualisation.docker.enable = true;
+  virtualisation.docker = {
+    enable = true;
+    daemon.settings = {
+      hosts = ["unix:///var/run/docker.sock" "tcp://0.0.0.0:2375"];
+    };
+  };
+
 
   # programs.hyprland = {
   #   enable = true;
