@@ -21,21 +21,11 @@
         action = "\"+y";
         # options.noremap = true;
       }
-
-      # Disable Ctrl+Z
       {
         mode = "n";
         key = "<C-z>";
         action = "<Nop>";
       }
-
-      # File explorer
-      {
-        mode = "n";
-        key = "<leader>pv";
-        action = ":Ex<CR>";
-      }
-
       # Move selected lines up/down
       {
         mode = "v";
@@ -177,11 +167,31 @@
         silent = true;
       }
 
+      # Supermaven toggle (mutually exclusive with cmp autocomplete)
+      {
+        mode = "n";
+        key = "<leader>si";
+        action = "<cmd>lua require('cmp').setup({ completion = { autocomplete = false } })<CR><cmd>SupermavenStart<CR>";
+        silent = true;
+      }
+      {
+        mode = "n";
+        key = "<leader>so";
+        action = "<cmd>lua require('cmp').setup({ completion = { autocomplete = { require('cmp.types').cmp.TriggerEvent.TextChanged } } })<CR><cmd>SupermavenStop<CR>";
+        silent = true;
+      }
+
       {
         mode = "n";
         key = "<leader><leader>";
         action = ":";
         silent = false;
+      }
+      {
+        mode = "n";
+        key = "<leader>hh";
+        action = "<cmd>lua Snacks.picker.command_history()<CR>";
+        silent = true;
       }
       {
         mode = "n";
@@ -194,6 +204,13 @@
         key = "<C-u>";
         action = "<C-u>zz";
         silent = false;
+      }
+      {
+        mode = "n";
+        key = "<C-p>";
+        action = "<cmd>lua Snacks.picker.git_files()<CR>";
+        desc = "Git files [Telescope]";
+        silent = true;
       }
       # {
       #   mode = "n";

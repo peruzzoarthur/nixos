@@ -8,6 +8,7 @@
           dashboard = {enabled = false;};
           explorer = {enabled = true;};
           indent = {enabled = true;};
+          cmdline = {enabled = true;};
           input = {enabled = true;};
           picker = {enabled = true;};
           notifier = {enabled = true;};
@@ -16,6 +17,7 @@
           scroll = {enabled = true;};
           statuscolumn = {enabled = true;};
           words = {enabled = true;};
+          terminal = {enabled = true;};
           zen = {enabled = false;};
         };
       };
@@ -51,6 +53,12 @@
         #   action = "<cmd>lua Snacks.zen()<CR>";
         #   silent = false;
         # }
+        {
+          mode = "n";
+          key = "<leader>no";
+          action = "<cmd>lua Snacks.terminal('bun run /home/ozzurep/coldLab/tui/cold-note-opentui/src/index.tsx')<CR>";
+          silent = true;
+        }
       ];
     };
   };

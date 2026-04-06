@@ -21,7 +21,7 @@
         setup = ''
           local cmp = require('cmp')
           cmp.setup({
-            completion = { autocomplete = false },
+            completion = { autocomplete = { require('cmp.types').cmp.TriggerEvent.TextChanged } },
             mapping = cmp.mapping.preset.insert({
               ['<CR>'] = cmp.mapping.confirm({ select = true }),
             }),
