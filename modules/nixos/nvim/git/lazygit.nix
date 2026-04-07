@@ -4,10 +4,10 @@
       vim.terminal.toggleterm = {
         enable = false;
         lazygit = {
-          enable = true;
-          mappings.open = "<leader>lg";
+          enable = false;
         };
       };
+
     };
   };
 }

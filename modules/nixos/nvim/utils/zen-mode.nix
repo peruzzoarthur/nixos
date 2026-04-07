@@ -34,7 +34,7 @@
                 -- callback where you can add custom code when the Zen window closes
                 on_close = function()
                   vim.loop.spawn("kitten", {
-                    args = {"@", "action", "set_background_opacity", "0.8"}
+                    args = {"@", "action", "set_background_opacity", "0.95"}
                   })
                   -- restore window name and show status
                 end,

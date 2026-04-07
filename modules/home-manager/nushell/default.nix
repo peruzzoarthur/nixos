@@ -78,6 +78,20 @@
           tmux new -s $sessionName
         }
 
+        # Spawn floating kitty with tmux session named after current dir + suffix
+        def float [suffix: string, --opacity: float = 1.0, --program: string = ""] {
+          let dir_name = (pwd | path basename | str replace -r '^\.' "")
+          let session_name = $"float-($dir_name)-($suffix)"
+          let exists = (tmux has-session -t $session_name | complete).exit_code == 0
+          if not $exists {
+            tmux new-session -d -s $session_name
+            if ($program | str length) > 0 {
+              tmux send-keys -t $session_name $program Enter
+            }
+          }
+          ^setsid -f kitty --class tmux-float --title $"tmux-float-($session_name)" -o $"background_opacity=($opacity)" tmux attach-session -t $session_name
+        }
+
           # Kitty remote control helper
        def krc [...args] {
            if "KITTY_LISTEN_ON" in $env {

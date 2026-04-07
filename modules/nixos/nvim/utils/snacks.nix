@@ -23,12 +23,12 @@
       };
 
       vim.keymaps = [
-        {
-          mode = "n";
-          key = "<leader>lg";
-          action = "<cmd>lua Snacks.lazygit()<CR>";
-          silent = false;
-        }
+        # {
+        #   mode = "n";
+        #   key = "<leader>lg";
+        #   action = "<cmd>lua Snacks.lazygit()<CR>";
+        #   silent = false;
+        # }
         {
           mode = "n";
           key = "<leader>gb";
@@ -53,12 +53,6 @@
         #   action = "<cmd>lua Snacks.zen()<CR>";
         #   silent = false;
         # }
-        {
-          mode = "n";
-          key = "<leader>no";
-          action = "<cmd>lua Snacks.terminal('bun run /home/ozzurep/coldLab/tui/cold-note-opentui/src/index.tsx')<CR>";
-          silent = true;
-        }
       ];
     };
   };

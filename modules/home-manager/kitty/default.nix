@@ -9,7 +9,7 @@
   programs.kitty = {
     enable = true;
     settings = {
-      background_opacity = 0.8;
+      background_opacity = 0.98;
       font_family = "JetBrainsMono Nerd Font Mono";
       font_size = 13;
       dynamic_background_opacity = true;

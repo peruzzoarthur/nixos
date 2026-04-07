@@ -11,5 +11,6 @@
     ./which-key.nix
     ./zen-mode.nix
     ./supermaven.nix
+    ./float.nix
   ];
 }

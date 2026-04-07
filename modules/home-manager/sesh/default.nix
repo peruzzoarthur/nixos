@@ -4,5 +4,8 @@
     icons = true;
     enableAlias = false;
     enableTmuxIntegration = false;
+    settings = {
+      blacklist = ["^float-"];
+    };
   };
 }
