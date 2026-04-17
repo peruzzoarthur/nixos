@@ -6,6 +6,9 @@
       name = "Arthur Sperotto Peruzzo";
     };
     settings = {
+      core = {
+        excludesfile = "~/.gitignore_global";
+      };
       merge = {
         tool = "meld";
       };

@@ -14,6 +14,7 @@
       font_size = 13;
       dynamic_background_opacity = true;
       allow_remote_control = true;
+      confirm_os_window_close = 0;
     };
     themeFile = "vague";
   };

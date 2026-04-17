@@ -334,6 +334,9 @@
     mermaid-cli
     chromium
     gdal
+    pandoc
+    python314Packages.defusedxml
+    kdePackages.kdenlive
 
     # Language servers
     vscode-langservers-extracted
