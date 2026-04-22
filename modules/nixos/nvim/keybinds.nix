@@ -205,13 +205,13 @@
         action = "<C-u>zz";
         silent = false;
       }
-      {
-        mode = "n";
-        key = "<C-p>";
-        action = "<cmd>lua Snacks.picker.git_files()<CR>";
-        desc = "Git files [Telescope]";
-        silent = true;
-      }
+      # {
+      #   mode = "n";
+      #   key = "<C-p>";
+      #   action = "<cmd>lua Snacks.picker.git_files()<CR>";
+      #   desc = "Git files [Telescope]";
+      #   silent = true;
+      # }
       # {
       #   mode = "n";
       #   key = "<leader>mp";

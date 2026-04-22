@@ -74,15 +74,15 @@
           };
         };
         
-        # keymaps = [
-        #   {
-        #     mode = "n";
-        #     key = "<C-p>";
-        #     action = ":Telescope git_files<CR>";
-        #     desc = "Git files [Telescope]";
-        #     silent = true;
-        #   }
-        # ];
+        keymaps = [
+          {
+            mode = "n";
+            key = "<C-p>";
+            action = ":Telescope git_files<CR>";
+            desc = "Git files [Telescope]";
+            silent = true;
+          }
+        ];
       };
     };
   };

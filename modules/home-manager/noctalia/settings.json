@@ -228,7 +228,8 @@
           "Del"
         ]
       },
-      "reverseScroll": false
+      "reverseScroll": false,
+      "smoothScrollEnabled": true
     },
     "ui": {
       "fontDefault": "Rubik",
@@ -248,6 +249,7 @@
       "name": "Pelotas, Brazil",
       "weatherEnabled": true,
       "weatherShowEffects": true,
+      "weatherTaliaMascotAlways": false,
       "useFahrenheit": false,
       "use12hourFormat": false,
       "showWeekNumberInCalendar": false,
@@ -256,7 +258,8 @@
       "analogClockInCalendar": false,
       "firstDayOfWeek": -1,
       "hideWeatherTimezone": false,
-      "hideWeatherCityName": false
+      "hideWeatherCityName": false,
+      "autoLocate": false
     },
     "calendar": {
       "cards": [
@@ -294,6 +297,7 @@
       "showHiddenFiles": false,
       "viewMode": "recursive",
       "setWallpaperOnAllMonitors": true,
+      "linkLightAndDarkWallpapers": true,
       "fillMode": "crop",
       "fillColor": "#000000",
       "useSolidColor": false,
@@ -472,7 +476,6 @@
       "indicatorOpacity": 0.6
     },
     "network": {
-      "airplaneModeEnabled": false,
       "bluetoothRssiPollingEnabled": false,
       "bluetoothRssiPollIntervalMs": 10000,
       "networkPanelView": "wifi",
@@ -734,9 +737,8 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "DP-1": "/home/ozzurep/wallpapers/0012_10A.jpg",
-      "HDMI-1": "/home/ozzurep/wallpapers/0012_10A.jpg",
-      "HDMI-A-1": "/home/ozzurep/wallpapers/0012_10A.jpg"
+      "HDMI-A-1": "/home/ozzurep/wallpapers/316 - 1731 - Lab Lab Land ALTA - Arthur Peruzzo -30.jpg",
+      "DP-1": "/home/ozzurep/wallpapers/316 - 1731 - Lab Lab Land ALTA - Arthur Peruzzo -30.jpg"
     },
     "desktopWidgetsEditMode": false,
     "display": {
@@ -775,7 +777,7 @@
       "lastSeenTs": 0
     },
     "changelogState": {
-      "lastSeenVersion": "v4.7.2"
+      "lastSeenVersion": "v4.7.6"
     },
     "colorSchemesList": {
       "schemes": [],
