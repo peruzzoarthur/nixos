@@ -48,6 +48,8 @@
         alias nhs = nh os switch .
         alias nhus = nh os switch -u .
         alias za = setsid -f zathura
+        alias cc = claude 
+        alias ccd = claude --dangerously-skip-permissions
         alias coldnote = bun run ~/coldLab/tui/cold-note-opentui/src/index.tsx
         def ns [] { nix-search-tv print | fzf --preview "nix-search-tv preview {}" --scheme history }
         alias s = sesh connect (sesh list --icons | gum filter --limit 1 --no-sort --fuzzy --no-strip-ansi --placeholder 'Pick a sesh' --height 50 --indicator.foreground='#b4a4d4' --match.foreground='#b4a4d4' | str trim)
