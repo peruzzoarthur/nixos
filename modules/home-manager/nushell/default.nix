@@ -32,6 +32,7 @@
         $env.config.edit_mode = 'vi'
         alias ff = fzf --preview 'bat --style=numbers --color=always {}'
         alias t = tmux
+        alias q = pi -p
         def v [...args] { kitty +kitten icat --clear; nvim +ZenMode ...$args }
         alias c = clear
         alias lsa = eza -lh --group-directories-first --icons=auto -a
