@@ -33,7 +33,7 @@
                 {
                   type = "ladspa";
                   name = "DeepFilter Mono";
-                  plugin = "${pkgs.deepfilternet}/lib/ladspa/libdeep_filter_ladspa.so";
+                  plugin = "libdeep_filter_ladspa";
                   label = "deep_filter_mono";
                   control = {
                     "Attenuation Limit (dB)" = 100;
