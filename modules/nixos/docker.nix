@@ -1,0 +1,8 @@
+{...}: {
+  virtualisation.docker = {
+    enable = true;
+    daemon.settings = {
+      hosts = ["unix:///var/run/docker.sock" "tcp://0.0.0.0:2375"];
+    };
+  };
+}

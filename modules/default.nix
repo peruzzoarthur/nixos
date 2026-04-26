@@ -9,8 +9,8 @@
   flake = {
     overlays = import ../overlays {inherit inputs;};
 
-    nixosModules = import ./nixos;
-    homeManagerModules = import ./home-manager;
+    nixosModules.default = import ./nixos;
+    homeManagerModules.default = import ./home-manager;
 
     nixosConfigurations.ozzurep = inputs.nixpkgs.lib.nixosSystem {
       specialArgs = {
