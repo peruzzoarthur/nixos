@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   programs.firefox = {
     enable = true;
+    configPath = ".mozilla/firefox";
     profiles.ozzu = {
       isDefault = true;
       path = "0f33li1b.ozzu";

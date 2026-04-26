@@ -2,10 +2,11 @@
   programs.nvf.settings.vim = {
     lsp = {
       enable = true;
+      presets.tailwindcss-language-server.enable = true;
     };
 
     languages = {
-      ts = {
+      typescript = {
         enable = true;
         format = {
           enable = true;
@@ -20,7 +21,6 @@
       lua.enable = true;
       bash.enable = true;
       terraform.enable = true;
-      tailwind.enable = true;
       # RE ADD LATER
       html.enable = true;
       yaml.enable = true;
