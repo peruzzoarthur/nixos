@@ -15,6 +15,7 @@
     xwayland-satellite
     ags
     nautilus
+    evtest
 
     # Themes
     qogir-icon-theme
