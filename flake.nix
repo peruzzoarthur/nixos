@@ -29,6 +29,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    worktrunk = {
+      url = "github:max-sixty/worktrunk";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixos-npm-ls = {
       url = "github:y3owk1n/nixos-npm-ls";
       # inputs.nixpkgs.follows = "nixpkgs"; # removed: nixpkgs >=2fc6539b dropped nodejs.src, breaking dream2nix's nodejs-granular-v3
@@ -61,7 +66,6 @@
     };
 
     import-tree.url = "github:vic/import-tree";
-
   };
 
   outputs = inputs @ {flake-parts, ...}:

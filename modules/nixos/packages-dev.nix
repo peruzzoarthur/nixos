@@ -22,7 +22,6 @@
     bruno-cli
     awscli
     sonar-scanner-cli
-    worktrunk
 
     # Databases & containers
     postgresql_16
