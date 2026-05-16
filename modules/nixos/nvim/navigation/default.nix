@@ -7,5 +7,6 @@
     ./yazi.nix
     ./harpoon.nix
     ./flash.nix
+    ./fff.nix
   ];
 }

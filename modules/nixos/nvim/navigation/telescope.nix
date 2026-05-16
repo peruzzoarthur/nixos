@@ -19,8 +19,8 @@
             }
           ];
           mappings = {
-            findFiles = "<leader>Ff";
-            liveGrep = "<leader>Fg";
+            # findFiles = "<leader>Ff";
+            # liveGrep = "<leader>Fg";
             buffers = "<leader>Fb";
             helpTags = "<leader>Fh";
             findProjects = "<leader>Fp";
