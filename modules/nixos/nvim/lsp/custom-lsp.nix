@@ -15,13 +15,13 @@
         }
         {
           key = "<leader>gd";
-          action = ":lua vim.lsp.buf.definition()<CR>";
+          action = "<cmd>lua Snacks.picker.lsp_definitions()<CR>";
           mode = "n";
           desc = "Go to definition";
         }
         {
           key = "<leader>gr";
-          action = ":lua vim.lsp.buf.references()<CR>";
+          action = "<cmd>lua Snacks.picker.lsp_references()<CR>";
           mode = "n";
           desc = "Go to references";
         }
