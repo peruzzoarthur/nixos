@@ -6,16 +6,16 @@
     };
 
     languages = {
-      typescript = {
-        enable = true;
-        format = {
-          enable = true;
-          type = ["prettierd"];
-        };
-        treesitter = {
-          enable = true;
-        };
-      };
+      # typescript = {
+      #   enable = true;
+      #   format = {
+      #     enable = true;
+      #     type = ["prettierd"];
+      #   };
+      #   treesitter = {
+      #     enable = true;
+      #   };
+      # };
       nix.enable = true;
       go.enable = true;
       lua.enable = true;

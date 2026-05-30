@@ -84,6 +84,19 @@
               "tooltipOption": "everything"
             },
             "id": "plugin:weather-indicator"
+                  },
+        {
+          "defaultSettings": {
+            "catColor": "default",
+            "catOffsetY": 0,
+            "catSize": 1,
+            "idleTimeout": 150,
+            "raveMode": false,
+            "tappyMode": false,
+            "useMprisFilter": false,
+            "waitingTimeout": 30000
+          },
+          "id": "plugin:slowbongo"
           }
         ],
         "center": [

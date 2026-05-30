@@ -41,6 +41,7 @@
     nil
     gopls
     prisma-language-server
+    graphql-language-service-cli
     gh-actions-language-server
 
     # Formatters
