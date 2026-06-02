@@ -9,14 +9,10 @@
       filter_mode = "directory";
       filter_mode_shell_up_key_binding = "global";
       theme = {
-        name = "catppuccin-mocha-mauve";
+        name = "vague";
       };
     };
   };
 
-  catppuccin.atuin = {
-    enable = true;
-    flavor = "mocha";
-    accent = "mauve";
-  };
+  xdg.configFile."atuin/themes/vague.toml".source = ./vague.toml;
 }

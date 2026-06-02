@@ -1,0 +1,12 @@
+[theme]
+name = "vague"
+
+[colors]
+AlertInfo = "#7fa563"
+AlertWarn = "#e8b589"
+AlertError = "#d8647e"
+Annotation = "#606079"
+Base = "#cdcdcd"
+Guidance = "#6e94b2"
+Important = "#c48282"
+Title = "#c3c3d5"
