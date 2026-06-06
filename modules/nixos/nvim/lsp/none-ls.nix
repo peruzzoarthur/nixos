@@ -23,6 +23,11 @@
                     to_stdin = true,
                   }),
                 },
+                -- Biome formatter using system binary
+                null_ls.builtins.formatting.biome.with({
+                  command = "/run/current-system/sw/bin/biome",
+                  args = { "format", "--stdin-file-path", "$FILENAME" },
+                }),
                 -- Prettier formatter using system binary
                 null_ls.builtins.formatting.prettier.with({
                   command = "/run/current-system/sw/bin/prettier",
@@ -44,6 +49,12 @@
               action = ":lua vim.lsp.buf.format({ filter = function(client) return client.name == 'null-ls' end })<CR>";
               mode = "n";
               desc = "Format code";
+            }
+            {
+              key = "<leader>bf";
+              action = ":!biome format --write %<CR>:edit!<CR>";
+              mode = "n";
+              desc = "Format with Biome directly";
             }
             {
               key = "<leader>pf";

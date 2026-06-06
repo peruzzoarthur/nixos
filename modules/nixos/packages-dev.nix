@@ -45,6 +45,7 @@
     gh-actions-language-server
 
     # Formatters
+    biome
     prettier
     alejandra
     stylua

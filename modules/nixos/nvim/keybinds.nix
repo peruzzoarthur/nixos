@@ -95,12 +95,19 @@
         action = "<nop>";
       }
 
-      # Format with null-ls
+      # Format with native nvim LSP (uses whichever LSP client is active: biome, null-ls, etc.)
       {
         mode = "n";
         key = "<leader>f";
-        action = "<cmd>lua vim.lsp.buf.format({ filter = function(client) return client.name == 'null-ls' end })<CR>";
+        action = "<cmd>lua vim.lsp.buf.format()<CR>";
       }
+
+      # -- Old version: force null-ls only --
+      # {
+      #   mode = "n";
+      #   key = "<leader>f";
+      #   action = "<cmd>lua vim.lsp.buf.format({ filter = function(client) return client.name == 'null-ls' end })<CR>";
+      # }
 
       # Quickfix navigation
       {
