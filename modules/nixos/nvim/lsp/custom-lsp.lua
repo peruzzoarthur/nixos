@@ -184,4 +184,4 @@ vim.lsp.config("prismals", {
 
 -- Enable the configured LSPs
 -- vim.lsp.enable({ "jsonls", "dockerls", "cssls", "eslint", "graphql", "prismals", "vtsls", "denols" })
-vim.lsp.enable({ "jsonls", "dockerls", "eslint", "graphql", "prismals" })
+vim.lsp.enable({ "jsonls", "dockerls", "graphql", "prismals", "eslint" })

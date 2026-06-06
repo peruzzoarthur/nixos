@@ -13,9 +13,12 @@
         };
         format = {
           enable = true;
-          type = ["prettierd"];
+          type = ["biome"];
         };
-        extraDiagnostics.types = ["eslint_d"];
+        extraDiagnostics = {
+          enable = true;
+          types = ["biomejs"];
+        };
         treesitter = {
           enable = true;
         };
@@ -27,9 +30,12 @@
         };
         format = {
           enable = true;
-          type = ["prettierd"];
+          type = ["biome"];
         };
-        extraDiagnostics.types = ["eslint_d"];
+        extraDiagnostics = {
+          enable = true;
+          types = ["biomejs"];
+        };
         treesitter = {
           enable = true;
         };
@@ -39,7 +45,6 @@
       lua.enable = true;
       bash.enable = true;
       terraform.enable = true;
-      # RE ADD LATER
       html.enable = true;
       yaml.enable = true;
       python = {
