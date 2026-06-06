@@ -1,4 +1,6 @@
 {pkgs, ...}: {
+  catppuccin.btop.enable = false;
+
   programs.btop = {
     enable = true;
     package = pkgs.symlinkJoin {

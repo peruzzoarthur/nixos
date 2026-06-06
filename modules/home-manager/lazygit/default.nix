@@ -2,7 +2,6 @@
 
 {
   home.packages = [ pkgs.delta ];
-
   programs.lazygit = {
     enable = true;
     enableZshIntegration = true;

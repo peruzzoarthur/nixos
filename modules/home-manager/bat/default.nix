@@ -1,4 +1,6 @@
 {...}: {
+  catppuccin.bat.enable = false;
+
   programs.bat = {
     enable = true;
     themes = {

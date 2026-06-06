@@ -7,7 +7,11 @@
 }:
 {
   imports = [inputs.catppuccin.homeModules.catppuccin];
-
+  catppuccin = {
+    enable = true;
+    autoEnable = false;
+    gtk.icon.enable = false;
+  };
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;

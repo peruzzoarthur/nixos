@@ -1,4 +1,6 @@
 {...}: {
+  catppuccin.yazi.enable = false;
+
   programs.yazi = {
     enable = true;
     shellWrapperName = "yy";

@@ -1,4 +1,6 @@
 {...}: {
+  catppuccin.atuin.enable = false;
+
   programs.atuin = {
     enable = true;
     enableZshIntegration = true;

@@ -28,7 +28,9 @@
   };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
-
+  boot.kernel.sysctl = {
+    "fs.inotify.max_user_watches" = 1048576;
+  };
   networking.hostName = "ozzurep";
   networking.networkmanager.enable = true;
 

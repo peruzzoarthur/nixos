@@ -6,16 +6,34 @@
     };
 
     languages = {
-      # typescript = {
-      #   enable = true;
-      #   format = {
-      #     enable = true;
-      #     type = ["prettierd"];
-      #   };
-      #   treesitter = {
-      #     enable = true;
-      #   };
-      # };
+      typescript = {
+        enable = true;
+        lsp = {
+          enable = true;
+        };
+        format = {
+          enable = true;
+          type = ["prettierd"];
+        };
+        extraDiagnostics.types = ["eslint_d"];
+        treesitter = {
+          enable = true;
+        };
+      };
+      tsx = {
+        enable = true;
+        lsp = {
+          enable = true;
+        };
+        format = {
+          enable = true;
+          type = ["prettierd"];
+        };
+        extraDiagnostics.types = ["eslint_d"];
+        treesitter = {
+          enable = true;
+        };
+      };
       nix.enable = true;
       go.enable = true;
       lua.enable = true;

@@ -21,15 +21,15 @@ vim.lsp.config("dockerls", {
 })
 
 -- CSS / SCSS / Less LSP
-vim.lsp.config("cssls", {
-	capabilities = capabilities,
-	on_attach = on_attach,
-	settings = {
-		css = { validate = true },
-		scss = { validate = true },
-		less = { validate = true },
-	},
-})
+-- vim.lsp.config("cssls", {
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- 	settings = {
+-- 		css = { validate = true },
+-- 		scss = { validate = true },
+-- 		less = { validate = true },
+-- 	},
+-- })
 
 -- ESLint LSP
 vim.lsp.config("eslint", {
@@ -76,111 +76,112 @@ vim.lsp.config("prismals", {
 -- TypeScript / JavaScript LSP
 -- Configure vtsls via native Neovim LSP config so it autostarts on .ts/.tsx
 -- with newer Neovim/nvim-lspconfig. Keep cmd PATH-based for Nix/devshells.
-vim.lsp.config("vtsls", {
-	cmd = { "vtsls", "--stdio" },
-	filetypes = {
-		"javascript",
-		"javascriptreact",
-		"typescript",
-		"typescriptreact",
-	},
-	root_markers = {
-		"package.json",
-		"tsconfig.json",
-		"jsconfig.json",
-	},
-	capabilities = capabilities,
-	on_attach = on_attach,
-	settings = {
-		vtsls = {
-			autoUseWorkspaceTsdk = true,
-			experimental = {
-				completion = {
-					enableServerSideFuzzyMatch = true,
-					entriesLimit = 100,
-				},
-				maxInlayHintLength = 30,
-			},
-		},
-		typescript = {
-			tsserver = {
-				maxTsServerMemory = 8192,
-				useSyntaxServer = "auto",
-			},
-			preferences = {
-				importModuleSpecifier = "non-relative",
-				importModuleSpecifierEnding = "minimal",
-				quoteStyle = "auto",
-				includePackageJsonAutoImports = "auto",
-				preferTypeOnlyAutoImports = true,
-				useAliasesForRenames = true,
-				renameMatchingJsxTags = true,
-			},
-			suggest = {
-				enabled = true,
-				autoImports = true,
-				completeFunctionCalls = true,
-				includeCompletionsForImportStatements = true,
-				includeAutomaticOptionalChainCompletions = true,
-				paths = true,
-			},
-			inlayHints = {
-				parameterNames = {
-					enabled = "literals",
-					suppressWhenArgumentMatchesName = true,
-				},
-				parameterTypes = { enabled = false },
-				variableTypes = {
-					enabled = false,
-					suppressWhenTypeMatchesName = true,
-				},
-				propertyDeclarationTypes = { enabled = true },
-				functionLikeReturnTypes = { enabled = true },
-				enumMemberValues = { enabled = true },
-			},
-			updateImportsOnFileMove = {
-				enabled = "always",
-			},
-			referencesCodeLens = {
-				enabled = false,
-				showOnAllFunctions = false,
-			},
-			implementationsCodeLens = {
-				enabled = false,
-				showOnInterfaceMethods = false,
-			},
-		},
-		javascript = {
-			preferences = {
-				importModuleSpecifier = "non-relative",
-				importModuleSpecifierEnding = "minimal",
-				quoteStyle = "auto",
-			},
-			suggest = {
-				autoImports = true,
-				completeFunctionCalls = true,
-				includeCompletionsForImportStatements = true,
-			},
-		},
-	},
-})
+-- vim.lsp.config("vtsls", {
+-- 	cmd = { "vtsls", "--stdio" },
+-- 	filetypes = {
+-- 		"javascript",
+-- 		"javascriptreact",
+-- 		"typescript",
+-- 		"typescriptreact",
+-- 	},
+-- 	root_markers = {
+-- 		"package.json",
+-- 		"tsconfig.json",
+-- 		"jsconfig.json",
+-- 	},
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- 	settings = {
+-- 		vtsls = {
+-- 			autoUseWorkspaceTsdk = true,
+-- 			experimental = {
+-- 				completion = {
+-- 					enableServerSideFuzzyMatch = true,
+-- 					entriesLimit = 100,
+-- 				},
+-- 				maxInlayHintLength = 30,
+-- 			},
+-- 		},
+-- 		typescript = {
+-- 			tsserver = {
+-- 				maxTsServerMemory = 8192,
+-- 				useSyntaxServer = "auto",
+-- 			},
+-- 			preferences = {
+-- 				importModuleSpecifier = "non-relative",
+-- 				importModuleSpecifierEnding = "minimal",
+-- 				quoteStyle = "auto",
+-- 				includePackageJsonAutoImports = "auto",
+-- 				preferTypeOnlyAutoImports = true,
+-- 				useAliasesForRenames = true,
+-- 				renameMatchingJsxTags = true,
+-- 			},
+-- 			suggest = {
+-- 				enabled = true,
+-- 				autoImports = true,
+-- 				completeFunctionCalls = true,
+-- 				includeCompletionsForImportStatements = true,
+-- 				includeAutomaticOptionalChainCompletions = true,
+-- 				paths = true,
+-- 			},
+-- 			inlayHints = {
+-- 				parameterNames = {
+-- 					enabled = "literals",
+-- 					suppressWhenArgumentMatchesName = true,
+-- 				},
+-- 				parameterTypes = { enabled = false },
+-- 				variableTypes = {
+-- 					enabled = false,
+-- 					suppressWhenTypeMatchesName = true,
+-- 				},
+-- 				propertyDeclarationTypes = { enabled = true },
+-- 				functionLikeReturnTypes = { enabled = true },
+-- 				enumMemberValues = { enabled = true },
+-- 			},
+-- 			updateImportsOnFileMove = {
+-- 				enabled = "always",
+-- 			},
+-- 			referencesCodeLens = {
+-- 				enabled = false,
+-- 				showOnAllFunctions = false,
+-- 			},
+-- 			implementationsCodeLens = {
+-- 				enabled = false,
+-- 				showOnInterfaceMethods = false,
+-- 			},
+-- 		},
+-- 		javascript = {
+-- 			preferences = {
+-- 				importModuleSpecifier = "non-relative",
+-- 				importModuleSpecifierEnding = "minimal",
+-- 				quoteStyle = "auto",
+-- 			},
+-- 			suggest = {
+-- 				autoImports = true,
+-- 				completeFunctionCalls = true,
+-- 				includeCompletionsForImportStatements = true,
+-- 			},
+-- 		},
+-- 	},
+-- })
 
 -- Deno LSP
-vim.lsp.config("denols", {
-	capabilities = capabilities,
-	root_markers = { "deno.json", "deno.jsonc" },
-	workspace_required = true,
-	on_attach = function(client, bufnr)
-		-- Disable TypeScript LSP if denols is active
-		local clients = vim.lsp.get_clients({ bufnr = bufnr })
-		for _, c in ipairs(clients) do
-			if c.name == "ts_ls" or c.name == "vtsls" then
-				c.stop()
-			end
-		end
-		on_attach(client, bufnr)
-	end,
-})
+-- vim.lsp.config("denols", {
+-- 	capabilities = capabilities,
+-- 	root_markers = { "deno.json", "deno.jsonc" },
+-- 	workspace_required = true,
+-- 	on_attach = function(client, bufnr)
+-- 		-- Disable TypeScript LSP if denols is active
+-- 		local clients = vim.lsp.get_clients({ bufnr = bufnr })
+-- 		for _, c in ipairs(clients) do
+-- 			if c.name == "ts_ls" or c.name == "vtsls" then
+-- 				c.stop()
+-- 			end
+-- 		end
+-- 		on_attach(client, bufnr)
+-- 	end,
+-- })
 
 -- Enable the configured LSPs
-vim.lsp.enable({ "jsonls", "dockerls", "cssls", "eslint", "graphql", "prismals", "vtsls", "denols" })
+-- vim.lsp.enable({ "jsonls", "dockerls", "cssls", "eslint", "graphql", "prismals", "vtsls", "denols" })
+vim.lsp.enable({ "jsonls", "dockerls", "eslint", "graphql", "prismals" })

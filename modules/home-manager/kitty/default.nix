@@ -1,6 +1,8 @@
-{ ... }:
+{ lib, ... }:
 
 {
+  catppuccin.kitty.enable = false;
+
   xdg.configFile."kitty/sessions" = {
     source = ./sessions;
     recursive = true;
@@ -15,6 +17,7 @@
       dynamic_background_opacity = true;
       allow_remote_control = true;
       confirm_os_window_close = 0;
+      auto_reload_config = -1;
     };
     themeFile = "vague";
   };

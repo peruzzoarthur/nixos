@@ -1,4 +1,5 @@
 {...}: {
+  catppuccin.nushell.enable = false;
   programs.nushell = {
     enable = true;
     envFile = {
