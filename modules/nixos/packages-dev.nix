@@ -29,6 +29,7 @@
     docker-compose
     docker-buildx
     lazydocker
+    redis
 
     # Language servers
     vscode-langservers-extracted

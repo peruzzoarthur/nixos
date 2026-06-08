@@ -13,7 +13,7 @@
         };
         format = {
           enable = true;
-          type = ["biome"];
+          type = ["prettierd"];
         };
         extraDiagnostics = {
           enable = true;
@@ -30,7 +30,7 @@
         };
         format = {
           enable = true;
-          type = ["biome"];
+          type = ["prettierd"];
         };
         extraDiagnostics = {
           enable = true;
