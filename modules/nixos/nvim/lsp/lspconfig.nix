@@ -17,7 +17,7 @@
         };
         extraDiagnostics = {
           enable = true;
-          types = ["biomejs"];
+          types = ["eslint_d"];
         };
         treesitter = {
           enable = true;

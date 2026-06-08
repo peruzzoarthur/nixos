@@ -50,11 +50,17 @@ in {
             vim.api.nvim_set_hl(0, "Normal", { bg = "#141415" })
             vim.api.nvim_set_hl(0, "NormalNC", { bg = "#141415" })
             vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#141415" })
+            vim.api.nvim_set_hl(0, "LspReferenceText", { bg = "#000000" })
+            vim.api.nvim_set_hl(0, "LspReferenceRead", { bg = "#000000" })
+            vim.api.nvim_set_hl(0, "LspReferenceWrite", { bg = "#000000" })
           end,
         })
         vim.api.nvim_set_hl(0, "Normal", { bg = "#141415" })
         vim.api.nvim_set_hl(0, "NormalNC", { bg = "#141415" })
         vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#141415" })
+        vim.api.nvim_set_hl(0, "LspReferenceText", { bg = "#000000" })
+        vim.api.nvim_set_hl(0, "LspReferenceRead", { bg = "#000000" })
+        vim.api.nvim_set_hl(0, "LspReferenceWrite", { bg = "#000000" })
 
         vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = "${borderColor}" })
         vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = "${borderColor}" })
