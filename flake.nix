@@ -64,6 +64,10 @@
     };
 
     import-tree.url = "github:vic/import-tree";
+
+    niri-nix = {
+      url = "git+https://codeberg.org/BANanaD3V/niri-nix";
+    };
   };
 
   outputs = inputs @ {flake-parts, ...}:

@@ -1,0 +1,32 @@
+{ ... }: {
+  wayland.windowManager.niri.settings.layout = {
+    gaps = 12;
+    center-focused-column = "never";
+
+    preset-column-widths._children = [
+      {proportion = 0.33333;}
+      {proportion = 0.5;}
+      {proportion = 0.66667;}
+    ];
+
+    # default-column-width { proportion 1.0; }
+    default-column-width._children = [
+      {proportion = 0.5;}
+    ];
+    # If you leave the brackets empty, the windows themselves will decide their initial width.
+    # default-column-width {}
+
+    focus-ring = {
+      # off
+      width = 3;
+      active-color = "#BB9DBD";
+      inactive-color = "#505050";
+      # active-gradient from="#80c8ff" to="#c7ff7f" angle=45
+      # inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+    };
+
+    border.off = [];
+
+    background-color = "transparent";
+  };
+}
