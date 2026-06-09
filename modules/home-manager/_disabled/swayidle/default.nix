@@ -4,7 +4,7 @@
   config,
   ...
 }: let
-  noctalia-ipc = "${lib.getExe config.programs.noctalia-shell.package} ipc call";
+  noctalia-ipc = "${lib.getExe config.programs.noctalia.package} ipc call";
   niri = lib.getExe pkgs.niri;
 in {
   services.swayidle = {

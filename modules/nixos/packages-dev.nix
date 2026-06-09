@@ -22,6 +22,7 @@
     bruno-cli
     awscli
     sonar-scanner-cli
+    tuxedo
 
     # Databases & containers
     postgresql_16
