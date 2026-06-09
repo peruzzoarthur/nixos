@@ -30,10 +30,7 @@
     vim.keymap.set('n', '<leader>no', function()
       open_float('coldnote', 'bun run /home/ozzurep/coldLab/tui/cold-note-opentui/src/index.tsx', 1.0)
     end, { desc = 'Float: cold-note', silent = true })
-    vim.keymap.set('n', '<leader>ccc', function() open_float('claude', 'claude', 1.0) end,
-      { desc = 'Float: claude', silent = true })
-    vim.keymap.set('n', '<leader>ccd', function()
-      open_float('claude-dangerous', 'claude --dangerously-skip-permissions', 1.0)
-    end, { desc = 'Float: claude (skip-permissions)', silent = true })
+    vim.keymap.set('n', '<leader>tu', function() open_float('tuxedo', 'tuxedo', 1.0) end,
+      { desc = 'Float: tuxedo', silent = true })
   '';
 }
