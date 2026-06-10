@@ -217,11 +217,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1781009359,
-        "narHash": "sha256-w/mZkRscTatf8NWyUstli8ROzM/eopxZzi0WRjoeYkU=",
+        "lastModified": 1781043330,
+        "narHash": "sha256-eApJsGv0lSn8OKqcBQJDFZI6Jg8coS7M8urNo3cVl9U=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "c58ead12efcac436afffa93a22099a5595eb4157",
+        "rev": "bd4277722d215970366a405d280301a796a364fc",
         "type": "github"
       },
       "original": {
@@ -402,18 +402,29 @@
         "type": "github"
       }
     },
+    "nixpkgs_5": {
+      "locked": {
+        "lastModified": 1777268161,
+        "narHash": "sha256-e1tDUQMbFCxCnke314UpghgRqg3FJLtcXFfq/WTRLYI=",
+        "rev": "1c3fe55ad329cbcb28471bb30f05c9827f724c76",
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.05pre987561.1c3fe55ad329/nixexprs.tar.xz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz"
+      }
+    },
     "noctalia": {
       "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
+        "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1781015124,
-        "narHash": "sha256-UwpfbTvKziDM0wH7iNKY81433ljhBw8Cd2wrzOzaFBE=",
+        "lastModified": 1781040958,
+        "narHash": "sha256-UCAWwjLJNjC1wm67uceOvrFaI40V1jil5GMA7vhRsRM=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "44caee4ed2f5a9b2ab532263b01c02de202f1805",
+        "rev": "138cd69f3153c3db0cfcf1d1cc359292e349710f",
         "type": "github"
       },
       "original": {
@@ -682,11 +693,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1780926460,
-        "narHash": "sha256-FXm6TglYAJglwrnDq1djHXHIbTKH8Rozohw8rAy0flU=",
+        "lastModified": 1781024988,
+        "narHash": "sha256-fC4bEGYQ1OyontoyxfPJ5KoP4src3GihbvALu+aS3W0=",
         "owner": "max-sixty",
         "repo": "worktrunk",
-        "rev": "ba6a3c2b56c34ef60ae8ca85dadcaf46524401fd",
+        "rev": "3f3c05bd4923cc84d583cfcf010b2fc776684b4e",
         "type": "github"
       },
       "original": {
