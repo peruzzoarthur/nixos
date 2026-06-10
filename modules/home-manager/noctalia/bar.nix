@@ -4,11 +4,11 @@
       order = [ "widgets" ];
 
       widgets = {
-        center = [ "workspaces" ];
+        center = [ "group:g1" ];
         end = [ "keyboard_layout" "group:g2" "volume" "notifications" ];
         margin_ends = 12;
         radius = 6;
-        start = [ "scripted_2" "group:g3" "group:g1" "bongocat" ];
+        start = [ "scripted_2" "workspaces" "weather" "bongocat" ];
         thickness = 25;
         widget_spacing = 8;
 
@@ -17,21 +17,14 @@
             fill = "surface_variant";
             id = "g2";
             members = [ "temp" "cpu" "ram" "network_tx" ];
-            opacity = 1.0;
+            opacity = 0.0;
             padding = 6.0;
           }
           {
             fill = "surface_variant";
             id = "g1";
             members = [ "date" "clock" ];
-            opacity = 1.0;
-            padding = 6.0;
-          }
-          {
-            fill = "surface_variant";
-            id = "g3";
-            members = [ "weather" ];
-            opacity = 1.0;
+            opacity = 0.0;
             padding = 6.0;
           }
         ];
@@ -55,9 +48,11 @@
       };
       network_tx = {
         stat = "disk_pct";
+        display = "text";
       };
       ram = {
         stat = "ram_pct";
+        display = "text";
       };
       temp = {
         display = "text";
