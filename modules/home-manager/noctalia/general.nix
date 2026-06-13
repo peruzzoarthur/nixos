@@ -5,8 +5,8 @@
     };
 
     theme = {
-      community_palette = "Monochrome";
-      source = "community";
+      source = "wallpaper";
+      wallpaper_scheme = "muted";
     };
 
     nightlight = {

@@ -1,14 +1,14 @@
-{ config, ... }: {
+{config, ...}: {
   programs.noctalia.settings = {
     bar = {
-      order = [ "widgets" ];
+      order = ["widgets"];
 
       widgets = {
-        center = [ "group:g1" ];
-        end = [ "keyboard_layout" "group:g2" "volume" "notifications" ];
+        center = ["group:g1" "taskbar" "tray"];
+        end = ["keyboard_layout" "group:g2" "volume" "clipboard" "notifications"];
         margin_ends = 12;
         radius = 6;
-        start = [ "scripted_2" "workspaces" "weather" "bongocat" ];
+        start = ["nix-logo" "workspaces" "weather" "bongocat"];
         thickness = 25;
         widget_spacing = 8;
 
@@ -16,14 +16,14 @@
           {
             fill = "surface_variant";
             id = "g2";
-            members = [ "temp" "cpu" "ram" "network_tx" ];
+            members = ["temp" "cpu" "ram" "network_tx"];
             opacity = 0.0;
             padding = 6.0;
           }
           {
             fill = "surface_variant";
             id = "g1";
-            members = [ "date" "clock" ];
+            members = ["date" "clock"];
             opacity = 0.0;
             padding = 6.0;
           }
@@ -59,10 +59,11 @@
       };
       workspaces = {
         display = "none";
+        pill_scale = 0.70000000000000007;
       };
-      scripted_2 = {
-        script = "${config.home.homeDirectory}/.config/noctalia/plugins/my-image.lua";
-        type = "scripted";
+      nix-logo = {
+        type = "community/nix-logo:nix-logo";
+        image_path = "image.svg";
       };
     };
   };

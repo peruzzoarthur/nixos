@@ -55,7 +55,7 @@
 
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
-      # inputs.nixpkgs.follows = "nixpkgs";
+      # NOTE: do NOT add inputs.nixpkgs.follows — required for cachix binary cache to match
     };
 
     flake-parts = {
@@ -68,11 +68,6 @@
     niri-nix = {
       url = "git+https://codeberg.org/BANanaD3V/niri-nix";
     };
-  };
-
-  nixConfig = {
-    extra-substituters = ["https://noctalia.cachix.org"];
-    extra-trusted-public-keys = ["noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="];
   };
 
   outputs = inputs @ {flake-parts, ...}:

@@ -1,4 +1,6 @@
 {inputs, ...}: {
+  programs.dconf.enable = true;
+
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
