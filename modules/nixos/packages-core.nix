@@ -63,6 +63,7 @@
     python3Packages.gpustat
     python312Packages.pip
     python314Packages.defusedxml
+    python314Packages.py3nvml
     pandoc
   ];
 }

@@ -16,7 +16,7 @@
           {
             fill = "surface_variant";
             id = "g2";
-            members = ["temp" "cpu" "ram" "network_tx"];
+            members = ["temp" "cpu" "ram" "network_tx" "gpu_usage" "gpu_temp"];
             opacity = 0.0;
             padding = 6.0;
           }
@@ -29,6 +29,10 @@
           }
         ];
       };
+    };
+
+    system = {
+      monitor.gpu_poll_seconds = 5;
     };
 
     widget = {
@@ -46,6 +50,16 @@
       date = {
         format = "{:%d %b}";
       };
+      gpu_temp = {
+        type = "sysmon";
+        stat = "gpu_temp";
+        display = "text";
+      };
+      gpu_usage = {
+        type = "sysmon";
+        stat = "gpu_usage";
+        display = "text";
+      };
       network_tx = {
         stat = "disk_pct";
         display = "text";
@@ -62,7 +76,7 @@
         pill_scale = 0.70000000000000007;
       };
       nix-logo = {
-        type = "community/nix-logo:nix-logo";
+        type = "peruzzoarthur/nix-logo:nix-logo";
         image_path = "image.svg";
       };
     };

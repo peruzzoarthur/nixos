@@ -25,7 +25,7 @@
     tuxedo
 
     # Databases & containers
-    postgresql_16
+    postgresql_17
     sqlite
     docker-compose
     docker-buildx

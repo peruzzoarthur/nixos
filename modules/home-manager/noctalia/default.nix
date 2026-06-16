@@ -10,16 +10,19 @@
     ./wallpaper.nix
   ];
 
+  systemd.user.services.noctalia.Service.Environment = [
+    "LD_LIBRARY_PATH=/run/opengl-driver/lib"
+  ];
+
   programs.noctalia = {
     enable = true;
     systemd.enable = true;
-    settings.plugins.enabled = ["noctalia/bongocat" "community/nix-logo"];
+    settings.plugins.enabled = ["noctalia/bongocat" "peruzzoarthur/nix-logo"];
   };
 
   home.file.".config/noctalia/colorschemes/Vague/Vague.json".source = ./Vague/Vague.json;
 
-  # Nix Logo plugin (v5 format)
-  home.file.".local/share/noctalia/plugins/nix-logo/plugin.toml".source = ./nix-logo/plugin.toml;
-  home.file.".local/share/noctalia/plugins/nix-logo/nix-logo.luau".source = ./nix-logo/nix-logo.luau;
-  home.file.".local/share/noctalia/plugins/nix-logo/image.svg".source = ./nix-logo/image.svg;
+  # NOTE: nix-logo plugin is loaded from GitHub source (peruzzoarthur/noctalia-plugins),
+  # not from a local copy here. Remove stale ~/.local/share/noctalia/plugins/nix-logo
+  # after switching so Noctalia fetches from the configured source.
 }

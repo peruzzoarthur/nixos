@@ -68,6 +68,11 @@
     niri-nix = {
       url = "git+https://codeberg.org/BANanaD3V/niri-nix";
     };
+
+    # noctalia-greeter = {
+    #   url = "github:noctalia-dev/noctalia-greeter";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs = inputs @ {flake-parts, ...}:
