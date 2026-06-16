@@ -10,6 +10,7 @@
       "lockscreen-widget-0000000000000003"
       "lockscreen-widget-0000000000000004"
       "lockscreen-widget-0000000000000005"
+      "lockscreen-widget-0000000000000006"
     ];
 
     grid = {
@@ -106,6 +107,20 @@
           background_radius = 14.0;
           image_path = "${config.home.homeDirectory}/arthur/cats-imgs/images/xoan_s2.png";
           opacity = 1.0;
+        };
+      };
+      lockscreen-widget-0000000000000006 = {
+        box_height = 0.0;
+        box_width = 0.0;
+        cx = 960.0;
+        cy = 838.0;
+        output = "HDMI-A-1";
+        rotation = 0.0;
+        type = "audio_visualizer";
+        settings = {
+          aspect_ratio = 2.5;
+          bands = 32;
+          show_when_idle = true;
         };
       };
     };

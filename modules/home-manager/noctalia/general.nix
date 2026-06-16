@@ -1,7 +1,29 @@
-{ ... }: {
+{ config, ... }: {
   programs.noctalia.settings = {
     desktop_widgets = {
-      enabled = false;
+      enabled = true;
+      schema_version = 2;
+      widget_order = ["desktop-widget-0000000000000001"];
+
+      grid = {
+        cell_size = 16;
+        major_interval = 4;
+        visible = true;
+      };
+
+      widget."desktop-widget-0000000000000001" = {
+        box_height = 0.0;
+        box_width = 0.0;
+        cx = 102.0;
+        cy = 109.0;
+        output = "HDMI-A-1";
+        rotation = 0.0;
+        type = "noctalia/timer:timer";
+
+        settings = {
+          duration = 3600;
+        };
+      };
     };
 
     theme = {

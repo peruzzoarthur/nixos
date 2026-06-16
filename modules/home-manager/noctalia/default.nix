@@ -17,7 +17,26 @@
   programs.noctalia = {
     enable = true;
     systemd.enable = true;
-    settings.plugins.enabled = ["noctalia/bongocat" "peruzzoarthur/nix-logo"];
+    settings.plugins = {
+      enabled = ["noctalia/bongocat" "peruzzoarthur/nix-logo" "noctalia/timer"];
+      source = [
+        {
+          kind = "git";
+          name = "official";
+          location = "https://github.com/noctalia-dev/official-plugins";
+        }
+        {
+          kind = "git";
+          name = "community";
+          location = "https://github.com/noctalia-dev/community-plugins";
+        }
+        {
+          kind = "git";
+          name = "peruzzoarthur";
+          location = "https://github.com/peruzzoarthur/noctalia-plugins";
+        }
+      ];
+    };
   };
 
   home.file.".config/noctalia/colorschemes/Vague/Vague.json".source = ./Vague/Vague.json;

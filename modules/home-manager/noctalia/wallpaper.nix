@@ -12,19 +12,19 @@
     };
 
     default = {
-      path = "${config.home.homeDirectory}/wallpapers/F1770027.JPG";
+      path = "${config.home.homeDirectory}/wallpapers/0018.jpg";
     };
 
     last = {
-      path = "${config.home.homeDirectory}/wallpapers/F1770027.JPG";
+      path = "${config.home.homeDirectory}/wallpapers/0018.jpg";
     };
 
     monitors = {
       DP-1 = {
-        path = "${config.home.homeDirectory}/wallpapers/F1770027.JPG";
+        path = "${config.home.homeDirectory}/wallpapers/0018.jpg";
       };
       HDMI-A-1 = {
-        path = "${config.home.homeDirectory}/wallpapers/F1770027.JPG";
+        path = "${config.home.homeDirectory}/wallpapers/0018.jpg";
       };
     };
   };

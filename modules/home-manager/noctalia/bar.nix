@@ -8,7 +8,7 @@
         end = ["keyboard_layout" "group:g2" "volume" "clipboard" "notifications"];
         margin_ends = 12;
         radius = 6;
-        start = ["nix-logo" "workspaces" "weather" "bongocat"];
+        start = ["nix-logo" "workspaces" "weather" "cat"];
         thickness = 25;
         widget_spacing = 8;
 
@@ -16,7 +16,7 @@
           {
             fill = "surface_variant";
             id = "g2";
-            members = ["temp" "cpu" "ram" "network_tx" "gpu_usage" "gpu_temp"];
+            members = ["temp" "cpu" "ram" "network_tx" "gpu_temp" "gpu_usage"];
             opacity = 0.0;
             padding = 6.0;
           }
@@ -36,10 +36,8 @@
     };
 
     widget = {
-      bongocat = {
-        input_device = "/dev/input/event2";
-        script = "scripts/bongocat.lua";
-        type = "scripted";
+      cat = {
+        type = "noctalia/bongocat:cat";
       };
       clock = {
         format = "{:%H:%M:%S}";
