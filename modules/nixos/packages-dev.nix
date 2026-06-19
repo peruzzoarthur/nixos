@@ -13,6 +13,7 @@
     go
     cargo
     bun
+    ruby
     yarn
     rbenv
     fnm
@@ -23,6 +24,7 @@
     awscli
     sonar-scanner-cli
     tuxedo
+    concurrently
 
     # Databases & containers
     postgresql_17

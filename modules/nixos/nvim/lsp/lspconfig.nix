@@ -47,6 +47,16 @@
       terraform.enable = true;
       html.enable = true;
       yaml.enable = true;
+      ruby = {
+        enable = true;
+        lsp = {
+          enable = true;
+          servers = ["solargraph" "stimulus-language-server"];
+        };
+        extraDiagnostics.enable = true;
+        format.enable = true;
+        treesitter.enable = true;
+      };
       python = {
         enable = true;
         treesitter = {
