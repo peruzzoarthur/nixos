@@ -51,7 +51,7 @@
         enable = true;
         lsp = {
           enable = true;
-          servers = ["solargraph" "stimulus-language-server"];
+          servers = ["ruby-lsp" "stimulus-language-server"];
         };
         extraDiagnostics.enable = true;
         format.enable = true;

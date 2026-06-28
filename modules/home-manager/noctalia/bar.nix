@@ -38,6 +38,7 @@
     widget = {
       cat = {
         type = "noctalia/bongocat:cat";
+        input_devices = ["/dev/input/event2"];
       };
       clock = {
         format = "{:%H:%M:%S}";

@@ -14,6 +14,7 @@
     cargo
     bun
     ruby
+    rubyPackages.rails
     yarn
     rbenv
     fnm
@@ -25,6 +26,7 @@
     sonar-scanner-cli
     tuxedo
     concurrently
+    libyaml
 
     # Databases & containers
     postgresql_17
