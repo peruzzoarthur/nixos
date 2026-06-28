@@ -125,6 +125,8 @@
           # Atuin
           [[ -f "$HOME/.atuin/bin/env" ]] && source "$HOME/.atuin/bin/env"
           eval "$(atuin init zsh --disable-up-arrow)"
+          # atuin only binds ^r in emacs/viins; claim it in vi command mode too (fzf grabs vicmd ^R)
+          bindkey -M vicmd '^r' atuin-search
           # Carapace
           export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
           zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
