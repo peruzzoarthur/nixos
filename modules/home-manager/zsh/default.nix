@@ -71,6 +71,13 @@
     # Key bindings
     defaultKeymap = "emacs";
     initContent = ''
+      # Herdr prints bash-style prompt markers literally; keep its prompt boring.
+      if [[ "''${TERM_PROGRAM:l}" == *herdr* || -n "$HERDR" || -n "$HERDR_SESSION" || -n "$HERDR_PANE_ID" ]]; then
+        PROMPT='%n@%m:%~%# '
+      else
+        eval "$(starship init zsh)"
+      fi
+
       # Disable Powerlevel10k instant prompt
       # typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
@@ -147,7 +154,6 @@
       nvm() {
         unset -f nvm
         [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
         nvm use 22 > /dev/null
         nvm "$@"
       }
@@ -177,7 +183,7 @@
 
       # Redirect both stdout and stderr to /dev/null
       alias -g NUL='>/dev/null 2>&1'
-    
+
       # Pipe to jq
       alias -g J='| jq'
 

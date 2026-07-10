@@ -58,7 +58,10 @@
       ld = "lazydocker";
     };
     initExtra = ''
-      export PS1='\[\e[38;5;76m\]\u\[\e[0m\] in \[\e[38;5;32m\]\w\[\e[0m\] \\$ '
+      case "''${TERM_PROGRAM,,}:''${HERDR:-}:''${HERDR_SESSION:-}" in
+        *herdr*) export PS1='\u@\h:\w \\$ ' ;;
+        *) export PS1='\[\e[38;5;76m\]\u\[\e[0m\] in \[\e[38;5;32m\]\w\[\e[0m\] \\$ ' ;;
+      esac
     '';
   };
 
@@ -114,7 +117,7 @@
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
-      "inode/directory" = [ "thunar.desktop" ];
+      "inode/directory" = ["thunar.desktop"];
     };
   };
 }

@@ -27,6 +27,7 @@
     tuxedo
     concurrently
     libyaml
+    zed-editor
 
     # Databases & containers
     postgresql_17

@@ -104,7 +104,6 @@ source <(fzf --zsh)
 # Load NVM (Node Version Manager)
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 nvm use 22 > /dev/null
 
@@ -154,7 +153,7 @@ export PATH=$PATH:/home/ozzurep/.pulumi/bin
 # if [ -f '/home/ozzurep/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/ozzurep/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/terraform terraform
+(( $+commands[terraform] )) && complete -o nospace -C /usr/local/bin/terraform terraform
 [[ -f "$HOME/.deno/env" ]] && source "$HOME/.deno/env"
 
 # export XMODIFIERS=@im=ibus

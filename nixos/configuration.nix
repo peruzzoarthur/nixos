@@ -34,6 +34,21 @@
   networking.hostName = "ozzurep";
   networking.networkmanager.enable = true;
 
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+    allowInterfaces = ["enp3s0"];
+    ipv6 = false;
+    publish = {
+      enable = true;
+      addresses = true;
+      workstation = true;
+    };
+  };
+
+  networking.firewall.allowedTCPPorts = [80];
+
   nixpkgs.config.allowUnfree = true;
 
   system.stateVersion = "25.05";

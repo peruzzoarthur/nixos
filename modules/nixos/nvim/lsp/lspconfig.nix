@@ -1,9 +1,14 @@
-{...}: {
+{lib, ...}: {
   programs.nvf.settings.vim = {
     lsp = {
       enable = true;
       presets.tailwindcss-language-server.enable = true;
     };
+
+    # ponytail: ruby module hardcodes rubocop for eruby, which can't parse ERB
+    # and emits bogus "regexp/<" syntax errors. Lint .erb with erb_lint instead
+    # (nvim-lint builtin runs `bundle exec erblint`, uses the project's gem).
+    diagnostics.nvim-lint.linters_by_ft.eruby = lib.mkForce ["erb_lint"];
 
     languages = {
       typescript = {

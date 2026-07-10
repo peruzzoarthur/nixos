@@ -3,7 +3,7 @@
     autocomplete.nvim-cmp = {
       enable = true;
       mappings = {
-        confirm = "<Tab>";
+        confirm = "<CR>";
         next = "<C-n>";
         previous = "<C-p>";
         complete = "<C-Space>";
