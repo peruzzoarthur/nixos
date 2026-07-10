@@ -4,14 +4,37 @@
   config,
   inputs,
   ...
-}:
-{
-  imports = [inputs.catppuccin.homeModules.catppuccin];
-  catppuccin = {
-    enable = true;
-    autoEnable = false;
-    gtk.icon.enable = false;
+}: let
+  /*
+     Catppuccin GTK fallback.
+  catppuccinGtk = pkgs.catppuccin-gtk.override {
+    python3 = pkgs.python313.override {
+      packageOverrides = _final: prev: {
+        catppuccin = prev.catppuccin.overridePythonAttrs (old: {
+          postPatch =
+            (old.postPatch or "")
+            + ''
+              substituteInPlace catppuccin/extras/matplotlib.py \
+                --replace-fail 'import matplotlib.style' 'import matplotlib.style as style' \
+                --replace-fail 'mpl.style.core.read_style_directory' 'style.read_style_directory' \
+                --replace-fail 'mpl.style.core.update_nested_dict(mpl.style.library' 'style.update_nested_dict(style.library'
+            '';
+        });
+      };
+    };
   };
+  */
+  vagueGtk = pkgs.runCommand "vague-gtk" {} ''
+    mkdir -p $out/share/themes
+    cp -r ${inputs.vague-gtk}/Vague $out/share/themes/Vague
+  '';
+in {
+  imports = [inputs.catppuccin.homeModules.catppuccin];
+  # catppuccin = {
+  #   enable = true;
+  #   autoEnable = false;
+  #   gtk.icon.enable = false;
+  # };
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
@@ -43,13 +66,17 @@
     enable = true;
 
     theme = {
-      name = "catppuccin-mocha-mauve-standard+normal";
-      package = pkgs.catppuccin-gtk.override {
-        accents = [ "mauve" ];
-        size = "standard";
-        tweaks = [ "normal" ];
-        variant = "mocha";
-      };
+      name = "Vague";
+      package = vagueGtk;
+
+      # Catppuccin GTK fallback:
+      # name = "catppuccin-mocha-mauve-standard+normal";
+      # package = catppuccinGtk.override {
+      #   accents = ["mauve"];
+      #   size = "standard";
+      #   tweaks = ["normal"];
+      #   variant = "mocha";
+      # };
     };
 
     iconTheme = {
@@ -82,8 +109,8 @@
       variant = "mocha";
     };
     kdePkg = pkgs.catppuccin-kde.override {
-      flavour = [ "mocha" ];
-      accents = [ "mauve" ];
+      flavour = ["mocha"];
+      accents = ["mauve"];
     };
     themeName = "catppuccin-mocha-mauve";
     themeDir = "${kvantumPkg}/share/Kvantum/${themeName}";
@@ -96,13 +123,15 @@
         theme=${themeName}
       '';
     };
-    "kdeglobals".text = builtins.readFile "${kdePkg}/share/color-schemes/CatppuccinMochaMauve.colors" + ''
+    "kdeglobals".text =
+      builtins.readFile "${kdePkg}/share/color-schemes/CatppuccinMochaMauve.colors"
+      + ''
 
-      [Icons]
-      Theme=Papirus-Dark
+        [Icons]
+        Theme=Papirus-Dark
 
-      [General]
-      widgetStyle=kvantum
-    '';
+        [General]
+        widgetStyle=kvantum
+      '';
   };
 }

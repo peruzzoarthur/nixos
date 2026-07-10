@@ -32,18 +32,18 @@
     deepfilternet
 
     # GIS
-    (pkgs.symlinkJoin {
-      name = "qgis-themed";
-      paths = [ pkgs.qgis ];
-      buildInputs = [ pkgs.makeWrapper ];
-      postBuild = ''
-        wrapProgram $out/bin/qgis \
-          --set QT_QPA_PLATFORM xcb \
-          --set QT_QPA_PLATFORMTHEME kvantum \
-          --set QT_STYLE_OVERRIDE kvantum \
-          --prefix QT_PLUGIN_PATH : "${pkgs.libsForQt5.qtstyleplugin-kvantum}/lib/qt-${pkgs.libsForQt5.qtbase.version}/plugins"
-      '';
-    })
-    libsForQt5.qtstyleplugin-kvantum
+    # (pkgs.symlinkJoin {
+    #   name = "qgis-themed";
+    #   paths = [ pkgs.qgis ];
+    #   buildInputs = [ pkgs.makeWrapper ];
+    #   postBuild = ''
+    #     wrapProgram $out/bin/qgis \
+    #       --set QT_QPA_PLATFORM xcb \
+    #       --set QT_QPA_PLATFORMTHEME kvantum \
+    #       --set QT_STYLE_OVERRIDE kvantum \
+    #       --prefix QT_PLUGIN_PATH : "${pkgs.libsForQt5.qtstyleplugin-kvantum}/lib/qt-${pkgs.libsForQt5.qtbase.version}/plugins"
+    #   '';
+    # })
+    # libsForQt5.qtstyleplugin-kvantum
   ];
 }

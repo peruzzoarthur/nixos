@@ -1,7 +1,7 @@
-{ config, ... }: {
+{config, ...}: {
   programs.noctalia.settings.shell = {
     avatar_path = "${config.home.homeDirectory}/arthur/cats-imgs/images/laranja.webp";
-    font_family = "JetBrainsMono Nerd Font";
+    font_family = "IoskeleyMonoTerm Nerd Font";
     lang = "en";
     settings_show_advanced = true;
     launch_apps_as_systemd_services = true;

@@ -53,6 +53,11 @@
     # };
     catppuccin.url = "github:catppuccin/nix";
 
+    vague-gtk = {
+      url = "github:vague-theme/vague-gtk";
+      flake = false;
+    };
+
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       # NOTE: do NOT add inputs.nixpkgs.follows — required for cachix binary cache to match
