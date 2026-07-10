@@ -11,7 +11,7 @@
     settings = {
       background_opacity = 0.98;
       font_family = "IoskeleyMonoTerm Nerd Font";
-      font_size = 13;
+      font_size = 14;
       dynamic_background_opacity = true;
       allow_remote_control = true;
       confirm_os_window_close = 0;

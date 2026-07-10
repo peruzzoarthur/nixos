@@ -30,12 +30,13 @@
   '';
 in {
   imports = [inputs.catppuccin.homeModules.catppuccin];
-  # catppuccin = {
-  #   enable = true;
-  #   autoEnable = false;
-  #   gtk.icon.enable = false;
-  # };
+  # Keep Catppuccin ports opt-in; Vague owns the GTK theme.
+  catppuccin = {
+    enable = true;
+    autoEnable = false;
+  };
   home.pointerCursor = {
+    enable = true;
     gtk.enable = true;
     x11.enable = true;
     package = pkgs.bibata-cursors;

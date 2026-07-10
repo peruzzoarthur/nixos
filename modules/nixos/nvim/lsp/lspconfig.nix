@@ -18,7 +18,7 @@
         };
         format = {
           enable = true;
-          type = ["prettierd"];
+          type = ["prettier"];
         };
         extraDiagnostics = {
           enable = true;
@@ -35,7 +35,7 @@
         };
         format = {
           enable = true;
-          type = ["prettierd"];
+          type = ["prettier"];
         };
         extraDiagnostics = {
           enable = true;
