@@ -41,7 +41,8 @@
       "Bash(time nu *)",
       "Bash(time bash *)",
       "Read(//home/ozzurep/.cache/QML/**)",
-      "Read(//home/ozzurep/.cache/**)"
+      "Read(//home/ozzurep/.cache/**)",
+      "WebFetch(domain:docs.noctalia.dev)"
     ],
     "deny": [],
     "ask": []
