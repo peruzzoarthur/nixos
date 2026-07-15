@@ -28,6 +28,7 @@
         output = "DP-1";
         rotation = 0.0;
         type = "login_box";
+        settings.show_login_button = true;
       };
       "lockscreen-login-box@HDMI-A-1" = {
         box_height = 0.0;
@@ -37,6 +38,7 @@
         output = "HDMI-A-1";
         rotation = 0.0;
         type = "login_box";
+        settings.show_login_button = true;
       };
       lockscreen-widget-0000000000000001 = {
         box_height = 256.0;

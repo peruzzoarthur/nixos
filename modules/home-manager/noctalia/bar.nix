@@ -6,7 +6,10 @@
       widgets = {
         center = ["group:g1" "taskbar" "tray"];
         end = ["keyboard_layout" "group:g2" "volume" "clipboard" "notifications"];
-        margin_ends = 12;
+        font_family = "IoskeleyMonoTerm Nerd Font Medium";
+        font_weight = 100;
+        margin_edge = 2;
+        margin_ends = 8;
         radius = 6;
         start = ["nix-logo" "workspaces" "weather" "cat"];
         thickness = 25;
@@ -73,6 +76,7 @@
       workspaces = {
         display = "none";
         pill_scale = 0.70000000000000007;
+        scale = 0.7;
       };
       nix-logo = {
         type = "peruzzoarthur/nix-logo:nix-logo";

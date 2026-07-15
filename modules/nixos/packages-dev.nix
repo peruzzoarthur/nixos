@@ -9,7 +9,7 @@
     zig
     gcc
     gnumake
-    nodejs_22
+    nodejs_24
     go
     cargo
     bun
@@ -28,6 +28,7 @@
     concurrently
     libyaml
     zed-editor
+    openspec
 
     # Databases & containers
     postgresql_17

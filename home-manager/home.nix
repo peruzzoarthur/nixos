@@ -79,6 +79,15 @@
     enable = true;
   };
 
+  programs.ssh = {
+    enable = true;
+    matchBlocks.notebook = {
+      hostname = "192.168.8.7";
+      user = "ozzurep";
+      identityFile = "~/.ssh/id_ed25519";
+    };
+  };
+
   # Configuration files
   xdg.configFile = {
     # "hypr" = {

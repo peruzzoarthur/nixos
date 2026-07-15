@@ -1,4 +1,4 @@
-{inputs, ...}: {
+{config, inputs, ...}: {
   imports = [
     inputs.noctalia.homeModules.default
     ./bar.nix
@@ -18,7 +18,7 @@
     enable = true;
     systemd.enable = true;
     settings.plugins = {
-      enabled = ["noctalia/bongocat" "peruzzoarthur/nix-logo" "noctalia/timer"];
+      enabled = ["noctalia/bongocat" "peruzzoarthur/nix-logo" "noctalia/timer" "noctalia/translator" "noctalia/notes"];
       source = [
         {
           kind = "git";
@@ -36,6 +36,11 @@
           location = "https://github.com/peruzzoarthur/noctalia-plugins";
         }
       ];
+    };
+
+    settings.plugin_settings."noctalia/notes" = {
+      notes_dir = "${config.home.homeDirectory}/Notes/ColdNotes/0-inbox";
+      panel_placement = "attached";
     };
   };
 

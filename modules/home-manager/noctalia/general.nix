@@ -1,5 +1,13 @@
 { config, ... }: {
   programs.noctalia.settings = {
+    calendar = {
+      enabled = true;
+      account.personal_google = {
+        name = "brave";
+        type = "google";
+      };
+    };
+
     desktop_widgets = {
       enabled = true;
       schema_version = 2;
