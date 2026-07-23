@@ -5,13 +5,13 @@
 
       widgets = {
         center = ["group:g1" "taskbar" "tray"];
-        end = ["keyboard_layout" "group:g2" "volume" "clipboard" "notifications"];
+        end = ["keyboard_layout" "group:g2" "volume" "notifications" "widget" "clipboard" "nix-monitor"];
         font_family = "IoskeleyMonoTerm Nerd Font Medium";
         font_weight = 100;
-        margin_edge = 2;
-        margin_ends = 8;
+        margin_edge = 0;
+        margin_ends = 0;
         radius = 6;
-        start = ["nix-logo" "workspaces" "weather" "cat"];
+        start = ["nix-logo" "workspaces" "weather" "widget_2" "cat" "cat_2" "hyprwhspr"];
         thickness = 25;
         widget_spacing = 8;
 
@@ -42,6 +42,9 @@
       cat = {
         type = "noctalia/bongocat:cat";
         input_devices = ["/dev/input/event2"];
+      };
+      cat_2 = {
+        type = "dotnetrob/cat:cat";
       };
       clock = {
         format = "{:%H:%M:%S}";
@@ -78,9 +81,24 @@
         pill_scale = 0.70000000000000007;
         scale = 0.7;
       };
+      hyprwhspr = {
+        type = "peruzzoarthur/hyprwhspr:hyprwhspr";
+      };
       nix-logo = {
         type = "peruzzoarthur/nix-logo:nix-logo";
         image_path = "image.svg";
+      };
+      nix-monitor = {
+        type = "avivbintangaringga/nix-monitor:nix-monitor";
+        enabled = false;
+      };
+      # color picker; noctalia named this widget instance "widget"
+      widget = {
+        type = "oldirtty/color_picker:widget";
+      };
+      # pomodoro; noctalia named this widget instance "widget_2"
+      widget_2 = {
+        type = "thepunkoff/pomodoro:widget";
       };
     };
   };

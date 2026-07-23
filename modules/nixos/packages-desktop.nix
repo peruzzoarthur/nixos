@@ -16,6 +16,7 @@
     ags
     nautilus
     evtest
+    hyprpicker
 
     # Themes
     qogir-icon-theme
@@ -30,6 +31,7 @@
     # Hardware
     openrgb
     deepfilternet
+    hyprwhspr-rs
 
     # GIS
     # (pkgs.symlinkJoin {

@@ -65,5 +65,6 @@
     python314Packages.defusedxml
     python314Packages.py3nvml
     pandoc
+    lsof
   ];
 }

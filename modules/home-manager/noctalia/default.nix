@@ -18,7 +18,18 @@
     enable = true;
     systemd.enable = true;
     settings.plugins = {
-      enabled = ["noctalia/bongocat" "peruzzoarthur/nix-logo" "noctalia/timer" "noctalia/translator" "noctalia/notes"];
+      enabled = [
+        "noctalia/bongocat"
+        "peruzzoarthur/nix-logo"
+        "noctalia/timer"
+        "noctalia/translator"
+        "noctalia/notes"
+        "goodroot/noctwhspr"
+        "peruzzoarthur/hyprwhspr"
+        "dotnetrob/cat"
+        "oldirtty/color_picker"
+        "thepunkoff/pomodoro"
+      ];
       source = [
         {
           kind = "git";
@@ -41,6 +52,15 @@
     settings.plugin_settings."noctalia/notes" = {
       notes_dir = "${config.home.homeDirectory}/Notes/ColdNotes/0-inbox";
       panel_placement = "attached";
+    };
+
+    settings.plugin_settings."thepunkoff/pomodoro" = {
+      work-duration = 50;
+      short-break-duration = 15;
+    };
+
+    settings.plugin_settings."avivbintangaringga/nix-monitor" = {
+      clean_command = "nix-collect-garbage -d";
     };
   };
 

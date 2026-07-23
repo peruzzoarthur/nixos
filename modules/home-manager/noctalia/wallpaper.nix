@@ -12,19 +12,19 @@
     };
 
     default = {
-      path = "${config.home.homeDirectory}/wallpapers/maria_espelhada.jpg";
+      path = "${config.home.homeDirectory}/wallpapers/0012_10A.jpg";
     };
 
     last = {
-      path = "${config.home.homeDirectory}/wallpapers/maria_espelhada.jpg";
+      path = "${config.home.homeDirectory}/wallpapers/0012_10A.jpg";
     };
 
     monitors = {
       DP-1 = {
-        path = "${config.home.homeDirectory}/wallpapers/maria_espelhada.jpg";
+        path = "${config.home.homeDirectory}/wallpapers/0012_10A.jpg";
       };
       HDMI-A-1 = {
-        path = "${config.home.homeDirectory}/wallpapers/maria_espelhada.jpg";
+        path = "${config.home.homeDirectory}/wallpapers/0012_10A.jpg";
       };
     };
   };

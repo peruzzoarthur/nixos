@@ -29,6 +29,7 @@
     libyaml
     zed-editor
     openspec
+    beekeeper-studio
 
     # Databases & containers
     postgresql_17

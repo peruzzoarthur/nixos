@@ -31,6 +31,7 @@
         $env.LS_COLORS = (vivid generate catppuccin-mocha)
         $env.config.show_banner = false
         $env.config.edit_mode = 'vi'
+        $env.config.buffer_editor = 'nvim'
         alias ff = fzf --preview 'bat --style=numbers --color=always {}'
         alias t = tmux
         alias q = pi -p
